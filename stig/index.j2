@@ -1,0 +1,34 @@
+{% set page_title = title | replace(' Security Technical Implementation Guide', '') %}
+{{ "=" * page_title | length }}
+{{ page_title }}
+{{ "=" * page_title | length }}
+
+{{ version }}
+
+
+Cat I (High Severity)
+=====================
+
+.. toctree::
+   :maxdepth: 1
+   {% for rule in rules if rule['severity'] == 'high' %}
+   rules/{{ rule['id'] }}.rst
+   {%- endfor %}
+
+Cat II (Medium Severity)
+========================
+
+.. toctree::
+   :maxdepth: 1
+   {% for rule in rules if rule['severity'] == 'medium' %}
+   rules/{{ rule['id'] }}.rst
+   {%- endfor %}
+
+Cat III (Low Severity)
+======================
+
+.. toctree::
+   :maxdepth: 1
+   {% for rule in rules if rule['severity'] == 'low' %}
+   rules/{{ rule['id'] }}.rst
+   {%- endfor %}

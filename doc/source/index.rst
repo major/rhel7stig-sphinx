@@ -1,0 +1,264 @@
+
+==========================
+Red Hat Enterprise Linux 7
+==========================
+
+Release: 0.2 Benchmark Date: 30 Jun 2016
+
+
+Cat I (High Severity)
+=====================
+
+.. toctree::
+   :maxdepth: 1
+   
+   rules/RHEL-07-010010.rst
+   rules/RHEL-07-010020.rst
+   rules/RHEL-07-010260.rst
+   rules/RHEL-07-010270.rst
+   rules/RHEL-07-010430.rst
+   rules/RHEL-07-010431.rst
+   rules/RHEL-07-010440.rst
+   rules/RHEL-07-010460.rst
+   rules/RHEL-07-010470.rst
+   rules/RHEL-07-020000.rst
+   rules/RHEL-07-020010.rst
+   rules/RHEL-07-020150.rst
+   rules/RHEL-07-020151.rst
+   rules/RHEL-07-020152.rst
+   rules/RHEL-07-020170.rst
+   rules/RHEL-07-020210.rst
+   rules/RHEL-07-020211.rst
+   rules/RHEL-07-020220.rst
+   rules/RHEL-07-020240.rst
+   rules/RHEL-07-020310.rst
+   rules/RHEL-07-021280.rst
+   rules/RHEL-07-021910.rst
+   rules/RHEL-07-030010.rst
+   rules/RHEL-07-030810.rst
+   rules/RHEL-07-040330.rst
+   rules/RHEL-07-040331.rst
+   rules/RHEL-07-040490.rst
+   rules/RHEL-07-040500.rst
+   rules/RHEL-07-040540.rst
+   rules/RHEL-07-040580.rst
+   rules/RHEL-07-040590.rst
+
+Cat II (Medium Severity)
+========================
+
+.. toctree::
+   :maxdepth: 1
+   
+   rules/RHEL-07-010030.rst
+   rules/RHEL-07-010031.rst
+   rules/RHEL-07-010040.rst
+   rules/RHEL-07-010060.rst
+   rules/RHEL-07-010070.rst
+   rules/RHEL-07-010074.rst
+   rules/RHEL-07-010071.rst
+   rules/RHEL-07-010072.rst
+   rules/RHEL-07-010073.rst
+   rules/RHEL-07-010090.rst
+   rules/RHEL-07-010100.rst
+   rules/RHEL-07-010110.rst
+   rules/RHEL-07-010120.rst
+   rules/RHEL-07-010130.rst
+   rules/RHEL-07-010140.rst
+   rules/RHEL-07-010150.rst
+   rules/RHEL-07-010160.rst
+   rules/RHEL-07-010170.rst
+   rules/RHEL-07-010180.rst
+   rules/RHEL-07-010190.rst
+   rules/RHEL-07-010200.rst
+   rules/RHEL-07-010210.rst
+   rules/RHEL-07-010220.rst
+   rules/RHEL-07-010230.rst
+   rules/RHEL-07-010240.rst
+   rules/RHEL-07-010250.rst
+   rules/RHEL-07-010280.rst
+   rules/RHEL-07-010371.rst
+   rules/RHEL-07-010372.rst
+   rules/RHEL-07-010373.rst
+   rules/RHEL-07-010380.rst
+   rules/RHEL-07-010381.rst
+   rules/RHEL-07-010400.rst
+   rules/RHEL-07-010401.rst
+   rules/RHEL-07-010402.rst
+   rules/RHEL-07-010420.rst
+   rules/RHEL-07-010441.rst
+   rules/RHEL-07-010442.rst
+   rules/RHEL-07-010500.rst
+   rules/RHEL-07-020090.rst
+   rules/RHEL-07-020130.rst
+   rules/RHEL-07-020140.rst
+   rules/RHEL-07-020160.rst
+   rules/RHEL-07-020161.rst
+   rules/RHEL-07-020230.rst
+   rules/RHEL-07-020250.rst
+   rules/RHEL-07-020290.rst
+   rules/RHEL-07-020360.rst
+   rules/RHEL-07-020370.rst
+   rules/RHEL-07-020620.rst
+   rules/RHEL-07-020630.rst
+   rules/RHEL-07-020640.rst
+   rules/RHEL-07-020650.rst
+   rules/RHEL-07-020660.rst
+   rules/RHEL-07-020670.rst
+   rules/RHEL-07-020680.rst
+   rules/RHEL-07-020690.rst
+   rules/RHEL-07-020700.rst
+   rules/RHEL-07-020840.rst
+   rules/RHEL-07-020850.rst
+   rules/RHEL-07-020860.rst
+   rules/RHEL-07-020870.rst
+   rules/RHEL-07-020880.rst
+   rules/RHEL-07-020940.rst
+   rules/RHEL-07-021010.rst
+   rules/RHEL-07-021011.rst
+   rules/RHEL-07-021012.rst
+   rules/RHEL-07-021050.rst
+   rules/RHEL-07-021060.rst
+   rules/RHEL-07-021160.rst
+   rules/RHEL-07-021190.rst
+   rules/RHEL-07-021200.rst
+   rules/RHEL-07-021230.rst
+   rules/RHEL-07-021620.rst
+   rules/RHEL-07-021760.rst
+   rules/RHEL-07-030090.rst
+   rules/RHEL-07-030310.rst
+   rules/RHEL-07-030330.rst
+   rules/RHEL-07-030331.rst
+   rules/RHEL-07-030340.rst
+   rules/RHEL-07-030350.rst
+   rules/RHEL-07-030351.rst
+   rules/RHEL-07-030352.rst
+   rules/RHEL-07-030380.rst
+   rules/RHEL-07-030381.rst
+   rules/RHEL-07-030382.rst
+   rules/RHEL-07-030383.rst
+   rules/RHEL-07-030390.rst
+   rules/RHEL-07-030391.rst
+   rules/RHEL-07-030392.rst
+   rules/RHEL-07-030400.rst
+   rules/RHEL-07-030401.rst
+   rules/RHEL-07-030402.rst
+   rules/RHEL-07-030403.rst
+   rules/RHEL-07-030404.rst
+   rules/RHEL-07-030405.rst
+   rules/RHEL-07-030420.rst
+   rules/RHEL-07-030421.rst
+   rules/RHEL-07-030422.rst
+   rules/RHEL-07-030423.rst
+   rules/RHEL-07-030424.rst
+   rules/RHEL-07-030425.rst
+   rules/RHEL-07-030441.rst
+   rules/RHEL-07-030442.rst
+   rules/RHEL-07-030443.rst
+   rules/RHEL-07-030444.rst
+   rules/RHEL-07-030490.rst
+   rules/RHEL-07-030491.rst
+   rules/RHEL-07-030492.rst
+   rules/RHEL-07-030510.rst
+   rules/RHEL-07-030511.rst
+   rules/RHEL-07-030512.rst
+   rules/RHEL-07-030513.rst
+   rules/RHEL-07-030514.rst
+   rules/RHEL-07-030521.rst
+   rules/RHEL-07-030522.rst
+   rules/RHEL-07-030526.rst
+   rules/RHEL-07-030523.rst
+   rules/RHEL-07-030524.rst
+   rules/RHEL-07-030525.rst
+   rules/RHEL-07-030530.rst
+   rules/RHEL-07-030531.rst
+   rules/RHEL-07-030540.rst
+   rules/RHEL-07-030541.rst
+   rules/RHEL-07-030550.rst
+   rules/RHEL-07-030560.rst
+   rules/RHEL-07-030561.rst
+   rules/RHEL-07-030630.rst
+   rules/RHEL-07-030670.rst
+   rules/RHEL-07-030671.rst
+   rules/RHEL-07-030672.rst
+   rules/RHEL-07-030673.rst
+   rules/RHEL-07-030674.rst
+   rules/RHEL-07-030710.rst
+   rules/RHEL-07-030750.rst
+   rules/RHEL-07-030751.rst
+   rules/RHEL-07-030752.rst
+   rules/RHEL-07-030753.rst
+   rules/RHEL-07-030754.rst
+   rules/RHEL-07-030770.rst
+   rules/RHEL-07-030780.rst
+   rules/RHEL-07-030820.rst
+   rules/RHEL-07-040020.rst
+   rules/RHEL-07-040030.rst
+   rules/RHEL-07-040040.rst
+   rules/RHEL-07-040050.rst
+   rules/RHEL-07-040060.rst
+   rules/RHEL-07-040070.rst
+   rules/RHEL-07-040080.rst
+   rules/RHEL-07-040100.rst
+   rules/RHEL-07-040110.rst
+   rules/RHEL-07-040160.rst
+   rules/RHEL-07-040170.rst
+   rules/RHEL-07-040180.rst
+   rules/RHEL-07-040181.rst
+   rules/RHEL-07-040182.rst
+   rules/RHEL-07-040190.rst
+   rules/RHEL-07-040191.rst
+   rules/RHEL-07-040210.rst
+   rules/RHEL-07-040230.rst
+   rules/RHEL-07-040250.rst
+   rules/RHEL-07-040260.rst
+   rules/RHEL-07-040261.rst
+   rules/RHEL-07-040290.rst
+   rules/RHEL-07-040301.rst
+   rules/RHEL-07-040310.rst
+   rules/RHEL-07-040334.rst
+   rules/RHEL-07-040332.rst
+   rules/RHEL-07-040333.rst
+   rules/RHEL-07-040350.rst
+   rules/RHEL-07-040351.rst
+   rules/RHEL-07-040380.rst
+   rules/RHEL-07-040410.rst
+   rules/RHEL-07-040420.rst
+   rules/RHEL-07-040421.rst
+   rules/RHEL-07-040470.rst
+   rules/RHEL-07-040480.rst
+   rules/RHEL-07-040520.rst
+   rules/RHEL-07-040560.rst
+   rules/RHEL-07-040620.rst
+   rules/RHEL-07-040640.rst
+   rules/RHEL-07-040650.rst
+   rules/RHEL-07-040660.rst
+   rules/RHEL-07-040670.rst
+   rules/RHEL-07-040680.rst
+   rules/RHEL-07-040690.rst
+   rules/RHEL-07-040700.rst
+   rules/RHEL-07-040730.rst
+   rules/RHEL-07-040740.rst
+   rules/RHEL-07-040810.rst
+   rules/RHEL-07-040820.rst
+   rules/RHEL-07-040830.rst
+   rules/RHEL-07-040860.rst
+
+Cat III (Low Severity)
+======================
+
+.. toctree::
+   :maxdepth: 1
+   
+   rules/RHEL-07-010490.rst
+   rules/RHEL-07-020200.rst
+   rules/RHEL-07-020300.rst
+   rules/RHEL-07-021240.rst
+   rules/RHEL-07-021250.rst
+   rules/RHEL-07-021260.rst
+   rules/RHEL-07-021270.rst
+   rules/RHEL-07-021600.rst
+   rules/RHEL-07-021610.rst
+   rules/RHEL-07-040010.rst
+   rules/RHEL-07-040300.rst
+   rules/RHEL-07-040320.rst

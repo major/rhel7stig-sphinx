@@ -1,0 +1,51 @@
+
+RHEL-07-040700 - The SSH daemon must not allow compression or must only allow compression after successful authentication.
+--------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+If compression is allowed in an SSH connection prior to authentication, vulnerabilities in the compression software could result in compromise of the system from an unauthenticated connection, potentially with root privileges.
+
+Check
+~~~~~
+
+Verify the SSH daemon performs compression after a user successfully authenticates.
+
+Check that the SSH daemon performs compression after a user successfully authenticates with the following command:
+
+# grep -i compression /etc/ssh/sshd_config
+Compression delayed
+
+If the “Compression” keyword is set to “yes”, is missing, or the retuned line is commented out, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

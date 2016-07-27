@@ -1,0 +1,59 @@
+
+RHEL-07-040640 - The SSH public host key files must have mode 0644 or less permissive.
+--------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+If a public host key file is modified by an unauthorized user, the SSH service may be compromised.
+
+Check
+~~~~~
+
+Verify the SSH public host key files have mode “0644” or less permissive.
+
+Note: SSH public key files may be found in other directories on the system depending on the installation.
+
+The following command will find all SSH public key files on the system:
+
+# find / -name '*.pub'
+
+Check the mode of the public host key files under /etc/ssh file with the following command:
+
+# ls -lL /etc/ssh/*.pub
+-rw-r--r--  1 root  wheel  618 Nov 28 06:43 ssh_host_dsa_key.pub
+-rw-r--r--  1 root  wheel  347 Nov 28 06:43 ssh_host_key.pub
+-rw-r--r--  1 root  wheel  238 Nov 28 06:43 ssh_host_rsa_key.pub
+
+If any file has a mode more permissive than “0644”, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

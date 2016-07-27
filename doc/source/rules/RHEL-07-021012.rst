@@ -1,0 +1,52 @@
+
+RHEL-07-021012 - Files systems that are being imported via Network File System (NFS) must be mounted to prevent files with the setuid and setgid bit set from being executed.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+The "nosuid" mount option causes the system to not execute setuid and setgid files with owner privileges. This option must be used for mounting any file system not containing approved setuid and setguid files. Executing files from untrusted file systems increases the opportunity for unprivileged users to attain unauthorized administrative access.
+
+Check
+~~~~~
+
+Verify file systems that are being NFS exported are mounted with the “nosetuid” option.
+
+Find the file system(s) that contain the directories being exported with the following command:
+
+# more /etc/fstab | grep nfs
+
+UUID=e06097bb-cfcd-437b-9e4d-a691f5662a7d    /store           nfs           rw,nosuid                                                    0 0
+
+If a file system found in “/etc/fstab” refers to NFS and it does not have the “nosuid” option set, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: NEW
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

@@ -1,0 +1,57 @@
+
+RHEL-07-030310 - All privileged function executions must be audited.
+--------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Misuse of privileged functions, either intentionally or unintentionally by authorized users, or by unauthorized external entities that have compromised information system accounts, is a serious and ongoing concern and can have significant adverse impacts on organizations. Auditing the use of privileged functions is one way to detect such misuse and identify the risk from insider threats and the advanced persistent threat.
+
+Check
+~~~~~
+
+Verify the operating system audits the execution of privileged functions.
+
+To find relevant setuid and setgid programs, use the following command once for each local partition [PART]:
+
+# find [PART] -xdev -local -type f \( -perm -4000 -o -perm -2000 \) 2>/dev/null
+
+Run the following command to verify entries in the audit rules for all programs found with the previous command:
+
+#grep <suid_prog_with_full_path>
+a always,exit -F <suid_prog_with_full_path> -F perm=x -F auid>=1000 -F auid!=4294967295 -k setuid/setgid
+
+All setuid and setgid files on the system must have a corresponding audit rule, or must have an audit rule for the (sub) directory that contains the setuid/setgid file.
+
+If all setuid/setgid files on the system do not have audit rule coverage, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-002234

@@ -1,0 +1,52 @@
+
+RHEL-07-040333 - The SSH daemon must not allow authentication using RSA rhosts authentication.
+----------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Configuring this setting for the SSH daemon provides additional assurance that remote logon via SSH will require a password, even in the event of misconfiguration elsewhere.
+
+Check
+~~~~~
+
+Verify the SSH daemon does not allow authentication using RSA rhosts authentication.
+
+To determine how the SSH daemon's "RhostsRSAAuthentication" option is set, run the following command:
+
+# grep -i IgnoreUserKnownHosts /etc/ssh/sshd_config
+
+RhostsRSAAuthentication yes
+
+If the value is returned as “no”, the returned line is commented out, or no output is returned, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: NEW
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

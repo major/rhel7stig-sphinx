@@ -1,0 +1,50 @@
+
+RHEL-07-010270 - The SSH daemon must not allow authentication using an empty password.
+--------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+Configuring this setting for the SSH daemon provides additional assurance that remote logon via SSH will require a password, even in the event of misconfiguration elsewhere.
+
+Check
+~~~~~
+
+To determine how the SSH daemon's "PermitEmptyPasswords" option is set, run the following command:
+
+# grep -i PermitEmptyPasswords /etc/ssh/sshd_config
+
+If no line, a commented line, or a line indicating the value "no" is returned, the required value is set.
+
+If the required value is not set, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000766

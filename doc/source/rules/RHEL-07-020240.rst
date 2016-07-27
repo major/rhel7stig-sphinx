@@ -1,0 +1,53 @@
+
+RHEL-07-020240 - The operating system must be a supported release.
+------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+An operating system release is considered "supported" if the vendor continues to provide security patches for the product. With an unsupported release, it will not be possible to resolve security issues discovered in the system software.
+
+Check
+~~~~~
+
+Severity Override Guidance: 
+
+Check the version of the operating system with the following command:
+
+# cat /etc/redhat-release
+
+Red Hat Enterprise Linux Server release 7.2 (Maipo)
+Current End of Life for RHEL 7 is June 30, 2024.
+
+If the release is not supported by the vendor, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

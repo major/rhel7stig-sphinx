@@ -1,0 +1,51 @@
+
+RHEL-07-010280 - The operating system must disable account identifiers (individuals, groups, roles, and devices) if the password expires.
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Inactive identifiers pose a risk to systems and applications because attackers may exploit an inactive identifier and potentially obtain undetected access to the system. Owners of inactive accounts will not notice if unauthorized access to their user account has been obtained.
+
+Operating systems need to track periods of inactivity and disable application identifiers after zero days of inactivity.
+
+Check
+~~~~~
+
+Verify the operating system disables account identifiers (individuals, groups, roles, and devices) after the password expires with the following command:
+
+# grep -i inactive /etc/default/useradd
+INACTIVE=0
+
+If the value is not set to “0”, is commented out, or is not defined, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000795

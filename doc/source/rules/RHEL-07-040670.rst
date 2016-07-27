@@ -1,0 +1,51 @@
+
+RHEL-07-040670 - The SSH daemon must not permit Kerberos authentication unless needed.
+--------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Kerberos authentication for SSH is often implemented using Generic Security Service Application Program Interface (GSSAPI). If Kerberos is enabled through SSH, the SSH daemon provides a means of access to the system's Kerberos implementation. Vulnerabilities in the system's Kerberos implementation may then be subject to exploitation. To reduce the attack surface of the system, the Kerberos authentication mechanism within SSH must be disabled for systems not using this capability.
+
+Check
+~~~~~
+
+Verify the SSH daemon does not permit Kerberos to authenticate passwords unless approved.
+
+Check that the SSH daemon does not permit Kerberos to authenticate passwords with the following command:
+
+# grep -i kerberosauth /etc/ssh/sshd_config
+KerberosAuthentication no
+
+If the “KerberosAuthentication” keyword is missing, or is set to "yes" and is not documented with the Information System Security Officer (ISSO), or the returned line is commented out, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000368, CCI-000318, CCI-001812, CCI-001813, CCI-001814

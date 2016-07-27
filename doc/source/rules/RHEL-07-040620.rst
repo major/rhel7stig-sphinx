@@ -1,0 +1,53 @@
+
+RHEL-07-040620 - The SSH daemon must be configured to only use Message Authentication Codes (MACs) employing FIPS 140-2 approved cryptographic hash algorithms.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+DoD information systems are required to use FIPS 140-2 approved cryptographic hash functions. The only SSHv2 hash algorithm meeting this requirement is SHA.
+
+Check
+~~~~~
+
+Verify the SSH daemon is configured to only use MACs employing FIPS 140-2 approved ciphers.
+
+Note: If RHEL-07-021280 is a finding, this is automatically a finding as the system cannot implement FIPS 140-2 approved cryptographic algorithms and hashes.
+
+Check that the SSH daemon is configured to only use MACs employing FIPS 140-2 approved ciphers with the following command:
+
+# grep -i macs /etc/ssh/sshd_config
+MACs hmac-sha2-256,hmac-sha2-512
+
+If any ciphers other than “hmac-sha2-256” or “hmac-sha2-512” are listed or the retuned line is commented out, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-001453

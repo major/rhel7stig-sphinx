@@ -1,0 +1,53 @@
+
+RHEL-07-010430 - The operating system must not allow an unattended or automatic logon to the system via a graphical user interface.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+Failure to restrict system access to authenticated users negatively impacts operating system security.
+
+Check
+~~~~~
+
+Verify the operating system does not allow an unattended or automatic logon to the system via a graphical user interface.
+
+Note: If the system does not have GNOME installed, this requirement is Not Applicable. 
+
+Check for the value of the “AutomaticLoginEnable” in “/etc/gdm/custom.conf” file with the following command:
+
+# grep -i automaticloginenable /etc/gdm/custom.conf
+AutomaticLoginEnable=false
+
+If the value of “AutomaticLoginEnable” is not set to “false”, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

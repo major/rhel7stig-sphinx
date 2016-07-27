@@ -1,0 +1,51 @@
+
+RHEL-07-040060 - The cn_map file must have mode 0644 or less permissive.
+------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Without mapping the certificate used to authenticate to the user account, the ability to determine the identity of the individual user or group will not be available for forensic analysis.
+
+Check
+~~~~~
+
+Verify the operating system protects the file that maps the authenticated identity to the user or group account for PKI–based authentication.
+
+Check the mode on the cn_map file with the following command:
+
+# ls –al /etc/pam_pkcs11/cn_map
+–rw––––––– 1 root root 1294 Apr 22 17:22 /etc/pam_pkcs11/cn_map
+
+If the cn_map file has a mode more permissive than “0644”, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000187

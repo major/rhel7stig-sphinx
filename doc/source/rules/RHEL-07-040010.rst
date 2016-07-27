@@ -1,0 +1,53 @@
+
+RHEL-07-040010 - The operating system must limit the number of concurrent sessions to 10 for all accounts and/or account types.
+-------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Low
+
+Description
+~~~~~~~~~~~
+
+Operating system management includes the ability to control the number of users and user sessions that utilize an operating system. Limiting the number of allowed users and sessions per user is helpful in reducing the risks related to DoS attacks.
+
+This requirement addresses concurrent sessions for information system accounts and does not address concurrent sessions by single users via multiple system accounts. The maximum number of concurrent sessions should be defined based on mission needs and the operational environment for each system.
+
+Check
+~~~~~
+
+Verify the operating system limits the number of concurrent sessions to ten for all accounts and/or account types by issuing the following command:
+
+# grep "maxlogins" /etc/security/limits.conf
+* hard maxlogins 10
+
+This can be set as a global domain (with the * wildcard) but may be set differently for multiple domains.
+
+If the maxlogins item is missing or the value is not set to 10 or less for all domains that have the maxlogins item assigned, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000054

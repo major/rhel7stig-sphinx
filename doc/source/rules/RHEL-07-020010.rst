@@ -1,0 +1,50 @@
+
+RHEL-07-020010 - The ypserv package must not be installed.
+----------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+Removing the "ypserv" package decreases the risk of the accidental (or intentional) activation of NIS or NIS+ services.
+
+Check
+~~~~~
+
+The NIS service provides an unencrypted authentication service that does not provide for the confidentiality and integrity of user passwords or the remote session.
+
+Check to see if the “ypserve” package is installed with the following command:
+
+# yum list installed | grep ypserv
+
+If the “ypserv” package is installed, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000381

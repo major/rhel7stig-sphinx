@@ -1,0 +1,53 @@
+
+RHEL-07-021260 - The system must use /var/log/audit for the system audit data path.
+-----------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Low
+
+Description
+~~~~~~~~~~~
+
+The use of separate file systems for different paths can protect the system from failures resulting from a file system becoming full or failing.
+
+Check
+~~~~~
+
+Verify that a separate file system/partition has been created for the system audit data path.
+
+Check that a file system/partition has been created for the system audit data path with the following command:
+
+#grep /var/log/audit /etc/fstab
+UUID=3645951a    /var/log/audit          ext4    defaults                 1 2
+
+If a separate entry for /var/log/audit does not exist, ask the System Administrator (SA) if the system audit logs are being written to a different file system/partition on the system, then grep for that file system/partition. 
+
+If a separate file system/partition does not exist for the system audit data path, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

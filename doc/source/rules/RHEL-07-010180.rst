@@ -1,0 +1,51 @@
+
+RHEL-07-010180 - The shadow file must be configured to store only encrypted representations of passwords.
+---------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Passwords need to be protected at all times, and encryption is the standard method for protecting passwords. If passwords are not encrypted, they can be plainly read (i.e., clear text) and easily compromised. Passwords encrypted with a weak algorithm are no more protected than if they are kept in plain text.
+
+Check
+~~~~~
+
+Verify the system's shadow file is configured to store only encrypted representations of passwords. The strength of encryption that must be used to hash passwords for all accounts is SHA512.
+
+Check that the system is configured to create SHA512 hashed passwords with the following command:
+
+# grep -i encrypt /etc/login.defs
+ENCRYPT_METHOD SHA512
+
+If the /etc/login.defs configuration file does not exist or allows for password hashes other than SHA512 to be used, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000196

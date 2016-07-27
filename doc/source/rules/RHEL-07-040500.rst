@@ -1,0 +1,56 @@
+
+RHEL-07-040500 - The Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for operational support.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+If TFTP is required for operational support (such as the transmission of router configurations) its use must be documented with the Information System Security Manager (ISSM), restricted to only authorized personnel, and have access control rules established.
+
+Check
+~~~~~
+
+Verify a TFTP server has not been installed on the system.
+
+Check to see if a TFTP server has been installed with the following command:
+
+# yum list installed | grep tftp-server
+tftp-server-0.49-9.el7.x86_64.rpm
+
+An alternate method of determining if a TFTP server is active on the server is to use the following commands:
+
+# netstat -a | grep 69
+# netstat -a | grep 8099
+
+If TFTP is installed and the requirement for TFTP is not documented with the ISSM, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000368, CCI-000318, CCI-001812, CCI-001813, CCI-001814

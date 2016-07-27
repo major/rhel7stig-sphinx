@@ -1,0 +1,52 @@
+
+RHEL-07-040300 - The system must display the date and time of the last successful account logon upon logon.
+-----------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Low
+
+Description
+~~~~~~~~~~~
+
+Providing users with feedback on when account accesses last occurred facilitates user recognition and reporting of unauthorized account use.
+
+Check
+~~~~~
+
+Verify that users are provided with feedback on when account accesses last occurred.
+
+Check that “pam_lastlog” is used and not silent with the following command:
+
+# grep pam_lastlog /etc/pam.d/postlogin
+
+session     required      pam_lastlog.so showfailed silent
+
+If “pam_lastlog” is missing from “/etc/pam.d/postlogin” file, or the silent option is present on the line check for the “PrintLastLog” keyword in the sshd daemon configuration file, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: NEW
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

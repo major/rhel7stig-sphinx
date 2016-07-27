@@ -1,0 +1,61 @@
+
+RHEL-07-010071 - The operating system must initiate a session lock after a 15-minute period of inactivity for all connection types.
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+A session time-out lock is a temporary action taken when a user stops work and moves away from the immediate physical vicinity of the information system but does not log out because of the temporary nature of the absence. Rather than relying on the user to manually lock their operating system session prior to vacating the vicinity, operating systems need to be able to identify when a user's session has idled and take action to initiate the session lock.
+
+The session lock is implemented at the point where session activity can be determined and/or controlled.
+
+Check
+~~~~~
+
+Verify the operating system prevents the user from overriding session lock after a 15-minute period of inactivity for graphical user interfaces. The screen program must be installed to lock sessions on the console.
+
+If it is installed, GNOME must be configured to prevent users from overriding the system-wide session lock settings. Check for the session lock settings with the following commands:
+
+# grep -i idle-delay /etc/dconf/db/local.d/locks/*
+
+/org/gnome/desktop/screensaver/idle-delay
+/org/gnome/desktop/session/idle-delay
+
+If the command does not return a result for the screensaver and session keywords, this is a finding.
+
+# grep -i lock-delay /etc/dconf/db/local.d/locks/*
+
+/org/gnome/desktop/screensaver/lock-delay
+
+If the command does not return a result, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000057

@@ -1,0 +1,49 @@
+
+RHEL-07-010460 - Systems with a Basic Input/Output System (BIOS) must require authentication upon booting into single-user and maintenance modes.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+If the system does not require valid root authentication before it boots into single-user or maintenance mode, anyone who invokes single-user or maintenance mode is granted privileged access to all files on the system. GRUB 2 is the default boot loader for RHEL 7 and is designed to require a password to boot into single-user mode or make modifications to the boot menu.
+
+Check
+~~~~~
+
+Check to see if an encrypted root password is set. On systems that use a BIOS, use the following command:
+
+# grep -i password /boot/grub2/grub.cfg
+password_pbkdf2 superusers-account password-hash
+
+If the root password entry does not begin with “password_pbkdf2”, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000213

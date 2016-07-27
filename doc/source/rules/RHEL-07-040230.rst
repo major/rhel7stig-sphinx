@@ -1,0 +1,72 @@
+
+RHEL-07-040230 - The operating system, if using PKI-based authentication, must implement a local cache of revocation data to certificate validation in case of the inability to access revocation information via the network.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Without configuring a local cache of revocation data, there is the potential to allow access to users who are no longer authorized (users with revoked certificates).
+
+Check
+~~~~~
+
+Verify the operating system, for PKI-based authentication, implements a local cache of revocation data to support certificate validation in case of the inability to access revocation information via the network.
+
+Check to see if the certificate authority certificate revocation data cache is enabled on the system with the following command:
+
+# grep -i  revocationchecking /var/lib/pki-ca/conf/CS.cfg
+auths.revocationChecking.bufferSize=50
+auths.revocationChecking.ca=ca
+auths.revocationChecking.enabled=true
+auths.revocationChecking.unknownStateInterval=0
+auths.revocationChecking.validityInterval=120
+
+If auths.revocationChecking.enabled is not set to "true", this is a finding.
+
+If auths.revocationChecking.bufferSize is not set to a value of “50” or less, this is a finding.
+
+Check to see if the Online Certificate Status Protocol (OCSP) certificate revocation data cache is enabled on the system with the following command: 
+
+# grep -i ocsp /var/lib/pki-kra/conf/server.xml
+enableOCSP="true"
+ocspResponderURL="http://server.pki.mil:9180/ca/ocsp"
+      ocspResponderCertNickname="ocspSigningCert cert-pki-ca 102409a"
+        ocspCacheSize="50"
+        ocspMinCacheEntryDuration="60"
+        ocspMaxCacheEntryDuration="120"
+        ocspTimeout="10"
+
+If “enableOCSP” is not set to "true", this is a finding.
+
+If “ocspCacheSize” is not set to a value of “50” or less, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-001991

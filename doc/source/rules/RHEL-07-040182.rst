@@ -1,0 +1,62 @@
+
+RHEL-07-040182 - The operating system must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Without cryptographic integrity protections, information can be altered by unauthorized users without detection.
+
+Cryptographic mechanisms used for protecting the integrity of information include, for example, signed hash functions using asymmetric cryptography enabling distribution of the public key to verify the hash information while maintaining the confidentiality of the secret key used to generate the hash.
+
+Check
+~~~~~
+
+Verify the operating system implements cryptography to protect the integrity of remote ldap access sessions.
+
+To determine if LDAP is being used for authentication, use the following command:
+
+# grep -i useldapauth /etc/sysconfig/authconfig
+USELDAPAUTH=yes
+
+If USELDAPAUTH=yes, then LDAP is being used.
+
+Check that the path to the X.509 certificate for peer authentication with the following command:
+
+# grep -i cacertfile /etc/pam_ldap.conf
+tls_cacertfile /etc/openldap/ldap-cacert.pem
+
+Verify the “tls_cacertfile” option points to a file that contains the trusted CA certificate.
+
+If this file does not exist, or the option is commented out or missing, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-001453

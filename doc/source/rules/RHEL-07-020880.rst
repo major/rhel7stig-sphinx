@@ -1,0 +1,55 @@
+
+RHEL-07-020880 - Local initialization files must not execute world-writable programs.
+-------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+If user start-up files execute world-writable programs, especially in unprotected directories, they could be maliciously modified to destroy user files or otherwise compromise the system at the user level. If the system is compromised at the user level, it is easier to elevate privileges to eventually compromise the system at the root and network level.
+
+Check
+~~~~~
+
+Verify that local initialization files do not execute world-writable programs.
+
+Check the system for world-writable files with the following command:
+# find / -perm -002 -type f -exec ls -ld {} \; | more
+
+For all files listed, check for their presence in the local initialization files with the following commands:
+
+Note: The example will be for a system that is configured to create users’ home directories in the /home directory.
+
+# grep <file> /home/*/.*
+
+If any local initialization files are found to reference world-writable files, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

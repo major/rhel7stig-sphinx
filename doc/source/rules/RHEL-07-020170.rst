@@ -1,0 +1,60 @@
+
+RHEL-07-020170 - Operating systems handling data requiring data-at-rest protections must employ cryptographic mechanisms to prevent unauthorized disclosure and modification of the information at rest.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+Selection of a cryptographic mechanism is based on the need to protect the integrity and confidentiality of sensitive information. The strength of the mechanism is commensurate with the security category and/or classification of the information. Organizations have the flexibility to either encrypt all information on storage devices (i.e., full disk encryption) or encrypt specific data structures (e.g., files, records, or fields). This requirement is applicable if the organization determines that its sensitive information is to be protected at the storage device level.
+
+Satisfies: SRG-OS-000405-GPOS-00184, SRG-OS-000185-GPOS-00079
+
+Check
+~~~~~
+
+Verify the operating system, if handling data that requires protection to prevent the unauthorized discloser or modification of information at rest, is using disk encryption. 
+
+Note: If the organization determines that no data resident on the system requires protection, or that sensitive data is being protected through an application encryption mechanism, this requirement is Not Applicable.
+
+Check the system partitions to determine if they are all encrypted with the following command:
+
+# blkid
+/dev/sda1: UUID=" ab12c3de-4f56-789a-8f33-3850cc8ce3a2
+" TYPE="crypto_LUKS"
+/dev/sda2: UUID=" bc98d7ef-6g54-321h-1d24-9870de2ge1a2
+" TYPE="crypto_LUKS"
+
+Pseudo-file systems, such as /proc, /sys, and tmpfs, are not required to use disk encryption and are not a finding. 
+
+If any other partitions do not have a type of “crypto_LUKS”, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: NEW
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-002476, CCI-001199

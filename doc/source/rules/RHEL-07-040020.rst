@@ -1,0 +1,56 @@
+
+RHEL-07-040020 - The system must log informational authentication data.
+-----------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Access services, such as those providing remote access to network devices and information systems, that lack automated monitoring capabilities increase risk and make remote user access management difficult at best.
+
+Automated monitoring of access sessions allows organizations to detect cyber attacks and also ensure ongoing compliance with remote access policies by auditing connection activities of remote access capabilities, such as Remote Desktop Protocol (RDP), on a variety of information system components (e.g., servers, workstations, notebook computers, smartphones, and tablets).
+
+Check
+~~~~~
+
+Verify the operating system logs informational authentication data.
+
+Check to see if rsyslog is logging authentication information with the following commands:
+
+# grep auth* /etc/rsyslog.conf
+auth,authpriv.debug /var/log/auth.log
+
+# grep daemon.* /etc/rsyslog.conf
+daemon.notice /var/log/messages
+
+If the auth, authpriv, and daemon facilities are not being logged, or they are being logged at a priority of notice or higher, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000067, CCI-000126

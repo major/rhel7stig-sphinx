@@ -1,0 +1,51 @@
+
+RHEL-07-040540 - Remote X connections for interactive users must be encrypted.
+------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+Open X displays allow an attacker to capture keystrokes and execute commands remotely.
+
+Check
+~~~~~
+
+Verify remote X connections for interactive users are encrypted.
+
+Check that remote X connections are encrypted with the following command:
+
+# grep -i x11forwarding /etc/ssh/sshd_config
+X11Fowarding yes
+
+If the X11Forwarding keyword is set to "no", is missing, or is commented out, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

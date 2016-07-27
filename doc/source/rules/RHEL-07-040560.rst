@@ -1,0 +1,52 @@
+
+RHEL-07-040560 - An X Windows display manager must not be installed unless approved.
+------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Internet services that are not required for system or application processes must not be active to decrease the attack surface of the system. X Windows has a long history of security vulnerabilities and will not be used unless approved and documented.
+
+Check
+~~~~~
+
+Verify that if the system has X Windows installed, it is authorized.
+
+Check for the X11 package with the following command:
+
+#yum groupinstall "X Window System"
+
+Ask the System Administrator (SA) if use of the X Windows system is an operational requirement.
+
+If the use of X Windows on the system is not documented with the Information System Security Manager (ISSM), this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

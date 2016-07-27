@@ -1,0 +1,51 @@
+
+RHEL-07-010440 - The operating system must not allow empty passwords for SSH logon to the system.
+-------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+High
+
+Description
+~~~~~~~~~~~
+
+Failure to restrict system access to authenticated users negatively impacts operating system security.
+
+Check
+~~~~~
+
+Verify the operating system does not allow empty passwords to be used for SSH logon to the system.
+
+Check for the value of the PermitEmptyPasswords keyword with the following command:
+
+# grep -i permitemptypassword /etc/ssh/sshd_config
+PermitEmptyPasswords no
+
+If the “PermitEmptyPasswords” keyword is not set to “no”, is missing, or is commented out, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

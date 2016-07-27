@@ -1,0 +1,52 @@
+
+RHEL-07-040470 - Network interfaces must not be in promiscuous mode.
+--------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Network interfaces in promiscuous mode allow for the capture of all network traffic visible to the system. If unauthorized individuals can access these applications, it may allow then to collect information such as logon IDs, passwords, and key exchanges between systems.
+
+If the system is being used to perform a network troubleshooting function, the use of these tools must be documented with the Information System Security Manager (ISSM) and restricted to only authorized personnel.
+
+Check
+~~~~~
+
+Verify network interfaces are not in promiscuous mode unless approved by the Information System Security Manager (ISSM) and documented.
+
+Check for the status with the following command:
+
+# ip link | grep -i promisc
+
+If network interfaces are found on the system in promiscuous mode and their use has not been approved by the ISSM and documented, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

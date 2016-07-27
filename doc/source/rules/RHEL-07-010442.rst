@@ -1,0 +1,51 @@
+
+RHEL-07-010442 - The operating system must not allow a non-certificate trusted host SSH logon to the system.
+------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Failure to restrict system access to authenticated users negatively impacts operating system security.
+
+Check
+~~~~~
+
+Verify the operating system does not allow a non-certificate trusted host SSH logon to the system.
+
+Check for the value of the HostbasedAuthentication keyword with the following command:
+
+# grep -i hostbasedauthentication /etc/ssh/sshd_config
+HostbasedAuthentication no
+
+If the “HostbasedAuthentication” keyword is not set to “no”, is missing, or is commented out, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

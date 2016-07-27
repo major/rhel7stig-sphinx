@@ -1,0 +1,63 @@
+
+RHEL-07-021160 - Cron logging must be implemented.
+--------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Cron logging can be used to trace the successful or unsuccessful execution of cron jobs. It can also be used to spot intrusions into the use of the cron facility by unauthorized and malicious users.
+
+Check
+~~~~~
+
+Verify that rsyslog is configured to log cron events.
+
+Check the configuration of /etc/rsyslog.conf for the cron facility with the following command:
+
+Note: If another logging package is used, substitute the utility configuration file for /etc/rsyslog.conf. 
+
+# grep cron /etc/rsyslog.conf
+cron.* /var/log/cron.log
+
+If the command does not return a response, check for cron logging all facilities by inspecting the /etc/rsyslog.conf file:
+
+# more /etc/rsyslog.conf
+
+Look for the following entry:
+
+*.* /var/log/messages
+
+If rsyslog is not logging messages for the cron facility or all facilities, this is a finding.  
+
+If the entry is in the “/etc/rsyslog.conf” file but is after the entry: *.*', this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

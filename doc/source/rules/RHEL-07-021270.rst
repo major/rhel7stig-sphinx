@@ -1,0 +1,51 @@
+
+RHEL-07-021270 - The system must use a separate file system for /tmp (or equivalent).
+-------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Low
+
+Description
+~~~~~~~~~~~
+
+The use of separate file systems for different paths can protect the system from failures resulting from a file system becoming full or failing.
+
+Check
+~~~~~
+
+Verify that a separate file system/partition has been created for /tmp.
+
+Check that a file system/partition has been created for “/tmp” with the following command:
+
+# grep /tmp /etc/fstab
+UUID=7835718b    /tmp    ext4    nodev,nosetuid,noexec      1 2
+
+If a separate entry for /tmp is not in use, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366

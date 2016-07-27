@@ -1,0 +1,26 @@
+{% set title = [rule['id'], rule['title']] | join(" - ") %}
+{{ title }}
+{{ '-' * title | length }}
+
+Severity
+~~~~~~~~
+
+{{ rule['severity'] | title }}
+
+Description
+~~~~~~~~~~~
+
+{{ rule['description']['VulnDiscussion'] }}
+
+Check
+~~~~~
+
+{{ rule['check'] | safe }}
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+{% for topic, text in rule['description'].items() if topic not in ['root', 'VulnDiscussion'] %}
+* {{ topic | prettydesc }}: {{ text }}
+{% endfor %}
+* Control Correlation Identifiers: {{ rule['ident'] | join(', ') }}

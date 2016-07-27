@@ -1,0 +1,56 @@
+
+RHEL-07-020160 - USB mass storage must be disabled.
+---------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+USB mass storage permits easy introduction of unknown devices, thereby facilitating malicious activity.
+
+Satisfies: SRG-OS-000114-GPOS-00059, SRG-OS-000378-GPOS-00163, SRG-OS-000480-GPOS-00227
+
+Check
+~~~~~
+
+If there is an HBSS with a Device Control Module and a Data Loss Prevention mechanism, this requirement is not applicable.
+
+Verify the operating system disables the ability to use USB mass storage devices.
+
+Check to see if USB mass storage is disabled with the following command:
+
+#grep -i usb-storage /etc/modprobe.d/*
+
+install usb-storage /bin/true
+
+If the command does not return any output, and use of USB storage devices is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Security Override Guidance: None
+
+* Mitigation Control: None
+
+* IA Controls: None
+
+* False Negatives: None
+
+* Mitigations: None
+
+* Third Party Tools: None
+
+* Responsibility: None
+
+* Potential Impacts: None
+
+* False Positives: None
+
+* Documentable: false
+
+* Control Correlation Identifiers: CCI-000366, CCI-000778, CCI-001958
