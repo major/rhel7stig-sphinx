@@ -1,8 +1,9 @@
 RHEL 7 STIG in Sphinx
 =====================
 
-This is an attempt to make the Red Hat Enterprise Linux 7 STIG a little easier
-to work with by converting it into Sphinx documentation.
+This is an attempt to make the Red Hat Enterprise Linux 7 Security Technical
+Implementation Guide (STIG) a little easier to work with by converting it into
+Sphinx documentation.
 
 Pre-built documentation is available here:
 
