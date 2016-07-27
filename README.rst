@@ -12,7 +12,7 @@ To build documentation:
 
 .. code-block:: console
 
-    $ pip install lxml jinja2 sphinx
+    $ pip install -r requirements.txt
     $ git clone https://github.com/major/rhel7stig-sphinx
     $ cd rhel7stig-sphinx
     $ stig/parser.py
