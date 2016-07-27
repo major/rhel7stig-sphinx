@@ -11,7 +11,7 @@ Cat I (High Severity)
 .. toctree::
    :maxdepth: 2
 
-   high.rst
+   Cat I (High Severity)<high>
 
 Cat II (Medium Severity)
 ========================
@@ -19,7 +19,7 @@ Cat II (Medium Severity)
 .. toctree::
    :maxdepth: 2
 
-   medium.rst
+   Cat II (Medium Severity)<medium>
 
 Cat III (Low Severity)
 ======================
@@ -27,4 +27,4 @@ Cat III (Low Severity)
 .. toctree::
    :maxdepth: 2
 
-   low.rst
+   Cat III (Low Severity)<low>
