@@ -93,12 +93,22 @@ for group_element in group_elements:
     rule['description'] = {x.tag: x.text for x in temp.iter()}
 
     # Generate RST and write it to disk
-    rst_output = jinja_env.get_template("rule_template.j2").render(
-        rule=rule,
-    )
-    write_file('doc/source/rules/{0}.rst'.format(rule['id']), rst_output)
+    # rst_output = jinja_env.get_template("rule_template.j2").render(
+    #     rule=rule,
+    # )
+    # write_file('doc/source/rules/{0}.rst'.format(rule['id']), rst_output)
 
     rules.append(rule)
+
+for severity in ['low', 'medium', 'high']:
+    valid_rules = [x for x in rules if x['severity'] == severity]
+
+    # Generate RST and write it to disk
+    rst_output = jinja_env.get_template("rule_template.j2").render(
+        rules=valid_rules,
+        severity=severity,
+    )
+    write_file('doc/source/{0}.rst'.format(severity), rst_output)
 
 # Generate the index file RST and write it to disk
 rst_output = jinja_env.get_template("index.j2").render(

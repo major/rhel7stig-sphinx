@@ -9,25 +9,22 @@ Cat I (High Severity)
 =====================
 
 .. toctree::
-   :maxdepth: 1
-   {% for rule in rules if rule['severity'] == 'high' %}
-   rules/{{ rule['id'] }}.rst
-   {%- endfor %}
+   :maxdepth: 2
+
+   high.rst
 
 Cat II (Medium Severity)
 ========================
 
 .. toctree::
-   :maxdepth: 1
-   {% for rule in rules if rule['severity'] == 'medium' %}
-   rules/{{ rule['id'] }}.rst
-   {%- endfor %}
+   :maxdepth: 2
+
+   medium.rst
 
 Cat III (Low Severity)
 ======================
 
 .. toctree::
-   :maxdepth: 1
-   {% for rule in rules if rule['severity'] == 'low' %}
-   rules/{{ rule['id'] }}.rst
-   {%- endfor %}
+   :maxdepth: 2
+
+   low.rst

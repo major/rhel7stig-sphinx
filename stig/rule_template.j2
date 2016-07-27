@@ -1,6 +1,12 @@
-{% set title = [rule['id'], rule['title']] | join(" - ") %}
-{{ title }}
-{{ '-' * title | length }}
+{% set page_title = severity | title %}
+{{ page_title }}
+{{ "=" * page_title | length }}
+
+{% for rule in rules %}
+
+{% set rule_title = [rule['id'], rule['title']] | join(" - ") %}
+{{ rule_title }}
+{{ '-' * rule_title | length }}
 
 Severity
 ~~~~~~~~
@@ -24,3 +30,8 @@ Additional Data
 * {{ topic | prettydesc }}: {{ text }}
 {% endfor %}
 * Control Correlation Identifiers: {{ rule['ident'] | join(', ') }}
+
+{% if not loop.last %}
+----
+{% endif %}
+{% endfor %}
