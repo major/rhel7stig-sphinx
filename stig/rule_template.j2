@@ -26,7 +26,7 @@ Check
 Additional Data
 ~~~~~~~~~~~~~~~
 
-{% for topic, text in rule['description'].items() if topic not in ['root', 'VulnDiscussion'] %}
+{% for topic, text in rule['description'] | dictsort(false, 'key') if topic not in ['root', 'VulnDiscussion'] %}
 * {{ topic | prettydesc }}: {{ text }}
 {% endfor %}
 * Control Correlation Identifiers: {{ rule['ident'] | join(', ') }}
