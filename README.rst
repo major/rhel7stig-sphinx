@@ -1,6 +1,9 @@
 RHEL 7 STIG in Sphinx
 =====================
 
+.. image:: https://travis-ci.org/major/rhel7stig-sphinx.svg?branch=master
+    :target: https://travis-ci.org/major/rhel7stig-sphinx
+
 This is an attempt to make the `Red Hat Enterprise Linux 7 Security Technical
 Implementation Guide (STIG)`_ a little easier to work with by converting it into
 Sphinx documentation.
