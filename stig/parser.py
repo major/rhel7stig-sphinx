@@ -19,7 +19,7 @@ def write_file(filename, content):
     if not os.path.isdir(dirname):
         os.makedirs(dirname)
 
-    with open(filename, 'w') as f:
+    with open(filename, 'wb') as f:
         f.write(content.encode('utf-8'))
 
 

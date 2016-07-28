@@ -16,9 +16,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Discretionary access control is weakened if a user or group has access permissions to system files and directories greater than the default.
-
-Satisfies: SRG-OS-000257-GPOS-00098, SRG-OS-000278-GPOS-00108
+Discretionary access control is weakened if a user or group has access permissions to system files and directories greater than the default.\n\nSatisfies: SRG-OS-000257-GPOS-00098, SRG-OS-000278-GPOS-00108
 
 Check
 ~~~~~
@@ -73,9 +71,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Without cryptographic integrity protections, system command and files can be altered by unauthorized users without detection.
-
-Cryptographic mechanisms used for protecting the integrity of information include, for example, signed hash functions using asymmetric cryptography enabling distribution of the public key to verify the hash information while maintaining the confidentiality of the secret key used to generate the hash.
+Without cryptographic integrity protections, system command and files can be altered by unauthorized users without detection.\n\nCryptographic mechanisms used for protecting the integrity of information include, for example, signed hash functions using asymmetric cryptography enabling distribution of the public key to verify the hash information while maintaining the confidentiality of the secret key used to generate the hash.
 
 Check
 ~~~~~
@@ -530,13 +526,7 @@ High
 Description
 ~~~~~~~~~~~
 
-It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.
-
-Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).
-
-The rsh-server service provides an unencrypted remote access service that does not provide for the confidentiality and integrity of user passwords or the remote session and has very weak authentication.
-
-If a privileged user were to log on using this service, the privileged user password could be compromised.
+It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\n\nOperating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\n\nThe rsh-server service provides an unencrypted remote access service that does not provide for the confidentiality and integrity of user passwords or the remote session and has very weak authentication.\n\nIf a privileged user were to log on using this service, the privileged user password could be compromised.
 
 Check
 ~~~~~
@@ -646,11 +636,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor.
-
-Accordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization.
-
-Verifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This verifies the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved CA.
+Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor.\n\nAccordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization.\n\nVerifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This verifies the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved CA.
 
 Check
 ~~~~~
@@ -707,11 +693,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor.
-
-Accordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization.
-
-Verifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This verifies the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved CA.
+Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor.\n\nAccordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization.\n\nVerifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This verifies the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved CA.
 
 Check
 ~~~~~
@@ -768,11 +750,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor.
-
-Accordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization.
-
-Verifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This ensures the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved Certificate Authority.
+Changes to any software components can have significant effects on the overall security of the operating system. This requirement ensures the software has not been tampered with and that it has been provided by a trusted vendor.\n\nAccordingly, patches, service packs, device drivers, or operating system components must be signed with a certificate recognized and approved by the organization.\n\nVerifying the authenticity of the software prior to installation validates the integrity of the patch or upgrade received from a vendor. This ensures the software has not been tampered with and that it has been provided by a trusted vendor. Self-signed certificates are disallowed by this requirement. The operating system should not have to verify the software again. This requirement does not mandate DoD certificates for this purpose; however, the certificate used to verify the software must be from an approved Certificate Authority.
 
 Check
 ~~~~~
@@ -829,9 +807,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Selection of a cryptographic mechanism is based on the need to protect the integrity and confidentiality of sensitive information. The strength of the mechanism is commensurate with the security category and/or classification of the information. Organizations have the flexibility to either encrypt all information on storage devices (i.e., full disk encryption) or encrypt specific data structures (e.g., files, records, or fields). This requirement is applicable if the organization determines that its sensitive information is to be protected at the storage device level.
-
-Satisfies: SRG-OS-000405-GPOS-00184, SRG-OS-000185-GPOS-00079
+Selection of a cryptographic mechanism is based on the need to protect the integrity and confidentiality of sensitive information. The strength of the mechanism is commensurate with the security category and/or classification of the information. Organizations have the flexibility to either encrypt all information on storage devices (i.e., full disk encryption) or encrypt specific data structures (e.g., files, records, or fields). This requirement is applicable if the organization determines that its sensitive information is to be protected at the storage device level.\n\nSatisfies: SRG-OS-000405-GPOS-00184, SRG-OS-000185-GPOS-00079
 
 Check
 ~~~~~
@@ -895,9 +871,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Without verification of the security functions, security functions may not operate correctly and the failure may go unnoticed. Security function is defined as the hardware, software, and/or firmware of the information system responsible for enforcing the system security policy and supporting the isolation of code and data on which the protection is based. Security functionality includes, but is not limited to, establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters.
-
-This requirement applies to operating systems performing security function verification/testing and/or systems and environments that require this functionality.
+Without verification of the security functions, security functions may not operate correctly and the failure may go unnoticed. Security function is defined as the hardware, software, and/or firmware of the information system responsible for enforcing the system security policy and supporting the isolation of code and data on which the protection is based. Security functionality includes, but is not limited to, establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters.\n\nThis requirement applies to operating systems performing security function verification/testing and/or systems and environments that require this functionality.
 
 Check
 ~~~~~
@@ -954,9 +928,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Without verification of the security functions, security functions may not operate correctly and the failure may go unnoticed. Security function is defined as the hardware, software, and/or firmware of the information system responsible for enforcing the system security policy and supporting the isolation of code and data on which the protection is based. Security functionality includes, but is not limited to, establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters.
-
-This requirement applies to operating systems performing security function verification/testing and/or systems and environments that require this functionality.
+Without verification of the security functions, security functions may not operate correctly and the failure may go unnoticed. Security function is defined as the hardware, software, and/or firmware of the information system responsible for enforcing the system security policy and supporting the isolation of code and data on which the protection is based. Security functionality includes, but is not limited to, establishing system accounts, configuring access authorizations (i.e., permissions, privileges), setting events to be audited, and setting intrusion detection parameters.\n\nThis requirement applies to operating systems performing security function verification/testing and/or systems and environments that require this functionality.
 
 Check
 ~~~~~
@@ -1137,7 +1109,7 @@ High
 Description
 ~~~~~~~~~~~
 
-If an account other than root also has a User Identifier (UID) of “0”, it has root authority, giving that account unrestricted access to the entire operating system. Multiple accounts with a UID of “0” afford an opportunity for potential intruders to guess a password for a privileged account.
+If an account other than root also has a User Identifier (UID) of \xe2\x80\x9c0\xe2\x80\x9d, it has root authority, giving that account unrestricted access to the entire operating system. Multiple accounts with a UID of \xe2\x80\x9c0\xe2\x80\x9d afford an opportunity for potential intruders to guess a password for a privileged account.
 
 Check
 ~~~~~
@@ -1191,9 +1163,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Use of weak or untested encryption algorithms undermines the purposes of using encryption to protect data. The operating system must implement cryptographic modules adhering to the higher standards approved by the federal government since this provides assurance they have been tested and validated.
-
-Satisfies: SRG-OS-000033-GPOS-00014, SRG-OS-000396-GPOS-00176, SRG-OS-000478-GPOS-00223
+Use of weak or untested encryption algorithms undermines the purposes of using encryption to protect data. The operating system must implement cryptographic modules adhering to the higher standards approved by the federal government since this provides assurance they have been tested and validated.\n\nSatisfies: SRG-OS-000033-GPOS-00014, SRG-OS-000396-GPOS-00176, SRG-OS-000478-GPOS-00223
 
 Check
 ~~~~~
@@ -1262,11 +1232,7 @@ High
 Description
 ~~~~~~~~~~~
 
-It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.
-
-Operating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).
-
-Examples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software not related to requirements or providing a wide array of functionality not required for every mission, but which cannot be disabled.
+It is detrimental for operating systems to provide, or install by default, functionality exceeding requirements or mission objectives. These unnecessary capabilities or services are often overlooked and therefore may remain unsecured. They increase the risk to the platform by providing additional attack vectors.\n\nOperating systems are capable of providing a wide variety of functions and services. Some of the functions and services, provided by default, may not be necessary to support essential organizational operations (e.g., key missions, functions).\n\nExamples of non-essential capabilities include, but are not limited to, games, software packages, tools, and demonstration software not related to requirements or providing a wide array of functionality not required for every mission, but which cannot be disabled.
 
 Check
 ~~~~~
@@ -1328,13 +1294,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Without establishing what type of events occurred, it would be difficult to establish, correlate, and investigate the events leading up to an outage or attack.
-
-Audit record content that may be necessary to satisfy this requirement includes, for example, time stamps, source and destination addresses, user/process identifiers, event descriptions, success/fail indications, filenames involved, and access control or flow control rules invoked.
-
-Associating event types with detected events in the operating system audit logs provides a means of investigating an attack; recognizing resource utilization or capacity thresholds; or identifying an improperly configured operating system.
-
-Satisfies: SRG-OS-000038-GPOS-00016, SRG-OS-000039-GPOS-00017, SRG-OS-000042-GPOS-00021, SRG-OS-000254-GPOS-00095, SRG-OS-000255-GPOS-00096
+Without establishing what type of events occurred, it would be difficult to establish, correlate, and investigate the events leading up to an outage or attack.\n\nAudit record content that may be necessary to satisfy this requirement includes, for example, time stamps, source and destination addresses, user/process identifiers, event descriptions, success/fail indications, filenames involved, and access control or flow control rules invoked.\n\nAssociating event types with detected events in the operating system audit logs provides a means of investigating an attack; recognizing resource utilization or capacity thresholds; or identifying an improperly configured operating system.\n\nSatisfies: SRG-OS-000038-GPOS-00016, SRG-OS-000039-GPOS-00017, SRG-OS-000042-GPOS-00021, SRG-OS-000254-GPOS-00095, SRG-OS-000255-GPOS-00096
 
 Check
 ~~~~~
@@ -1391,11 +1351,7 @@ High
 Description
 ~~~~~~~~~~~
 
-Virus scanning software can be used to protect a system from penetration from computer viruses and to limit their spread through intermediate systems.  
-
-The virus scanning software should be configured to perform scans dynamically on accessed files. If this capability is not available, the system must be configured to scan, at a minimum, all altered files on the system on a daily basis.
-
-If the system processes inbound SMTP mail, the virus scanner must be configured to scan all received mail.
+Virus scanning software can be used to protect a system from penetration from computer viruses and to limit their spread through intermediate systems.  \n\nThe virus scanning software should be configured to perform scans dynamically on accessed files. If this capability is not available, the system must be configured to scan, at a minimum, all altered files on the system on a daily basis.\n\nIf the system processes inbound SMTP mail, the virus scanner must be configured to scan all received mail.
 
 Check
 ~~~~~
@@ -1818,9 +1774,7 @@ High
 Description
 ~~~~~~~~~~~
 
-SSHv1 is an insecure implementation of the SSH protocol and has many well-known vulnerability exploits. Exploits of the SSH daemon could provide immediate root access to the system.
-
-Satisfies: SRG-OS-000074-GPOS-00042, SRG-OS-000480-GPOS-00227
+SSHv1 is an insecure implementation of the SSH protocol and has many well-known vulnerability exploits. Exploits of the SSH daemon could provide immediate root access to the system.\n\nSatisfies: SRG-OS-000074-GPOS-00042, SRG-OS-000480-GPOS-00227
 
 Check
 ~~~~~
