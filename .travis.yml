@@ -17,8 +17,6 @@ matrix:
       env: TOXENV=pep8
     - python: 3.3
       env: TOXENV=py3pep8
-before_install:
-  apt-get -y install make
 install:
   - "pip install tox"
 script: "tox"
