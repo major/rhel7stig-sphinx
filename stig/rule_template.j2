@@ -4,7 +4,7 @@
 
 {% for rule in rules %}
 
-{% set rule_title = [rule['id'], rule['title']] | join(" - ") %}
+{% set rule_title = [rule['id'], rule['title'], rule['version']] | join(" - ") %}
 {{ rule_title }}
 {{ '-' * rule_title | length }}
 

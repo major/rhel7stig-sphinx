@@ -5,8 +5,8 @@ Low
 
 
 
-V-71987 - The operating system must remove all software components after updated versions have been installed.
---------------------------------------------------------------------------------------------------------------
+V-71987 - The operating system must remove all software components after updated versions have been installed. - RHEL-07-020200
+-------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -71,8 +71,8 @@ Additional Data
 
 
 
-V-72003 - All Group Identifiers (GIDs) referenced in the /etc/passwd file must be defined in the /etc/group file.
------------------------------------------------------------------------------------------------------------------
+V-72003 - All Group Identifiers (GIDs) referenced in the /etc/passwd file must be defined in the /etc/group file. - RHEL-07-020300
+----------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -132,8 +132,8 @@ Additional Data
 
 
 
-V-72059 - A separate file system must be used for user home directories (such as /home or an equivalent).
----------------------------------------------------------------------------------------------------------
+V-72059 - A separate file system must be used for user home directories (such as /home or an equivalent). - RHEL-07-021310
+--------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -206,8 +206,8 @@ Additional Data
 
 
 
-V-72061 - The system must use a separate file system for /var.
---------------------------------------------------------------
+V-72061 - The system must use a separate file system for /var. - RHEL-07-021320
+-------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -268,8 +268,8 @@ Additional Data
 
 
 
-V-72063 - The system must use a separate file system for the system audit data path.
-------------------------------------------------------------------------------------
+V-72063 - The system must use a separate file system for the system audit data path. - RHEL-07-021330
+-----------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -349,8 +349,8 @@ Additional Data
 
 
 
-V-72065 - The system must use a separate file system for /tmp (or equivalent).
-------------------------------------------------------------------------------
+V-72065 - The system must use a separate file system for /tmp (or equivalent). - RHEL-07-021340
+-----------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -413,8 +413,8 @@ Additional Data
 
 
 
-V-72069 - The file integrity tool must be configured to verify Access Control Lists (ACLs).
--------------------------------------------------------------------------------------------
+V-72069 - The file integrity tool must be configured to verify Access Control Lists (ACLs). - RHEL-07-021600
+------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -494,8 +494,8 @@ Additional Data
 
 
 
-V-72071 - The file integrity tool must be configured to verify extended attributes.
------------------------------------------------------------------------------------
+V-72071 - The file integrity tool must be configured to verify extended attributes. - RHEL-07-021610
+----------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -575,8 +575,8 @@ Additional Data
 
 
 
-V-72217 - The operating system must limit the number of concurrent sessions to 10 for all accounts and/or account types.
-------------------------------------------------------------------------------------------------------------------------
+V-72217 - The operating system must limit the number of concurrent sessions to 10 for all accounts and/or account types. - RHEL-07-040000
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -643,8 +643,8 @@ Additional Data
 
 
 
-V-72275 - The system must display the date and time of the last successful account logon upon logon.
-----------------------------------------------------------------------------------------------------
+V-72275 - The system must display the date and time of the last successful account logon upon logon. - RHEL-07-040530
+---------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -710,8 +710,8 @@ Additional Data
 
 
 
-V-72281 - For systems using DNS resolution, at least two name servers must be configured.
------------------------------------------------------------------------------------------
+V-72281 - For systems using DNS resolution, at least two name servers must be configured. - RHEL-07-040600
+----------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~

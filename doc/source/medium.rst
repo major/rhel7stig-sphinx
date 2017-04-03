@@ -5,8 +5,8 @@ Medium
 
 
 
-V-71859 - The operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71859 - The operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon. - RHEL-07-010030
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -104,8 +104,8 @@ Additional Data
 
 
 
-V-71861 - The operating system must display the approved Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71861 - The operating system must display the approved Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a graphical user logon. - RHEL-07-010040
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -228,8 +228,8 @@ Additional Data
 
 
 
-V-71863 - The operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71863 - The operating system must display the Standard Mandatory DoD Notice and Consent Banner before granting local or remote access to the system via a command line user logon. - RHEL-07-010050
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -346,8 +346,8 @@ Additional Data
 
 
 
-V-71891 - The operating system must enable a user session lock until that user re-establishes access using established identification and authentication procedures.
---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71891 - The operating system must enable a user session lock until that user re-establishes access using established identification and authentication procedures. - RHEL-07-010060
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -447,8 +447,8 @@ Additional Data
 
 
 
-V-71893 - The operating system must initiate a screensaver after a 15-minute period of inactivity for graphical user interfaces.
---------------------------------------------------------------------------------------------------------------------------------
+V-71893 - The operating system must initiate a screensaver after a 15-minute period of inactivity for graphical user interfaces. - RHEL-07-010070
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -544,8 +544,8 @@ Additional Data
 
 
 
-V-71895 - The operating system must set the idle delay setting for all connection types.
-----------------------------------------------------------------------------------------
+V-71895 - The operating system must set the idle delay setting for all connection types. - RHEL-07-010080
+---------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -628,8 +628,8 @@ Additional Data
 
 
 
-V-71897 - The operating system must have the screen package installed.
-----------------------------------------------------------------------
+V-71897 - The operating system must have the screen package installed. - RHEL-07-010090
+---------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -700,8 +700,8 @@ Additional Data
 
 
 
-V-71899 - The operating system must initiate a session lock for the screensaver after a period of inactivity for graphical user interfaces.
--------------------------------------------------------------------------------------------------------------------------------------------
+V-71899 - The operating system must initiate a session lock for the screensaver after a period of inactivity for graphical user interfaces. - RHEL-07-010100
+------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -774,8 +774,8 @@ Additional Data
 
 
 
-V-71901 - The operating system must initiate a session lock for graphical user interfaces when the screensaver is activated.
-----------------------------------------------------------------------------------------------------------------------------
+V-71901 - The operating system must initiate a session lock for graphical user interfaces when the screensaver is activated. - RHEL-07-010110
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -851,8 +851,8 @@ Additional Data
 
 
 
-V-71903 - When passwords are changed or new passwords are established, the new password must contain at least one upper-case character.
----------------------------------------------------------------------------------------------------------------------------------------
+V-71903 - When passwords are changed or new passwords are established, the new password must contain at least one upper-case character. - RHEL-07-010120
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -919,8 +919,8 @@ Additional Data
 
 
 
-V-71905 - When passwords are changed or new passwords are established, the new password must contain at least one lower-case character.
----------------------------------------------------------------------------------------------------------------------------------------
+V-71905 - When passwords are changed or new passwords are established, the new password must contain at least one lower-case character. - RHEL-07-010130
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -993,8 +993,8 @@ Additional Data
 
 
 
-V-71907 - When passwords are changed or new passwords are assigned, the new password must contain at least one numeric character.
----------------------------------------------------------------------------------------------------------------------------------
+V-71907 - When passwords are changed or new passwords are assigned, the new password must contain at least one numeric character. - RHEL-07-010140
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1061,8 +1061,8 @@ Additional Data
 
 
 
-V-71909 - When passwords are changed or new passwords are assigned, the new password must contain at least one special character.
----------------------------------------------------------------------------------------------------------------------------------
+V-71909 - When passwords are changed or new passwords are assigned, the new password must contain at least one special character. - RHEL-07-010150
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1131,8 +1131,8 @@ Additional Data
 
 
 
-V-71911 - When passwords are changed a minimum of eight of the total number of characters must be changed.
-----------------------------------------------------------------------------------------------------------
+V-71911 - When passwords are changed a minimum of eight of the total number of characters must be changed. - RHEL-07-010160
+---------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1199,8 +1199,8 @@ Additional Data
 
 
 
-V-71913 - When passwords are changed a minimum of four character classes must be changed.
------------------------------------------------------------------------------------------
+V-71913 - When passwords are changed a minimum of four character classes must be changed. - RHEL-07-010170
+----------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1267,8 +1267,8 @@ Additional Data
 
 
 
-V-71915 - When passwords are changed the number of repeating consecutive characters must not be more than four characters.
---------------------------------------------------------------------------------------------------------------------------
+V-71915 - When passwords are changed the number of repeating consecutive characters must not be more than four characters. - RHEL-07-010180
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1335,8 +1335,8 @@ Additional Data
 
 
 
-V-71917 - When passwords are changed the number of repeating characters of the same character class must not be more than four characters.
-------------------------------------------------------------------------------------------------------------------------------------------
+V-71917 - When passwords are changed the number of repeating characters of the same character class must not be more than four characters. - RHEL-07-010190
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1403,8 +1403,8 @@ Additional Data
 
 
 
-V-71919 - The PAM system service must be configured to store only encrypted representations of passwords.
----------------------------------------------------------------------------------------------------------
+V-71919 - The PAM system service must be configured to store only encrypted representations of passwords. - RHEL-07-010200
+--------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1471,8 +1471,8 @@ Additional Data
 
 
 
-V-71921 - The shadow file must be configured to store only encrypted representations of passwords.
---------------------------------------------------------------------------------------------------
+V-71921 - The shadow file must be configured to store only encrypted representations of passwords. - RHEL-07-010210
+-------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1537,8 +1537,8 @@ Additional Data
 
 
 
-V-71923 - User and group account administration utilities must be configured to store only encrypted representations of passwords.
-----------------------------------------------------------------------------------------------------------------------------------
+V-71923 - User and group account administration utilities must be configured to store only encrypted representations of passwords. - RHEL-07-010220
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1604,8 +1604,8 @@ Additional Data
 
 
 
-V-71925 - Passwords for new users must be restricted to a 24 hours/1 day minimum lifetime.
-------------------------------------------------------------------------------------------
+V-71925 - Passwords for new users must be restricted to a 24 hours/1 day minimum lifetime. - RHEL-07-010230
+-----------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1670,8 +1670,8 @@ Additional Data
 
 
 
-V-71927 - Passwords must be restricted to a 24 hours/1 day minimum lifetime.
-----------------------------------------------------------------------------
+V-71927 - Passwords must be restricted to a 24 hours/1 day minimum lifetime. - RHEL-07-010240
+---------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1731,8 +1731,8 @@ Additional Data
 
 
 
-V-71929 - Passwords for new users must be restricted to a 60-day maximum lifetime.
-----------------------------------------------------------------------------------
+V-71929 - Passwords for new users must be restricted to a 60-day maximum lifetime. - RHEL-07-010250
+---------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1797,8 +1797,8 @@ Additional Data
 
 
 
-V-71931 - Existing passwords must be restricted to a 60-day maximum lifetime.
------------------------------------------------------------------------------
+V-71931 - Existing passwords must be restricted to a 60-day maximum lifetime. - RHEL-07-010260
+----------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1858,8 +1858,8 @@ Additional Data
 
 
 
-V-71933 - Passwords must be prohibited from reuse for a minimum of five generations.
-------------------------------------------------------------------------------------
+V-71933 - Passwords must be prohibited from reuse for a minimum of five generations. - RHEL-07-010270
+-----------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1926,8 +1926,8 @@ Additional Data
 
 
 
-V-71935 - Passwords must be a minimum of 15 characters in length.
------------------------------------------------------------------
+V-71935 - Passwords must be a minimum of 15 characters in length. - RHEL-07-010280
+----------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1994,8 +1994,8 @@ Additional Data
 
 
 
-V-71941 - The operating system must disable account identifiers (individuals, groups, roles, and devices) if the password expires.
-----------------------------------------------------------------------------------------------------------------------------------
+V-71941 - The operating system must disable account identifiers (individuals, groups, roles, and devices) if the password expires. - RHEL-07-010310
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2060,8 +2060,8 @@ Additional Data
 
 
 
-V-71943 - Accounts subject to three unsuccessful logon attempts within 15 minutes must be locked for the maximum configurable period.
--------------------------------------------------------------------------------------------------------------------------------------
+V-71943 - Accounts subject to three unsuccessful logon attempts within 15 minutes must be locked for the maximum configurable period. - RHEL-07-010320
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2133,8 +2133,8 @@ Additional Data
 
 
 
-V-71945 - If three unsuccessful root logon attempts within 15 minutes occur the associated account must be locked.
-------------------------------------------------------------------------------------------------------------------
+V-71945 - If three unsuccessful root logon attempts within 15 minutes occur the associated account must be locked. - RHEL-07-010330
+-----------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2204,8 +2204,8 @@ Additional Data
 
 
 
-V-71947 - Users must provide a password for privilege escalation.
------------------------------------------------------------------
+V-71947 - Users must provide a password for privilege escalation. - RHEL-07-010340
+----------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2275,8 +2275,8 @@ Additional Data
 
 
 
-V-71949 - Users must re-authenticate for privilege escalation.
---------------------------------------------------------------
+V-71949 - Users must re-authenticate for privilege escalation. - RHEL-07-010350
+-------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2344,8 +2344,8 @@ Additional Data
 
 
 
-V-71951 - The delay between logon prompts following a failed console logon attempt must be at least four seconds.
------------------------------------------------------------------------------------------------------------------
+V-71951 - The delay between logon prompts following a failed console logon attempt must be at least four seconds. - RHEL-07-010430
+----------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2412,8 +2412,8 @@ Additional Data
 
 
 
-V-71957 - The operating system must not allow users to override SSH environment variables.
-------------------------------------------------------------------------------------------
+V-71957 - The operating system must not allow users to override SSH environment variables. - RHEL-07-010460
+-----------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2480,8 +2480,8 @@ Additional Data
 
 
 
-V-71959 - The operating system must not allow a non-certificate trusted host SSH logon to the system.
------------------------------------------------------------------------------------------------------
+V-71959 - The operating system must not allow a non-certificate trusted host SSH logon to the system. - RHEL-07-010470
+----------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2548,8 +2548,8 @@ Additional Data
 
 
 
-V-71965 - The operating system must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71965 - The operating system must uniquely identify and must authenticate organizational users (or processes acting on behalf of organizational users) using multifactor authentication. - RHEL-07-010500
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2632,8 +2632,8 @@ Additional Data
 
 
 
-V-71971 - The operating system must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71971 - The operating system must prevent non-privileged users from executing privileged functions to include disabling, circumventing, or altering implemented security safeguards/countermeasures. - RHEL-07-020020
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2730,8 +2730,8 @@ Additional Data
 
 
 
-V-71973 - A file integrity tool must verify the baseline operating system configuration at least weekly.
---------------------------------------------------------------------------------------------------------
+V-71973 - A file integrity tool must verify the baseline operating system configuration at least weekly. - RHEL-07-020030
+-------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2807,8 +2807,8 @@ Additional Data
 
 
 
-V-71975 - Designated personnel must be notified if baseline configurations are changed in an unauthorized manner.
------------------------------------------------------------------------------------------------------------------
+V-71975 - Designated personnel must be notified if baseline configurations are changed in an unauthorized manner. - RHEL-07-020040
+----------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2891,8 +2891,8 @@ Additional Data
 
 
 
-V-71983 - USB mass storage must be disabled.
---------------------------------------------
+V-71983 - USB mass storage must be disabled. - RHEL-07-020100
+-------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2966,8 +2966,8 @@ Additional Data
 
 
 
-V-71985 - File system automounter must be disabled unless required.
--------------------------------------------------------------------
+V-71985 - File system automounter must be disabled unless required. - RHEL-07-020110
+------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3038,8 +3038,8 @@ Additional Data
 
 
 
-V-71995 - The operating system must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71995 - The operating system must define default permissions for all authenticated users in such a way that the user can only read and modify their own files. - RHEL-07-020240
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3106,8 +3106,8 @@ Additional Data
 
 
 
-V-71999 - Vendor packaged system security patches and updates must be installed and up to date.
------------------------------------------------------------------------------------------------
+V-71999 - Vendor packaged system security patches and updates must be installed and up to date. - RHEL-07-020260
+----------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3181,8 +3181,8 @@ Additional Data
 
 
 
-V-72001 - The system must not have unnecessary accounts.
---------------------------------------------------------
+V-72001 - The system must not have unnecessary accounts. - RHEL-07-020270
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3258,8 +3258,8 @@ Additional Data
 
 
 
-V-72007 - All files and directories must have a valid owner.
-------------------------------------------------------------
+V-72007 - All files and directories must have a valid owner. - RHEL-07-020320
+-----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3323,8 +3323,8 @@ Additional Data
 
 
 
-V-72009 - All files and directories must have a valid group owner.
-------------------------------------------------------------------
+V-72009 - All files and directories must have a valid group owner. - RHEL-07-020330
+-----------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3388,8 +3388,8 @@ Additional Data
 
 
 
-V-72011 - All local interactive users must have a home directory assigned in the /etc/passwd file.
---------------------------------------------------------------------------------------------------
+V-72011 - All local interactive users must have a home directory assigned in the /etc/passwd file. - RHEL-07-020600
+-------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3457,8 +3457,8 @@ Additional Data
 
 
 
-V-72013 - All local interactive user accounts, upon creation, must be assigned a home directory.
-------------------------------------------------------------------------------------------------
+V-72013 - All local interactive user accounts, upon creation, must be assigned a home directory. - RHEL-07-020610
+-----------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3521,8 +3521,8 @@ Additional Data
 
 
 
-V-72015 - All local interactive user home directories defined in the /etc/passwd file must exist.
--------------------------------------------------------------------------------------------------
+V-72015 - All local interactive user home directories defined in the /etc/passwd file must exist. - RHEL-07-020620
+------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3597,8 +3597,8 @@ Additional Data
 
 
 
-V-72017 - All local interactive user home directories must have mode 0750 or less permissive.
----------------------------------------------------------------------------------------------
+V-72017 - All local interactive user home directories must have mode 0750 or less permissive. - RHEL-07-020630
+--------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3665,8 +3665,8 @@ Additional Data
 
 
 
-V-72019 - All local interactive user home directories must be owned by their respective users.
-----------------------------------------------------------------------------------------------
+V-72019 - All local interactive user home directories must be owned by their respective users. - RHEL-07-020640
+---------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3733,8 +3733,8 @@ Additional Data
 
 
 
-V-72021 - All local interactive user home directories must be group-owned by the home directory owners primary group.
----------------------------------------------------------------------------------------------------------------------
+V-72021 - All local interactive user home directories must be group-owned by the home directory owners primary group. - RHEL-07-020650
+--------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3806,8 +3806,8 @@ Additional Data
 
 
 
-V-72023 - All files and directories contained in local interactive user home directories must be owned by the owner of the home directory.
-------------------------------------------------------------------------------------------------------------------------------------------
+V-72023 - All files and directories contained in local interactive user home directories must be owned by the owner of the home directory. - RHEL-07-020660
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3876,8 +3876,8 @@ Additional Data
 
 
 
-V-72025 - All files and directories contained in local interactive user home directories must be group-owned by a group of which the home directory owner is a member.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72025 - All files and directories contained in local interactive user home directories must be group-owned by a group of which the home directory owner is a member. - RHEL-07-020670
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -3952,8 +3952,8 @@ Additional Data
 
 
 
-V-72027 - All files and directories contained in local interactive user home directories must have mode 0750 or less permissive.
---------------------------------------------------------------------------------------------------------------------------------
+V-72027 - All files and directories contained in local interactive user home directories must have mode 0750 or less permissive. - RHEL-07-020680
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4024,8 +4024,8 @@ Additional Data
 
 
 
-V-72029 - All local initialization files for interactive users must be owned by the home directory user or root.
-----------------------------------------------------------------------------------------------------------------
+V-72029 - All local initialization files for interactive users must be owned by the home directory user or root. - RHEL-07-020690
+---------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4094,8 +4094,8 @@ Additional Data
 
 
 
-V-72031 - Local initialization files for local interactive users must be group-owned by the users primary group or root.
-------------------------------------------------------------------------------------------------------------------------
+V-72031 - Local initialization files for local interactive users must be group-owned by the users primary group or root. - RHEL-07-020700
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4174,8 +4174,8 @@ Additional Data
 
 
 
-V-72033 - All local initialization files must have mode 0740 or less permissive.
---------------------------------------------------------------------------------
+V-72033 - All local initialization files must have mode 0740 or less permissive. - RHEL-07-020710
+-------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4244,8 +4244,8 @@ Additional Data
 
 
 
-V-72035 - All local interactive user initialization files executable search paths must contain only paths that resolve to the users home directory.
----------------------------------------------------------------------------------------------------------------------------------------------------
+V-72035 - All local interactive user initialization files executable search paths must contain only paths that resolve to the users home directory. - RHEL-07-020720
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4309,8 +4309,8 @@ Additional Data
 
 
 
-V-72037 - Local initialization files must not execute world-writable programs.
-------------------------------------------------------------------------------
+V-72037 - Local initialization files must not execute world-writable programs. - RHEL-07-020730
+-----------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4378,8 +4378,8 @@ Additional Data
 
 
 
-V-72039 - All system device files must be correctly labeled to prevent unauthorized modification.
--------------------------------------------------------------------------------------------------
+V-72039 - All system device files must be correctly labeled to prevent unauthorized modification. - RHEL-07-020900
+------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4455,8 +4455,8 @@ Additional Data
 
 
 
-V-72041 - File systems that contain user home directories must be mounted to prevent files with the setuid and setgid bit set from being executed.
---------------------------------------------------------------------------------------------------------------------------------------------------
+V-72041 - File systems that contain user home directories must be mounted to prevent files with the setuid and setgid bit set from being executed. - RHEL-07-021000
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4526,8 +4526,8 @@ Additional Data
 
 
 
-V-72043 - File systems that are used with removable media must be mounted to prevent files with the setuid and setgid bit set from being executed.
---------------------------------------------------------------------------------------------------------------------------------------------------
+V-72043 - File systems that are used with removable media must be mounted to prevent files with the setuid and setgid bit set from being executed. - RHEL-07-021010
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4589,8 +4589,8 @@ Additional Data
 
 
 
-V-72045 - File systems that are being imported via Network File System (NFS) must be mounted to prevent files with the setuid and setgid bit set from being executed.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72045 - File systems that are being imported via Network File System (NFS) must be mounted to prevent files with the setuid and setgid bit set from being executed. - RHEL-07-021020
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4652,8 +4652,8 @@ Additional Data
 
 
 
-V-72047 - All world-writable directories must be group-owned by root, sys, bin, or an application group.
---------------------------------------------------------------------------------------------------------
+V-72047 - All world-writable directories must be group-owned by root, sys, bin, or an application group. - RHEL-07-021030
+-------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4722,8 +4722,8 @@ Additional Data
 
 
 
-V-72049 - The umask must be set to 077 for all local interactive user accounts.
--------------------------------------------------------------------------------
+V-72049 - The umask must be set to 077 for all local interactive user accounts. - RHEL-07-021040
+------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4789,8 +4789,8 @@ Additional Data
 
 
 
-V-72051 - Cron logging must be implemented.
--------------------------------------------
+V-72051 - Cron logging must be implemented. - RHEL-07-021100
+------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4869,8 +4869,8 @@ Additional Data
 
 
 
-V-72053 - If the cron.allow file exists it must be owned by root.
------------------------------------------------------------------
+V-72053 - If the cron.allow file exists it must be owned by root. - RHEL-07-021110
+----------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4933,8 +4933,8 @@ Additional Data
 
 
 
-V-72055 - If the cron.allow file exists it must be group-owned by root.
------------------------------------------------------------------------
+V-72055 - If the cron.allow file exists it must be group-owned by root. - RHEL-07-021120
+----------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -4997,8 +4997,8 @@ Additional Data
 
 
 
-V-72057 - Kernel core dumps must be disabled unless needed.
------------------------------------------------------------
+V-72057 - Kernel core dumps must be disabled unless needed. - RHEL-07-021300
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5069,8 +5069,8 @@ Additional Data
 
 
 
-V-72073 - The file integrity tool must use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
----------------------------------------------------------------------------------------------------------------------------------
+V-72073 - The file integrity tool must use FIPS 140-2 approved cryptographic hashes for validating file contents and directories. - RHEL-07-021620
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5152,8 +5152,8 @@ Additional Data
 
 
 
-V-72075 - The system must not allow removable media to be used as the boot loader unless approved.
---------------------------------------------------------------------------------------------------
+V-72075 - The system must not allow removable media to be used as the boot loader unless approved. - RHEL-07-021700
+-------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5225,8 +5225,8 @@ Additional Data
 
 
 
-V-72081 - The operating system must shut down upon audit processing failure, unless availability is an overriding concern. If availability is a concern, the system must alert the designated staff (System Administrator [SA] and Information System Security Officer [ISSO] at a minimum) in the event of an audit processing failure.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72081 - The operating system must shut down upon audit processing failure, unless availability is an overriding concern. If availability is a concern, the system must alert the designated staff (System Administrator [SA] and Information System Security Officer [ISSO] at a minimum) in the event of an audit processing failure. - RHEL-07-030010
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5313,8 +5313,8 @@ Additional Data
 
 
 
-V-72083 - The operating system must off-load audit records onto a different system or media from the system being audited.
---------------------------------------------------------------------------------------------------------------------------
+V-72083 - The operating system must off-load audit records onto a different system or media from the system being audited. - RHEL-07-030300
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5383,8 +5383,8 @@ Additional Data
 
 
 
-V-72085 - The operating system must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited.
-----------------------------------------------------------------------------------------------------------------------------------------------------
+V-72085 - The operating system must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited. - RHEL-07-030310
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5455,8 +5455,8 @@ Additional Data
 
 
 
-V-72087 - The audit system must take appropriate action when the audit storage volume is full.
-----------------------------------------------------------------------------------------------
+V-72087 - The audit system must take appropriate action when the audit storage volume is full. - RHEL-07-030320
+---------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5530,8 +5530,8 @@ Additional Data
 
 
 
-V-72089 - The operating system must immediately notify the System Administrator (SA) and Information System Security Officer ISSO (at a minimum) when allocated audit record storage volume reaches 75% of the repository maximum audit record storage capacity.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72089 - The operating system must immediately notify the System Administrator (SA) and Information System Security Officer ISSO (at a minimum) when allocated audit record storage volume reaches 75% of the repository maximum audit record storage capacity. - RHEL-07-030330
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5617,8 +5617,8 @@ Additional Data
 
 
 
-V-72091 - The operating system must immediately notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) via email when the threshold for the repository maximum audit record storage capacity is reached.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72091 - The operating system must immediately notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) via email when the threshold for the repository maximum audit record storage capacity is reached. - RHEL-07-030340
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5683,8 +5683,8 @@ Additional Data
 
 
 
-V-72093 - The operating system must immediately notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when the threshold for the repository maximum audit record storage capacity is reached.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72093 - The operating system must immediately notify the System Administrator (SA) and Information System Security Officer (ISSO) (at a minimum) when the threshold for the repository maximum audit record storage capacity is reached. - RHEL-07-030350
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5749,8 +5749,8 @@ Additional Data
 
 
 
-V-72095 - All privileged function executions must be audited.
--------------------------------------------------------------
+V-72095 - All privileged function executions must be audited. - RHEL-07-030360
+------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5824,8 +5824,8 @@ Additional Data
 
 
 
-V-72097 - All uses of the chown command must be audited.
---------------------------------------------------------
+V-72097 - All uses of the chown command must be audited. - RHEL-07-030370
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5901,8 +5901,8 @@ Additional Data
 
 
 
-V-72099 - All uses of the fchown command must be audited.
----------------------------------------------------------
+V-72099 - All uses of the fchown command must be audited. - RHEL-07-030380
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -5978,8 +5978,8 @@ Additional Data
 
 
 
-V-72101 - All uses of the lchown command must be audited.
----------------------------------------------------------
+V-72101 - All uses of the lchown command must be audited. - RHEL-07-030390
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6055,8 +6055,8 @@ Additional Data
 
 
 
-V-72103 - All uses of the fchownat command must be audited.
------------------------------------------------------------
+V-72103 - All uses of the fchownat command must be audited. - RHEL-07-030400
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6132,8 +6132,8 @@ Additional Data
 
 
 
-V-72105 - All uses of the chmod command must be audited.
---------------------------------------------------------
+V-72105 - All uses of the chmod command must be audited. - RHEL-07-030410
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6211,8 +6211,8 @@ Additional Data
 
 
 
-V-72107 - All uses of the fchmod command must be audited.
----------------------------------------------------------
+V-72107 - All uses of the fchmod command must be audited. - RHEL-07-030420
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6290,8 +6290,8 @@ Additional Data
 
 
 
-V-72109 - All uses of the fchmodat command must be audited.
------------------------------------------------------------
+V-72109 - All uses of the fchmodat command must be audited. - RHEL-07-030430
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6369,8 +6369,8 @@ Additional Data
 
 
 
-V-72111 - All uses of the setxattr command must be audited.
------------------------------------------------------------
+V-72111 - All uses of the setxattr command must be audited. - RHEL-07-030440
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6448,8 +6448,8 @@ Additional Data
 
 
 
-V-72113 - All uses of the fsetxattr command must be audited.
-------------------------------------------------------------
+V-72113 - All uses of the fsetxattr command must be audited. - RHEL-07-030450
+-----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6527,8 +6527,8 @@ Additional Data
 
 
 
-V-72115 - All uses of the lsetxattr command must be audited.
-------------------------------------------------------------
+V-72115 - All uses of the lsetxattr command must be audited. - RHEL-07-030460
+-----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6606,8 +6606,8 @@ Additional Data
 
 
 
-V-72117 - All uses of the removexattr command must be audited.
---------------------------------------------------------------
+V-72117 - All uses of the removexattr command must be audited. - RHEL-07-030470
+-------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6685,8 +6685,8 @@ Additional Data
 
 
 
-V-72119 - All uses of the fremovexattr command must be audited.
----------------------------------------------------------------
+V-72119 - All uses of the fremovexattr command must be audited. - RHEL-07-030480
+--------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6764,8 +6764,8 @@ Additional Data
 
 
 
-V-72121 - All uses of the lremovexattr command must be audited.
----------------------------------------------------------------
+V-72121 - All uses of the lremovexattr command must be audited. - RHEL-07-030490
+--------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6843,8 +6843,8 @@ Additional Data
 
 
 
-V-72123 - All uses of the creat command must be audited.
---------------------------------------------------------
+V-72123 - All uses of the creat command must be audited. - RHEL-07-030500
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -6922,8 +6922,8 @@ Additional Data
 
 
 
-V-72125 - All uses of the open command must be audited.
--------------------------------------------------------
+V-72125 - All uses of the open command must be audited. - RHEL-07-030510
+------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7001,8 +7001,8 @@ Additional Data
 
 
 
-V-72127 - All uses of the openat command must be audited.
----------------------------------------------------------
+V-72127 - All uses of the openat command must be audited. - RHEL-07-030520
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7080,8 +7080,8 @@ Additional Data
 
 
 
-V-72129 - All uses of the open_by_handle_at command must be audited.
---------------------------------------------------------------------
+V-72129 - All uses of the open_by_handle_at command must be audited. - RHEL-07-030530
+-------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7159,8 +7159,8 @@ Additional Data
 
 
 
-V-72131 - All uses of the truncate command must be audited.
------------------------------------------------------------
+V-72131 - All uses of the truncate command must be audited. - RHEL-07-030540
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7238,8 +7238,8 @@ Additional Data
 
 
 
-V-72133 - All uses of the ftruncate command must be audited.
-------------------------------------------------------------
+V-72133 - All uses of the ftruncate command must be audited. - RHEL-07-030550
+-----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7317,8 +7317,8 @@ Additional Data
 
 
 
-V-72135 - All uses of the semanage command must be audited.
------------------------------------------------------------
+V-72135 - All uses of the semanage command must be audited. - RHEL-07-030560
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7390,8 +7390,8 @@ Additional Data
 
 
 
-V-72137 - All uses of the setsebool command must be audited.
-------------------------------------------------------------
+V-72137 - All uses of the setsebool command must be audited. - RHEL-07-030570
+-----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7463,8 +7463,8 @@ Additional Data
 
 
 
-V-72139 - All uses of the chcon command must be audited.
---------------------------------------------------------
+V-72139 - All uses of the chcon command must be audited. - RHEL-07-030580
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7536,8 +7536,8 @@ Additional Data
 
 
 
-V-72141 - All uses of the restorecon command must be audited.
--------------------------------------------------------------
+V-72141 - All uses of the restorecon command must be audited. - RHEL-07-030590
+------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7609,8 +7609,8 @@ Additional Data
 
 
 
-V-72143 - The operating system must generate audit records for all successful/unsuccessful account access count events.
------------------------------------------------------------------------------------------------------------------------
+V-72143 - The operating system must generate audit records for all successful/unsuccessful account access count events. - RHEL-07-030600
+----------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7682,8 +7682,8 @@ Additional Data
 
 
 
-V-72145 - The operating system must generate audit records for all unsuccessful account access events.
-------------------------------------------------------------------------------------------------------
+V-72145 - The operating system must generate audit records for all unsuccessful account access events. - RHEL-07-030610
+-----------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7755,8 +7755,8 @@ Additional Data
 
 
 
-V-72147 - The operating system must generate audit records for all successful account access events.
-----------------------------------------------------------------------------------------------------
+V-72147 - The operating system must generate audit records for all successful account access events. - RHEL-07-030620
+---------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7828,8 +7828,8 @@ Additional Data
 
 
 
-V-72149 - All uses of the passwd command must be audited.
----------------------------------------------------------
+V-72149 - All uses of the passwd command must be audited. - RHEL-07-030630
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7901,8 +7901,8 @@ Additional Data
 
 
 
-V-72151 - All uses of the unix_chkpwd command must be audited.
---------------------------------------------------------------
+V-72151 - All uses of the unix_chkpwd command must be audited. - RHEL-07-030640
+-------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7974,8 +7974,8 @@ Additional Data
 
 
 
-V-72153 - All uses of the gpasswd command must be audited.
-----------------------------------------------------------
+V-72153 - All uses of the gpasswd command must be audited. - RHEL-07-030650
+---------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8047,8 +8047,8 @@ Additional Data
 
 
 
-V-72155 - All uses of the chage command must be audited.
---------------------------------------------------------
+V-72155 - All uses of the chage command must be audited. - RHEL-07-030660
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8120,8 +8120,8 @@ Additional Data
 
 
 
-V-72157 - All uses of the userhelper command must be audited.
--------------------------------------------------------------
+V-72157 - All uses of the userhelper command must be audited. - RHEL-07-030670
+------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8193,8 +8193,8 @@ Additional Data
 
 
 
-V-72159 - All uses of the su command must be audited.
------------------------------------------------------
+V-72159 - All uses of the su command must be audited. - RHEL-07-030680
+----------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8266,8 +8266,8 @@ Additional Data
 
 
 
-V-72161 - All uses of the sudo command must be audited.
--------------------------------------------------------
+V-72161 - All uses of the sudo command must be audited. - RHEL-07-030690
+------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8339,8 +8339,8 @@ Additional Data
 
 
 
-V-72163 - All uses of the sudoers command must be audited.
-----------------------------------------------------------
+V-72163 - All uses of the sudoers command must be audited. - RHEL-07-030700
+---------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8418,8 +8418,8 @@ Additional Data
 
 
 
-V-72165 - All uses of the newgrp command must be audited.
----------------------------------------------------------
+V-72165 - All uses of the newgrp command must be audited. - RHEL-07-030710
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8491,8 +8491,8 @@ Additional Data
 
 
 
-V-72167 - All uses of the chsh command must be audited.
--------------------------------------------------------
+V-72167 - All uses of the chsh command must be audited. - RHEL-07-030720
+------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8564,8 +8564,8 @@ Additional Data
 
 
 
-V-72169 - All uses of the sudoedit command must be audited.
------------------------------------------------------------
+V-72169 - All uses of the sudoedit command must be audited. - RHEL-07-030730
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8637,8 +8637,8 @@ Additional Data
 
 
 
-V-72171 - All uses of the mount command must be audited.
---------------------------------------------------------
+V-72171 - All uses of the mount command must be audited. - RHEL-07-030740
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8714,8 +8714,8 @@ Additional Data
 
 
 
-V-72173 - All uses of the umount command must be audited.
----------------------------------------------------------
+V-72173 - All uses of the umount command must be audited. - RHEL-07-030750
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8787,8 +8787,8 @@ Additional Data
 
 
 
-V-72175 - All uses of the postdrop command must be audited.
------------------------------------------------------------
+V-72175 - All uses of the postdrop command must be audited. - RHEL-07-030760
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8860,8 +8860,8 @@ Additional Data
 
 
 
-V-72177 - All uses of the postqueue command must be audited.
-------------------------------------------------------------
+V-72177 - All uses of the postqueue command must be audited. - RHEL-07-030770
+-----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -8933,8 +8933,8 @@ Additional Data
 
 
 
-V-72179 - All uses of the ssh-keysign command must be audited.
---------------------------------------------------------------
+V-72179 - All uses of the ssh-keysign command must be audited. - RHEL-07-030780
+-------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9006,8 +9006,8 @@ Additional Data
 
 
 
-V-72181 - All uses of the pt_chown command must be audited.
------------------------------------------------------------
+V-72181 - All uses of the pt_chown command must be audited. - RHEL-07-030790
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9079,8 +9079,8 @@ Additional Data
 
 
 
-V-72183 - All uses of the crontab command must be audited.
-----------------------------------------------------------
+V-72183 - All uses of the crontab command must be audited. - RHEL-07-030800
+---------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9152,8 +9152,8 @@ Additional Data
 
 
 
-V-72185 - All uses of the pam_timestamp_check command must be audited.
-----------------------------------------------------------------------
+V-72185 - All uses of the pam_timestamp_check command must be audited. - RHEL-07-030810
+---------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9221,8 +9221,8 @@ Additional Data
 
 
 
-V-72187 - All uses of the init_module command must be audited.
---------------------------------------------------------------
+V-72187 - All uses of the init_module command must be audited. - RHEL-07-030820
+-------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9302,8 +9302,8 @@ Additional Data
 
 
 
-V-72189 - All uses of the delete_module command must be audited.
-----------------------------------------------------------------
+V-72189 - All uses of the delete_module command must be audited. - RHEL-07-030830
+---------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9383,8 +9383,8 @@ Additional Data
 
 
 
-V-72191 - All uses of the insmod command must be audited.
----------------------------------------------------------
+V-72191 - All uses of the insmod command must be audited. - RHEL-07-030840
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9458,8 +9458,8 @@ Additional Data
 
 
 
-V-72193 - All uses of the rmmod command must be audited.
---------------------------------------------------------
+V-72193 - All uses of the rmmod command must be audited. - RHEL-07-030850
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9533,8 +9533,8 @@ Additional Data
 
 
 
-V-72195 - All uses of the modprobe command must be audited.
------------------------------------------------------------
+V-72195 - All uses of the modprobe command must be audited. - RHEL-07-030860
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9610,8 +9610,8 @@ Additional Data
 
 
 
-V-72197 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72197 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd. - RHEL-07-030870
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9683,8 +9683,8 @@ Additional Data
 
 
 
-V-72199 - All uses of the rename command must be audited.
----------------------------------------------------------
+V-72199 - All uses of the rename command must be audited. - RHEL-07-030880
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9757,8 +9757,8 @@ Additional Data
 
 
 
-V-72201 - All uses of the renameat command must be audited.
------------------------------------------------------------
+V-72201 - All uses of the renameat command must be audited. - RHEL-07-030890
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9831,8 +9831,8 @@ Additional Data
 
 
 
-V-72203 - All uses of the rmdir command must be audited.
---------------------------------------------------------
+V-72203 - All uses of the rmdir command must be audited. - RHEL-07-030900
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9905,8 +9905,8 @@ Additional Data
 
 
 
-V-72205 - All uses of the unlink command must be audited.
----------------------------------------------------------
+V-72205 - All uses of the unlink command must be audited. - RHEL-07-030910
+--------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -9979,8 +9979,8 @@ Additional Data
 
 
 
-V-72207 - All uses of the unlinkat command must be audited.
------------------------------------------------------------
+V-72207 - All uses of the unlinkat command must be audited. - RHEL-07-030920
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10053,8 +10053,8 @@ Additional Data
 
 
 
-V-72209 - The system must send rsyslog output to a log aggregation server.
---------------------------------------------------------------------------
+V-72209 - The system must send rsyslog output to a log aggregation server. - RHEL-07-031000
+-------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10121,8 +10121,8 @@ Additional Data
 
 
 
-V-72211 - The rsyslog daemon must not accept log messages from other servers unless the server is being used for log aggregation.
----------------------------------------------------------------------------------------------------------------------------------
+V-72211 - The rsyslog daemon must not accept log messages from other servers unless the server is being used for log aggregation. - RHEL-07-031010
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10186,8 +10186,8 @@ Additional Data
 
 
 
-V-72215 - The system must update the DoD-approved virus scan program every seven days or more frequently.
----------------------------------------------------------------------------------------------------------
+V-72215 - The system must update the DoD-approved virus scan program every seven days or more frequently. - RHEL-07-032010
+--------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10275,8 +10275,8 @@ Additional Data
 
 
 
-V-72219 - The host must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Component Local Service Assessment (PPSM CLSA) and vulnerability assessments.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72219 - The host must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Component Local Service Assessment (PPSM CLSA) and vulnerability assessments. - RHEL-07-040100
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10353,8 +10353,8 @@ Additional Data
 
 
 
-V-72221 - A FIPS 140-2 approved cryptographic algorithm must be used for SSH communications.
---------------------------------------------------------------------------------------------
+V-72221 - A FIPS 140-2 approved cryptographic algorithm must be used for SSH communications. - RHEL-07-040110
+-------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10431,8 +10431,8 @@ Additional Data
 
 
 
-V-72223 - All network connections associated with a communication session must be terminated at the end of the session or after 10 minutes of inactivity from the user at a command prompt, except to fulfill documented and validated mission requirements.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72223 - All network connections associated with a communication session must be terminated at the end of the session or after 10 minutes of inactivity from the user at a command prompt, except to fulfill documented and validated mission requirements. - RHEL-07-040160
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10501,8 +10501,8 @@ Additional Data
 
 
 
-V-72225 - The Standard Mandatory DoD Notice and Consent Banner must be displayed immediately prior to, or as part of, remote access logon prompts.
---------------------------------------------------------------------------------------------------------------------------------------------------
+V-72225 - The Standard Mandatory DoD Notice and Consent Banner must be displayed immediately prior to, or as part of, remote access logon prompts. - RHEL-07-040170
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10624,8 +10624,8 @@ Additional Data
 
 
 
-V-72227 - The operating system must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) authentication communications.
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72227 - The operating system must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) authentication communications. - RHEL-07-040180
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10697,8 +10697,8 @@ Additional Data
 
 
 
-V-72229 - The operating system must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
----------------------------------------------------------------------------------------------------------------------------------------------------
+V-72229 - The operating system must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications. - RHEL-07-040190
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10774,8 +10774,8 @@ Additional Data
 
 
 
-V-72231 - The operating system must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications.
----------------------------------------------------------------------------------------------------------------------------------------------------
+V-72231 - The operating system must implement cryptography to protect the integrity of Lightweight Directory Access Protocol (LDAP) communications. - RHEL-07-040200
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10849,8 +10849,8 @@ Additional Data
 
 
 
-V-72233 - All networked systems must have SSH installed.
---------------------------------------------------------
+V-72233 - All networked systems must have SSH installed. - RHEL-07-040300
+-------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10925,8 +10925,8 @@ Additional Data
 
 
 
-V-72235 - All networked systems must use SSH for confidentiality and integrity of transmitted and received information as well as information during preparation for transmission.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72235 - All networked systems must use SSH for confidentiality and integrity of transmitted and received information as well as information during preparation for transmission. - RHEL-07-040310
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10998,8 +10998,8 @@ Additional Data
 
 
 
-V-72237 - All network connections associated with SSH traffic must terminate at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72237 - All network connections associated with SSH traffic must terminate at the end of the session or after 10 minutes of inactivity, except to fulfill documented and validated mission requirements. - RHEL-07-040320
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11071,8 +11071,8 @@ Additional Data
 
 
 
-V-72239 - The SSH daemon must not allow authentication using RSA rhosts authentication.
----------------------------------------------------------------------------------------
+V-72239 - The SSH daemon must not allow authentication using RSA rhosts authentication. - RHEL-07-040330
+--------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11140,8 +11140,8 @@ Additional Data
 
 
 
-V-72241 - All network connections associated with SSH traffic must terminate after a period of inactivity.
-----------------------------------------------------------------------------------------------------------
+V-72241 - All network connections associated with SSH traffic must terminate after a period of inactivity. - RHEL-07-040340
+---------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11212,8 +11212,8 @@ Additional Data
 
 
 
-V-72243 - The SSH daemon must not allow authentication using rhosts authentication.
------------------------------------------------------------------------------------
+V-72243 - The SSH daemon must not allow authentication using rhosts authentication. - RHEL-07-040350
+----------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11279,8 +11279,8 @@ Additional Data
 
 
 
-V-72245 - The system must display the date and time of the last successful account logon upon an SSH logon.
------------------------------------------------------------------------------------------------------------
+V-72245 - The system must display the date and time of the last successful account logon upon an SSH logon. - RHEL-07-040360
+----------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11351,8 +11351,8 @@ Additional Data
 
 
 
-V-72247 - The system must not permit direct logons to the root account using remote access via SSH.
----------------------------------------------------------------------------------------------------
+V-72247 - The system must not permit direct logons to the root account using remote access via SSH. - RHEL-07-040370
+--------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11419,8 +11419,8 @@ Additional Data
 
 
 
-V-72249 - The SSH daemon must not allow authentication using known hosts authentication.
-----------------------------------------------------------------------------------------
+V-72249 - The SSH daemon must not allow authentication using known hosts authentication. - RHEL-07-040380
+---------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11488,8 +11488,8 @@ Additional Data
 
 
 
-V-72253 - The SSH daemon must be configured to only use Message Authentication Codes (MACs) employing FIPS 140-2 approved cryptographic hash algorithms.
---------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72253 - The SSH daemon must be configured to only use Message Authentication Codes (MACs) employing FIPS 140-2 approved cryptographic hash algorithms. - RHEL-07-040400
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11556,8 +11556,8 @@ Additional Data
 
 
 
-V-72255 - The SSH public host key files must have mode 0644 or less permissive.
--------------------------------------------------------------------------------
+V-72255 - The SSH public host key files must have mode 0644 or less permissive. - RHEL-07-040410
+------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11627,8 +11627,8 @@ Additional Data
 
 
 
-V-72257 - The SSH private host key files must have mode 0600 or less permissive.
---------------------------------------------------------------------------------
+V-72257 - The SSH private host key files must have mode 0600 or less permissive. - RHEL-07-040420
+-------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11697,8 +11697,8 @@ Additional Data
 
 
 
-V-72259 - The SSH daemon must not permit Generic Security Service Application Program Interface (GSSAPI) authentication unless needed.
---------------------------------------------------------------------------------------------------------------------------------------
+V-72259 - The SSH daemon must not permit Generic Security Service Application Program Interface (GSSAPI) authentication unless needed. - RHEL-07-040430
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11765,8 +11765,8 @@ Additional Data
 
 
 
-V-72261 - The SSH daemon must not permit Kerberos authentication unless needed.
--------------------------------------------------------------------------------
+V-72261 - The SSH daemon must not permit Kerberos authentication unless needed. - RHEL-07-040440
+------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11833,8 +11833,8 @@ Additional Data
 
 
 
-V-72263 - The SSH daemon must perform strict mode checking of home directory configuration files.
--------------------------------------------------------------------------------------------------
+V-72263 - The SSH daemon must perform strict mode checking of home directory configuration files. - RHEL-07-040450
+------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11902,8 +11902,8 @@ Additional Data
 
 
 
-V-72265 - The SSH daemon must use privilege separation.
--------------------------------------------------------
+V-72265 - The SSH daemon must use privilege separation. - RHEL-07-040460
+------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -11969,8 +11969,8 @@ Additional Data
 
 
 
-V-72267 - The SSH daemon must not allow compression or must only allow compression after successful authentication.
--------------------------------------------------------------------------------------------------------------------
+V-72267 - The SSH daemon must not allow compression or must only allow compression after successful authentication. - RHEL-07-040470
+------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12035,8 +12035,8 @@ Additional Data
 
 
 
-V-72269 - The operating system must, for networked systems, synchronize clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS).
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72269 - The operating system must, for networked systems, synchronize clocks with a server that is synchronized to one of the redundant United States Naval Observatory (USNO) time servers, a time server designated for the appropriate DoD network (NIPRNet/SIPRNet), and/or the Global Positioning System (GPS). - RHEL-07-040500
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12127,8 +12127,8 @@ Additional Data
 
 
 
-V-72271 - The operating system must protect against or limit the effects of Denial of Service (DoS) attacks by validating the operating system is implementing rate-limiting measures on impacted network interfaces.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72271 - The operating system must protect against or limit the effects of Denial of Service (DoS) attacks by validating the operating system is implementing rate-limiting measures on impacted network interfaces. - RHEL-07-040510
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12197,8 +12197,8 @@ Additional Data
 
 
 
-V-72273 - The operating system must enable an application firewall, if available.
----------------------------------------------------------------------------------
+V-72273 - The operating system must enable an application firewall, if available. - RHEL-07-040520
+--------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12288,8 +12288,8 @@ Additional Data
 
 
 
-V-72283 - The system must not forward Internet Protocol version 4 (IPv4) source-routed packets.
------------------------------------------------------------------------------------------------
+V-72283 - The system must not forward Internet Protocol version 4 (IPv4) source-routed packets. - RHEL-07-040610
+----------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12352,8 +12352,8 @@ Additional Data
 
 
 
-V-72285 - The system must not forward Internet Protocol version 4 (IPv4) source-routed packets by default.
-----------------------------------------------------------------------------------------------------------
+V-72285 - The system must not forward Internet Protocol version 4 (IPv4) source-routed packets by default. - RHEL-07-040620
+---------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12416,8 +12416,8 @@ Additional Data
 
 
 
-V-72287 - The system must not respond to Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) echoes sent to a broadcast address.
---------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72287 - The system must not respond to Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) echoes sent to a broadcast address. - RHEL-07-040630
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12480,8 +12480,8 @@ Additional Data
 
 
 
-V-72289 - The system must prevent Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirect messages from being accepted.
-----------------------------------------------------------------------------------------------------------------------------------------------------
+V-72289 - The system must prevent Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirect messages from being accepted. - RHEL-07-040640
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12544,8 +12544,8 @@ Additional Data
 
 
 
-V-72291 - The system must not allow interfaces to perform Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirects by default.
------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72291 - The system must not allow interfaces to perform Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirects by default. - RHEL-07-040650
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12610,8 +12610,8 @@ Additional Data
 
 
 
-V-72293 - The system must not send Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirects.
--------------------------------------------------------------------------------------------------------------------------
+V-72293 - The system must not send Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirects. - RHEL-07-040660
+------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12677,8 +12677,8 @@ Additional Data
 
 
 
-V-72295 - Network interfaces must not be in promiscuous mode.
--------------------------------------------------------------
+V-72295 - Network interfaces must not be in promiscuous mode. - RHEL-07-040670
+------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12744,8 +12744,8 @@ Additional Data
 
 
 
-V-72297 - The system must be configured to prevent unrestricted mail relaying.
-------------------------------------------------------------------------------
+V-72297 - The system must be configured to prevent unrestricted mail relaying. - RHEL-07-040680
+-----------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12815,8 +12815,8 @@ Additional Data
 
 
 
-V-72305 - If the Trivial File Transfer Protocol (TFTP) server is required, the TFTP daemon must be configured to operate in secure mode.
-----------------------------------------------------------------------------------------------------------------------------------------
+V-72305 - If the Trivial File Transfer Protocol (TFTP) server is required, the TFTP daemon must be configured to operate in secure mode. - RHEL-07-040720
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12886,8 +12886,8 @@ Additional Data
 
 
 
-V-72307 - An X Windows display manager must not be installed unless approved.
------------------------------------------------------------------------------
+V-72307 - An X Windows display manager must not be installed unless approved. - RHEL-07-040730
+----------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -12953,8 +12953,8 @@ Additional Data
 
 
 
-V-72309 - The system must not be performing packet forwarding unless the system is a router.
---------------------------------------------------------------------------------------------
+V-72309 - The system must not be performing packet forwarding unless the system is a router. - RHEL-07-040740
+-------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13017,8 +13017,8 @@ Additional Data
 
 
 
-V-72311 - The Network File System (NFS) must be configured to use RPCSEC_GSS.
------------------------------------------------------------------------------
+V-72311 - The Network File System (NFS) must be configured to use RPCSEC_GSS. - RHEL-07-040750
+----------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13081,8 +13081,8 @@ Additional Data
 
 
 
-V-72315 - The system access control program must be configured to grant or deny system access to specific hosts and services.
------------------------------------------------------------------------------------------------------------------------------
+V-72315 - The system access control program must be configured to grant or deny system access to specific hosts and services. - RHEL-07-040810
+----------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13177,8 +13177,8 @@ Additional Data
 
 
 
-V-72317 - The system must not have unauthorized IP tunnels configured.
-----------------------------------------------------------------------
+V-72317 - The system must not have unauthorized IP tunnels configured. - RHEL-07-040820
+---------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13254,8 +13254,8 @@ Additional Data
 
 
 
-V-72319 - The system must not forward IPv6 source-routed packets.
------------------------------------------------------------------
+V-72319 - The system must not forward IPv6 source-routed packets. - RHEL-07-040830
+----------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13320,8 +13320,8 @@ Additional Data
 
 
 
-V-72417 - The operating system must have the required packages for multifactor authentication installed.
---------------------------------------------------------------------------------------------------------
+V-72417 - The operating system must have the required packages for multifactor authentication installed. - RHEL-07-041001
+-------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13404,8 +13404,8 @@ Additional Data
 
 
 
-V-72427 - The operating system must implement multifactor authentication for access to privileged accounts via pluggable authentication modules (PAM).
-------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72427 - The operating system must implement multifactor authentication for access to privileged accounts via pluggable authentication modules (PAM). - RHEL-07-041002
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13481,8 +13481,8 @@ Additional Data
 
 
 
-V-72433 - The operating system must implement certificate status checking for PKI authentication.
--------------------------------------------------------------------------------------------------
+V-72433 - The operating system must implement certificate status checking for PKI authentication. - RHEL-07-041003
+------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13562,8 +13562,8 @@ Additional Data
 
 
 
-V-72435 - The operating system must implement smart card logons for multifactor authentication for access to privileged accounts.
----------------------------------------------------------------------------------------------------------------------------------
+V-72435 - The operating system must implement smart card logons for multifactor authentication for access to privileged accounts. - RHEL-07-041004
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13642,8 +13642,8 @@ Additional Data
 
 
 
-V-73155 - The operating system must set the lock delay setting  for all connection types.
------------------------------------------------------------------------------------------
+V-73155 - The operating system must set the lock delay setting  for all connection types. - RHEL-07-010081
+----------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13726,8 +13726,8 @@ Additional Data
 
 
 
-V-73157 - The operating system must set the session idle delay setting for all connection types.
-------------------------------------------------------------------------------------------------
+V-73157 - The operating system must set the session idle delay setting for all connection types. - RHEL-07-010082
+-----------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13810,8 +13810,8 @@ Additional Data
 
 
 
-V-73159 - When passwords are changed or new passwords are established, pwquality must be used.
-----------------------------------------------------------------------------------------------
+V-73159 - When passwords are changed or new passwords are established, pwquality must be used. - RHEL-07-010119
+---------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13877,8 +13877,8 @@ Additional Data
 
 
 
-V-73161 - File systems that are being imported via Network File System (NFS) must be mounted to prevent binary files from being executed.
------------------------------------------------------------------------------------------------------------------------------------------
+V-73161 - File systems that are being imported via Network File System (NFS) must be mounted to prevent binary files from being executed. - RHEL-07-021021
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13940,8 +13940,8 @@ Additional Data
 
 
 
-V-73163 - The audit system must take appropriate action when there is an error sending audit records to a remote system.
-------------------------------------------------------------------------------------------------------------------------
+V-73163 - The audit system must take appropriate action when there is an error sending audit records to a remote system. - RHEL-07-030321
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -14006,8 +14006,8 @@ Additional Data
 
 
 
-V-73165 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group.
---------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-73165 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/group. - RHEL-07-030871
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -14077,8 +14077,8 @@ Additional Data
 
 
 
-V-73167 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-73167 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/gshadow. - RHEL-07-030872
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -14148,8 +14148,8 @@ Additional Data
 
 
 
-V-73171 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow.
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-73171 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/shadow. - RHEL-07-030873
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -14219,8 +14219,8 @@ Additional Data
 
 
 
-V-73173 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-73173 - The operating system must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd. - RHEL-07-030874
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -14290,8 +14290,8 @@ Additional Data
 
 
 
-V-73175 - The system must ignore Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirect messages.
--------------------------------------------------------------------------------------------------------------------------------
+V-73175 - The system must ignore Internet Protocol version 4 (IPv4) Internet Control Message Protocol (ICMP) redirect messages. - RHEL-07-040641
+------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -14355,8 +14355,8 @@ Additional Data
 
 
 
-V-73177 - Wireless network adapters must be disabled.
------------------------------------------------------
+V-73177 - Wireless network adapters must be disabled. - RHEL-07-041010
+----------------------------------------------------------------------
 
 Severity
 ~~~~~~~~

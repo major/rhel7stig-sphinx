@@ -5,8 +5,8 @@ High
 
 
 
-V-71849 - The file permissions, ownership, and group membership of system files and commands must match the vendor values.
---------------------------------------------------------------------------------------------------------------------------
+V-71849 - The file permissions, ownership, and group membership of system files and commands must match the vendor values. - RHEL-07-010010
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -78,8 +78,8 @@ Additional Data
 
 
 
-V-71855 - The cryptographic hash of system files and commands must match vendor values.
----------------------------------------------------------------------------------------
+V-71855 - The cryptographic hash of system files and commands must match vendor values. - RHEL-07-010020
+--------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -153,8 +153,8 @@ Additional Data
 
 
 
-V-71937 - The system must not have accounts configured with blank or null passwords.
-------------------------------------------------------------------------------------
+V-71937 - The system must not have accounts configured with blank or null passwords. - RHEL-07-010290
+-----------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -216,8 +216,8 @@ Additional Data
 
 
 
-V-71939 - The SSH daemon must not allow authentication using an empty password.
--------------------------------------------------------------------------------
+V-71939 - The SSH daemon must not allow authentication using an empty password. - RHEL-07-010300
+------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -282,8 +282,8 @@ Additional Data
 
 
 
-V-71953 - The operating system must not allow an unattended or automatic logon to the system via a graphical user interface.
-----------------------------------------------------------------------------------------------------------------------------
+V-71953 - The operating system must not allow an unattended or automatic logon to the system via a graphical user interface. - RHEL-07-010440
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -353,8 +353,8 @@ Additional Data
 
 
 
-V-71955 - The operating system must not allow an unrestricted logon to the system.
-----------------------------------------------------------------------------------
+V-71955 - The operating system must not allow an unrestricted logon to the system. - RHEL-07-010450
+---------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -424,8 +424,8 @@ Additional Data
 
 
 
-V-71961 - Systems with a Basic Input/Output System (BIOS) must require authentication upon booting into single-user and maintenance modes.
-------------------------------------------------------------------------------------------------------------------------------------------
+V-71961 - Systems with a Basic Input/Output System (BIOS) must require authentication upon booting into single-user and maintenance modes. - RHEL-07-010480
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -504,8 +504,8 @@ Additional Data
 
 
 
-V-71963 - Systems using Unified Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user and maintenance modes.
------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71963 - Systems using Unified Extensible Firmware Interface (UEFI) must require authentication upon booting into single-user and maintenance modes. - RHEL-07-010490
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -585,8 +585,8 @@ Additional Data
 
 
 
-V-71967 - The rsh-server package must not be installed.
--------------------------------------------------------
+V-71967 - The rsh-server package must not be installed. - RHEL-07-020000
+------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -652,8 +652,8 @@ Additional Data
 
 
 
-V-71969 - The ypserv package must not be installed.
----------------------------------------------------
+V-71969 - The ypserv package must not be installed. - RHEL-07-020010
+--------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -715,8 +715,8 @@ Additional Data
 
 
 
-V-71977 - The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71977 - The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components from a repository without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. - RHEL-07-020050
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -785,8 +785,8 @@ Additional Data
 
 
 
-V-71979 - The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71979 - The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components of local packages without verification they have been digitally signed using a certificate that is issued by a Certificate Authority (CA) that is recognized and approved by the organization. - RHEL-07-020060
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -855,8 +855,8 @@ Additional Data
 
 
 
-V-71981 - The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components of packages without verification of the repository metadata.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-71981 - The operating system must prevent the installation of software, patches, service packs, device drivers, or operating system components of packages without verification of the repository metadata. - RHEL-07-020070
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -925,8 +925,8 @@ Additional Data
 
 
 
-V-71989 - The operating system must enable SELinux.
----------------------------------------------------
+V-71989 - The operating system must enable SELinux. - RHEL-07-020210
+--------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -995,8 +995,8 @@ Additional Data
 
 
 
-V-71991 - The operating system must enable the SELinux targeted policy.
------------------------------------------------------------------------
+V-71991 - The operating system must enable the SELinux targeted policy. - RHEL-07-020220
+----------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1070,8 +1070,8 @@ Additional Data
 
 
 
-V-71993 - The x86 Ctrl-Alt-Delete key sequence must be disabled.
-----------------------------------------------------------------
+V-71993 - The x86 Ctrl-Alt-Delete key sequence must be disabled. - RHEL-07-020230
+---------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1146,8 +1146,8 @@ Additional Data
 
 
 
-V-71997 - The operating system must be a vendor supported release.
-------------------------------------------------------------------
+V-71997 - The operating system must be a vendor supported release. - RHEL-07-020250
+-----------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1213,8 +1213,8 @@ Additional Data
 
 
 
-V-72005 - The root account must be the only account having unrestricted access to the system.
----------------------------------------------------------------------------------------------
+V-72005 - The root account must be the only account having unrestricted access to the system. - RHEL-07-020310
+--------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1274,8 +1274,8 @@ Additional Data
 
 
 
-V-72067 - The operating system must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+V-72067 - The operating system must implement NIST FIPS-validated cryptography for the following: to provision digital signatures, to generate cryptographic hashes, and to protect data requiring data-at-rest protections in accordance with applicable federal laws, Executive Orders, directives, policies, regulations, and standards. - RHEL-07-021350
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1400,8 +1400,8 @@ Additional Data
 
 
 
-V-72077 - The telnet-server package must not be installed.
-----------------------------------------------------------
+V-72077 - The telnet-server package must not be installed. - RHEL-07-021710
+---------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1473,8 +1473,8 @@ Additional Data
 
 V-72079 - Auditing must be configured to produce records containing information to establish what type of events occurred, where the events occurred, the source of the events, and the outcome of the events.
 
-These audit records must also identify individual identities of group account users.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+These audit records must also identify individual identities of group account users. - RHEL-07-030000
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1545,8 +1545,8 @@ Additional Data
 
 
 
-V-72213 - The system must use a DoD-approved virus scan program.
-----------------------------------------------------------------
+V-72213 - The system must use a DoD-approved virus scan program. - RHEL-07-032000
+---------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1623,8 +1623,8 @@ Additional Data
 
 
 
-V-72251 - The SSH daemon must be configured to only use the SSHv2 protocol.
----------------------------------------------------------------------------
+V-72251 - The SSH daemon must be configured to only use the SSHv2 protocol. - RHEL-07-040390
+--------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1692,8 +1692,8 @@ Additional Data
 
 
 
-V-72277 - There must be no .shosts files on the system.
--------------------------------------------------------
+V-72277 - There must be no .shosts files on the system. - RHEL-07-040540
+------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1755,8 +1755,8 @@ Additional Data
 
 
 
-V-72279 - There must be no shosts.equiv files on the system.
-------------------------------------------------------------
+V-72279 - There must be no shosts.equiv files on the system. - RHEL-07-040550
+-----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1818,8 +1818,8 @@ Additional Data
 
 
 
-V-72299 - A File Transfer Protocol (FTP) server package must not be installed unless needed.
---------------------------------------------------------------------------------------------
+V-72299 - A File Transfer Protocol (FTP) server package must not be installed unless needed. - RHEL-07-040690
+-------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1882,8 +1882,8 @@ Additional Data
 
 
 
-V-72301 - The Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for operational support.
----------------------------------------------------------------------------------------------------------------------------------
+V-72301 - The Trivial File Transfer Protocol (TFTP) server package must not be installed if not required for operational support. - RHEL-07-040700
+--------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1946,8 +1946,8 @@ Additional Data
 
 
 
-V-72303 - Remote X connections for interactive users must be encrypted.
------------------------------------------------------------------------
+V-72303 - Remote X connections for interactive users must be encrypted. - RHEL-07-040710
+----------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -2014,8 +2014,8 @@ Additional Data
 
 
 
-V-72313 - SNMP community strings must be changed from the default.
-------------------------------------------------------------------
+V-72313 - SNMP community strings must be changed from the default. - RHEL-07-040800
+-----------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~

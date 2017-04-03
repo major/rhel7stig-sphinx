@@ -74,6 +74,10 @@ for group_element in group_elements:
     # Overwrite rule_id with the id from the parent group to make things easier
     rule['id'] = group_element.attrib['id']
 
+    rule['version'] = rule_element.find(
+        'x:version',
+        namespaces=namespaces
+    ).text
     rule['title'] = rule_element.find('x:title', namespaces=namespaces).text
     rule['fix'] = rule_element.find('x:fixtext',
                                     namespaces=namespaces).text
