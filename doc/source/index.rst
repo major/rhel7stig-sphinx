@@ -2,7 +2,7 @@
 Red Hat Enterprise Linux 7 Security Technical Implementation Guide
 ==================================================================
 
-Release: 0.2 Benchmark Date: 30 Jun 2016
+Release: 1 Benchmark Date: 27 Feb 2017
 
 
 Cat I (High Severity)
