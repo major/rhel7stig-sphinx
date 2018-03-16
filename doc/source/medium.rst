@@ -36,9 +36,6 @@ By using this IS (which includes any device attached to this IS), you consent to
 
 -Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details."
 
-Use the following verbiage for operating systems that have severe limitations on the number of characters that can be displayed in the banner:
-
-"I've read  consent to terms in IS user agreem't."
 
 Satisfies: SRG-OS-000023-GPOS-00006, SRG-OS-000024-GPOS-00007, SRG-OS-000228-GPOS-00088
 
@@ -57,6 +54,12 @@ Add the following line to the [org/gnome/login-screen] section of the "/etc/dcon
 
 [org/gnome/login-screen]
 banner-message-enable=true
+
+Update the system databases:
+
+# dconf update
+
+Users must log out and back in again before the system-wide settings take effect.
 
 Check
 ~~~~~
@@ -135,10 +138,6 @@ By using this IS (which includes any device attached to this IS), you consent to
 
 -Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details."
 
-Use the following verbiage for operating systems that have severe limitations on the number of characters that can be displayed in the banner:
-
-"I've read  consent to terms in IS user agreem't."
-
 Satisfies: SRG-OS-000023-GPOS-00006, SRG-OS-000024-GPOS-00007, SRG-OS-000228-GPOS-00088
 
 Fix
@@ -155,19 +154,15 @@ Create a database to contain the system-wide graphical user logon settings (if i
 Add the following line to the [org/gnome/login-screen] section of the "/etc/dconf/db/local.d/01-banner-message":
 
 [org/gnome/login-screen]
-banner-message-text=’You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
 
-By using this IS (which includes any device attached to this IS), you consent to the following conditions:
+banner-message-enable=true
 
--The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
+banner-message-text='You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.\nBy using this IS (which includes any device attached to this IS), you consent to the following conditions:\n-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.\n-At any time, the USG may inspect and seize data stored on this IS.\n-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.\n-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.\n-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details. '
 
--At any time, the USG may inspect and seize data stored on this IS.
+Note: The "\n " characters are for formatting only. They will not be displayed on the GUI.
 
--Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
-
--This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
-
--Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.’
+Run the following command to update the database:
+# dconf update
 
 Check
 ~~~~~
@@ -180,19 +175,9 @@ Check that the operating system displays the exact approved Standard Mandatory D
 
 # grep banner-message-text /etc/dconf/db/local.d/*
 banner-message-text=
-‘You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
+'You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.\nBy using this IS (which includes any device attached to this IS), you consent to the following conditions:\n-The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.\n-At any time, the USG may inspect and seize data stored on this IS.\n-Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.\n-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.\n-Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details. '
 
-By using this IS (which includes any device attached to this IS), you consent to the following conditions:
-
--The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
-
--At any time, the USG may inspect and seize data stored on this IS.
-
--Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
-
--This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
-
--Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.’
+Note: The "\n " characters are for formatting only. They will not be displayed on the GUI.
 
 If the banner does not match the approved Standard Mandatory DoD Notice and Consent Banner, this is a finding.
 
@@ -258,10 +243,6 @@ By using this IS (which includes any device attached to this IS), you consent to
 -This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
 
 -Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details."
-
-Use the following verbiage for operating systems that have severe limitations on the number of characters that can be displayed in the banner:
-
-"I've read  consent to terms in IS user agreem't."
 
 Satisfies: SRG-OS-000023-GPOS-00006, SRG-OS-000024-GPOS-00007
 
@@ -374,26 +355,10 @@ Create a database to contain the system-wide screensaver settings (if it does no
 
 # touch /etc/dconf/db/local.d/00-screensaver
 
-Edit “org/gnome/desktop/session” and add or update the following lines:
-
-# Set the lock time out to 900 seconds before the session is considered idle
-idle-delay=uint32 900
-
 Edit "org/gnome/desktop/screensaver" and add or update the following lines:
 
 # Set this to true to lock the screen when the screensaver activates
 lock-enabled=true
-# Set the lock timeout to 180 seconds after the screensaver has been activated
-lock-delay=uint32 180
-
-You must include the "uint32" along with the integer key values as shown.
-
-Override the user's setting and prevent the user from changing it by editing “/etc/dconf/db/local.d/locks/screensaver” and adding or updating the following lines:
-
-# Lock desktop screensaver settings
-/org/gnome/desktop/session/idle-delay
-/org/gnome/desktop/screensaver/lock-enabled
-/org/gnome/desktop/screensaver/lock-delay
 
 Update the system databases:
 
@@ -471,26 +436,13 @@ Create a database to contain the system-wide screensaver settings (if it does no
 
 # touch /etc/dconf/db/local.d/00-screensaver
 
-Edit “org/gnome/desktop/session” and add or update the following lines:
+Edit /etc/dconf/db/local.d/00-screensaver and add or update the following lines:
 
+[org/gnome/desktop/session]
 # Set the lock time out to 900 seconds before the session is considered idle
 idle-delay=uint32 900
 
-Edit "org/gnome/desktop/screensaver" and add or update the following lines:
-
-# Set this to true to lock the screen when the screensaver activates
-lock-enabled=true
-# Set the lock timeout to 180 seconds after the screensaver has been activated
-lock-delay=uint32 180
-
 You must include the "uint32" along with the integer key values as shown.
-
-Override the user's setting and prevent the user from changing it by editing “/etc/dconf/db/local.d/locks/screensaver” and adding or updating the following lines:
-
-# Lock desktop screensaver settings
-/org/gnome/desktop/session/idle-delay
-/org/gnome/desktop/screensaver/lock-enabled
-/org/gnome/desktop/screensaver/lock-delay
 
 Update the system databases:
 
@@ -511,90 +463,6 @@ Check to see if GNOME is configured to display a screensaver after a 15 minute d
 idle-delay=uint32 900
 
 If the "idle-delay" setting is missing or is not set to "900" or less, this is a finding.
-
-Additional Data
-~~~~~~~~~~~~~~~
-
-
-* Documentable: false
-
-* False Negatives: None
-
-* False Positives: None
-
-* IA Controls: None
-
-* Mitigation Control: None
-
-* Mitigations: None
-
-* Potential Impacts: None
-
-* Responsibility: None
-
-* SeverityOverrideGuidance: None
-
-* Third Party Tools: None
-
-* Control Correlation Identifiers: CCI-000057
-
-
-----
-
-
-
-
-V-71895 - The operating system must set the idle delay setting for all connection types. - RHEL-07-010080
----------------------------------------------------------------------------------------------------------
-
-Severity
-~~~~~~~~
-
-Medium
-
-Description
-~~~~~~~~~~~
-
-A session time-out lock is a temporary action taken when a user stops work and moves away from the immediate physical vicinity of the information system but does not log out because of the temporary nature of the absence. Rather than relying on the user to manually lock their operating system session prior to vacating the vicinity, operating systems need to be able to identify when a user's session has idled and take action to initiate the session lock.
-
-The session lock is implemented at the point where session activity can be determined and/or controlled.
-
-Fix
-~~~
-
-Configure the operating system to prevent a user from overriding a session lock after a 15-minute period of inactivity for graphical user interfaces.
-
-Create a database to contain the system-wide screensaver settings (if it does not already exist) with the following command: 
-
-Note: The example below is using the database "local" for the system, so if the system is using another database in /etc/dconf/profile/user, the file should be created under the appropriate subdirectory.
-
-# touch /etc/dconf/db/local.d/locks/session
-
-Add the setting to lock the screensaver idle delay:
-
-/org/gnome/desktop/screensaver/idle-delay
-
-Check
-~~~~~
-
-Verify the operating system prevents a user from overriding session lock after a 15-minute period of inactivity for graphical user interfaces. The screen program must be installed to lock sessions on the console.
-
-Note: If the system does not have GNOME installed, this requirement is Not Applicable.
-
-Determine which profile the system database is using with the following command:
-#grep system-db /etc/dconf/profile/user
-
-system-db:local
-
-Check for the lock delay setting with the following command:
-
-Note: The example below is using the database "local" for the system, so the path is "/etc/dconf/db/local.d". This path must be modified if a database other than "local" is being used.
-
-# grep -i idle-delay /etc/dconf/db/local.d/locks/*
-
-/org/gnome/desktop/screensaver/idle-delay
-
-If the command does not return a result, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -730,6 +598,12 @@ Add the setting to enable screensaver locking after 15 minutes of inactivity:
 
 idle-activation-enabled=true
 
+Update the system databases:
+
+# dconf update
+
+Users must log out and back in again before the system-wide settings take effect.
+
 Check
 ~~~~~
 
@@ -737,8 +611,9 @@ Verify the operating system initiates a session lock after a 15-minute period of
 
 If it is installed, GNOME must be configured to enforce a session lock after a 15-minute delay. Check for the session lock settings with the following commands:
 
-# grep -i  idle_activation_enabled /etc/dconf/db/local.d/*
-[org/gnome/desktop/screensaver]   idle-activation-enabled=true
+# grep -i  idle-activation-enabled /etc/dconf/db/local.d/*
+
+idle-activation-enabled=true
 
 If "idle-activation-enabled" is not set to "true", this is a finding.
 
@@ -803,21 +678,27 @@ Add the setting to enable session locking when a screensaver is activated:
 [org/gnome/desktop/screensaver]
 lock-delay=uint32 5
 
-After the setting has been set, run dconf update.
+The "uint32" must be included along with the integer key values as shown.
+
+Update the system databases:
+
+# dconf update
+
+Users must log out and back in again before the system-wide settings take effect.
 
 Check
 ~~~~~
 
-Verify the operating system initiates a session lock a for graphical user interfaces when the screensaver is activated. The screen program must be installed to lock sessions on the console.
+Verify the operating system initiates a session lock a for graphical user interfaces when the screensaver is activated. 
 
-Note: If the system does not have GNOME installed, this requirement is Not Applicable.
+Note: If the system does not have GNOME installed, this requirement is Not Applicable. The screen program must be installed to lock sessions on the console.
 
 If GNOME is installed, check to see a session lock occurs when the screensaver is activated with the following command:
 
 # grep -i lock-delay /etc/dconf/db/local.d/*
 lock-delay=uint32 5
 
-If the "lock-delay" setting is missing, or is not set, this is a finding.
+If the "lock-delay" setting is missing, or is not set to “5” or less, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -937,17 +818,12 @@ Password complexity is one factor of several that determines how long it takes t
 Fix
 ~~~
 
-Configure the operating system to lock an account for the maximum period when three unsuccessful logon attempts in 15 minutes are made.
+Configure the system to require at least one lower-case character when creating or changing a password.
 
-Modify the first three lines of the "auth" section of the "/etc/pam.d/system-auth-ac" and "/etc/pam.d/password-auth-ac" files to match the following lines:
+Add or modify the following line 
+in "/etc/security/pwquality.conf":
 
-Note: RHEL 7.3 and later allows for a value of “never” for "unlock_time". This is an acceptable value but should be used with caution if availability is a concern.
-
-auth        required       pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=604800
-auth        sufficient     pam_unix.so try_first_pass
-auth        [default=die]  pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=604800
-
-and run the "authconfig" command.
+lcredit = -1
 
 Check
 ~~~~~
@@ -1267,8 +1143,8 @@ Additional Data
 
 
 
-V-71915 - When passwords are changed the number of repeating consecutive characters must not be more than four characters. - RHEL-07-010180
--------------------------------------------------------------------------------------------------------------------------------------------
+V-71915 - When passwords are changed the number of repeating consecutive characters must not be more than three characters. - RHEL-07-010180
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1289,7 +1165,7 @@ Configure the operating system to require the change of the number of repeating 
 
 Add the following line to "/etc/security/pwquality.conf conf" (or modify the line to have the required value):
 
-maxrepeat = 2
+maxrepeat = 3
 
 Check
 ~~~~~
@@ -1299,9 +1175,9 @@ The "maxrepeat" option sets the maximum number of allowed same consecutive chara
 Check for the value of the "maxrepeat" option in "/etc/security/pwquality.conf" with the following command:
 
 # grep maxrepeat /etc/security/pwquality.conf 
-maxrepeat = 2
+maxrepeat = 3
 
-If the value of "maxrepeat" is set to more than "2", this is a finding.
+If the value of "maxrepeat" is set to more than "3", this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -1424,8 +1300,6 @@ Configure the operating system to store only SHA512 encrypted representations of
 Add the following line in "/etc/pam.d/system-auth-ac":
 
 password sufficient pam_unix.so sha512
-
-and run the "authconfig" command.
 
 Check
 ~~~~~
@@ -1880,8 +1754,6 @@ Add the following line in "/etc/pam.d/system-auth-ac" (or modify the line to hav
 
 password sufficient pam_unix.so use_authtok sha512 shadow remember=5
 
-and run the "authconfig" command.
-
 Check
 ~~~~~
 
@@ -2085,8 +1957,7 @@ Modify the first three lines of the auth section of the "/etc/pam.d/system-auth-
 auth        required       pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=604800
 auth        sufficient     pam_unix.so try_first_pass
 auth        [default=die]  pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=604800
-
-and run the "authconfig" command.
+account required pam_faillock.so
 
 Check
 ~~~~~
@@ -2098,6 +1969,14 @@ Check that the system locks an account for the maximum period after three unsucc
 # grep pam_faillock.so /etc/pam.d/password-auth-ac
 auth        required       pam_faillock.so preauth silent audit deny=3 even_deny_root unlock_time=604800
 auth        [default=die]  pam_faillock.so authfail audit deny=3 even_deny_root unlock_time=604800
+account required pam_faillock.so 
+
+If the "unlock_time" setting is greater than "604800" on both lines with the "pam_faillock.so" module name or is missing from a line, this is a finding.
+
+# grep pam_faillock.so /etc/pam.d/system-auth-ac
+auth required pam_faillock.so preauth silent audit deny=3 even_deny_root unlock_time=604800
+auth [default=die] pam_faillock.so authfail audit deny=3 even_deny_root unlock_time=604800
+account required pam_faillock.so 
 
 If the "unlock_time" setting is greater than "604800" on both lines with the "pam_faillock.so" module name or is missing from a line, this is a finding.
 
@@ -2158,8 +2037,9 @@ Modify the first three lines of the auth section of the "/etc/pam.d/system-auth-
 auth        required       pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900 unlock_time=604800
 auth        sufficient     pam_unix.so try_first_pass
 auth        [default=die]  pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900 unlock_time=604800
+account required pam_faillock.so
 
-and run the "authconfig" command.
+Note: Any updates made to "/etc/pam.d/system-auth-ac" and "/etc/pam.d/password-auth-ac" may be overwritten by the "authconfig" program. The "authconfig" program should not be used.
 
 Check
 ~~~~~
@@ -2167,8 +2047,16 @@ Check
 Verify the operating system automatically locks the root account until it is released by an administrator when three unsuccessful logon attempts in 15 minutes are made.
 
 # grep pam_faillock.so /etc/pam.d/password-auth-ac
-auth        required       pam_faillock.so preauth silent audit deny=3 even_deny_root fail_interval=900
-auth        [default=die]  pam_faillock.so authfail audit deny=3 even_deny_root fail_interval=900
+auth required pam_faillock.so preauth silent audit deny=3 even_deny_root unlock_time=604800 fail_interval=900 
+auth [default=die] pam_faillock.so authfail audit deny=3 even_deny_root unlock_time=604800 fail_interval=900
+account required pam_faillock.so
+
+If the "even_deny_root" setting is not defined on both lines with the "pam_faillock.so" module name, this is a finding.
+
+# grep pam_faillock.so /etc/pam.d/system-auth-ac
+auth required pam_faillock.so preauth silent audit deny=3 even_deny_root unlock_time=604800 fail_interval=900 
+auth [default=die] pam_faillock.so authfail audit deny=3 even_deny_root unlock_time=604800 fail_interval=900
+account required pam_faillock.so
 
 If the "even_deny_root" setting is not defined on both lines with the "pam_faillock.so" module name, this is a finding.
 
@@ -2234,6 +2122,8 @@ Remove any occurrences of "NOPASSWD" tags in the file.
 
 Check
 ~~~~~
+
+If passwords are not being used for authentication, this is Not Applicable.
 
 Verify the operating system requires users to supply a password for privilege escalation.
 
@@ -2911,13 +2801,11 @@ Fix
 
 Configure the operating system to disable the ability to use USB mass storage devices.
 
-Create a file under "/etc/modprobe.d" with the following command:
+# vi /etc/modprobe.d/blacklist.conf
 
-#touch /etc/modprobe.d/nousbstorage
+Add or update the line:
 
-Add the following line to the created file:
-
-install usb-storage /bin/true
+blacklist usb-storage
 
 Check
 ~~~~~
@@ -2928,11 +2816,10 @@ Verify the operating system disables the ability to use USB mass storage devices
 
 Check to see if USB mass storage is disabled with the following command:
 
-#grep -i usb-storage /etc/modprobe.d/*
+# grep usb-storage /etc/modprobe.d/blacklist.conf
+blacklist usb-storage
 
-install usb-storage /bin/true
-
-If the command does not return any output, and use of USB storage devices is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+If the command does not return any output or the output is not "blacklist usb-storage", and use of USB storage devices is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -3287,7 +3174,7 @@ Check the owner of all files and directories with the following command:
 
 Note: The value after -fstype must be replaced with the filesystem type. XFS is used as an example.
 
-# find / -xdev -fstype xfs -nouser
+# find / -fstype xfs -nouser
 
 If any files on the system do not have an assigned owner, this is a finding.
 
@@ -3352,7 +3239,7 @@ Check the owner of all files and directories with the following command:
 
 Note: The value after -fstype must be replaced with the filesystem type. XFS is used as an example.
 
-# find / -xdev -fstype xfs -nogroup
+# find / -fstype xfs -nogroup
 
 If any files on the system do not have an assigned group, this is a finding.
 
@@ -3628,7 +3515,7 @@ Check the home directory assignment for all non-privileged users on the system w
 
 Note: This may miss interactive users that have been assigned a privileged User Identifier (UID). Evidence of interactive use may be obtained from a number of log files containing system logon information.
 
-# ls -ld $ (egrep ':[0-9]{4}' /etc/passwd | cut -d: -f6)
+# ls -ld $(egrep ':[0-9]{4}' /etc/passwd | cut -d: -f6)
 -rwxr-x--- 1 smithj users  18 Mar  5 17:06 /home/smithj
 
 If home directories referenced in "/etc/passwd" do not have a mode of "0750" or less permissive, this is a finding.
@@ -3692,14 +3579,13 @@ Check
 
 Verify the assigned home directory of all local interactive users on the system exists.
 
-Check the home directory assignment for all local interactive non-privileged users on the system with the following command:
+Check the home directory assignment for all local interactive users on the system with the following command:
 
-Note: This may miss interactive users that have been assigned a privileged UID. Evidence of interactive use may be obtained from a number of log files containing system logon information.
+# ls -ld $(egrep ':[0-9]{4}' /etc/passwd | cut -d: -f6)
 
-# ls -ld $ (egrep ':[0-9]{4}' /etc/passwd | cut -d: -f6)
--rwxr-x--- 1 smithj users  18 Mar  5 17:06 /home/smithj
+-rwxr-x--- 1 smithj users 18 Mar 5 17:06 /home/smithj
 
-If any home directories referenced in "/etc/passwd" are returned as not defined, this is a finding.
+If any home directories referenced in "/etc/passwd" are not owned by the interactive user, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -3760,19 +3646,20 @@ Check
 
 Verify the assigned home directory of all local interactive users is group-owned by that user’s primary GID.
 
-Check the home directory assignment for all non-privileged users on the system with the following command:
+Check the home directory assignment for all local interactive users on the system with the following command:
 
-Note: This may miss local interactive users that have been assigned a privileged UID. Evidence of interactive use may be obtained from a number of log files containing system logon information.
+# ls -ld $(egrep ':[0-9]{4}' /etc/passwd | cut -d: -f6)
 
-# ls -ld $ (egrep ':[0-9]{4}' /etc/passwd | cut -d: -f6)
--rwxr-x--- 1 smithj users  18 Mar  5 17:06 /home/smithj
+-rwxr-x--- 1 smithj users 18 Mar 5 17:06 /home/smithj
 
 Check the user's primary group with the following command:
 
 # grep users /etc/group
+
 users:x:250:smithj,jonesj,jacksons
 
 If the user home directory referenced in "/etc/passwd" is not group-owned by that user’s primary GID, this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -4260,7 +4147,9 @@ The executable search path (typically the PATH environment variable) contains a 
 Fix
 ~~~
 
-Configure the "/etc/fstab" to use the "nosuid" option on file systems that contain user home directories for interactive users.
+Edit the local interactive user initialization files to change any PATH variable statements that reference directories other than their home directory. 
+
+If a local interactive user requires path variables to reference a directory owned by the application, it must be documented with the ISSO. 
 
 Check
 ~~~~~
@@ -4482,9 +4371,9 @@ Find the file system(s) that contain the user home directories with the followin
 
 Note: If a separate file system has not been created for the user home directories (user home directories are mounted under "/"), this is not a finding as the "nosuid" option cannot be used on the "/" system.
 
-# cut -d: -f 1,6 /etc/passwd | egrep ":[1-4][0-9]{3}"
-smithj:/home/smithj
-thomasr:/home/thomasr
+# cut -d: -f 1,3,6 /etc/passwd | egrep ":[1-4][0-9]{3}"
+smithj:1001:/home/smithj
+thomasr:1002:/home/thomasr
 
 Check the file systems that are mounted at boot time with the following command:
 
@@ -4683,10 +4572,10 @@ Check the system for world-writable directories with the following command:
 
 Note: The value after -fstype must be replaced with the filesystem type. XFS is used as an example.
 
-# find / -perm -002 -xdev -type d -fstype xfs -exec ls -lLd {} \;
-drwxrwxrwt. 2 root root 40 Aug 26 13:07 /dev/mqueue
-drwxrwxrwt. 2 root root 220 Aug 26 13:23 /dev/shm
-drwxrwxrwt. 14 root root 4096 Aug 26 13:29 /tmp
+# find / -xdev -perm -002 -type d -fstype xfs -exec ls -lLd {} \;
+drwxrwxrwt 2 root root 40 Aug 26 13:07 /dev/mqueue
+drwxrwxrwt 2 root root 220 Aug 26 13:23 /dev/shm
+drwxrwxrwt 14 root root 4096 Aug 26 13:29 /tmp
 
 If any world-writable directories are not owned by root, sys, bin, or an application group associated with the directory, this is a finding.
 
@@ -4896,7 +4785,7 @@ Verify that the "cron.allow" file is owned by root.
 
 Check the owner of the "cron.allow" file with the following command:
 
-# l s -al /etc/cron.allow
+# ls -al /etc/cron.allow
 -rw------- 1 root root 6 Mar  5  2011 /etc/cron.allow
 
 If the "cron.allow" file exists and has an owner other than root, this is a finding.
@@ -5253,9 +5142,17 @@ Add or correct the option to shut down the operating system with the following c
 
 # auditctl -f 2
 
+Edit the "/etc/audit/rules.d/audit.rules" file and add the following line:
+
+-f 2
+
 If availability has been determined to be more important, and this decision is documented with the ISSO, configure the operating system to notify system administration staff and ISSO staff in the event of an audit processing failure with the following command:
 
 # auditctl -f 1
+
+Edit the "/etc/audit/rules.d/audit.rules" file and add the following line:
+
+-f 1
 
 Kernel log monitoring must also be configured to properly alert designated staff.
 
@@ -5268,18 +5165,20 @@ Confirm the audit configuration regarding how auditing processing failures are h
 
 Check to see what level "auditctl" is set to with following command: 
 
-# auditctl -l | grep /-f
- -f 2
+# auditctl -s | grep -i "fail"
 
-If the value of "-f" is set to "2", the system is configured to panic (shut down) in the event of an auditing failure.
+failure 2
 
-If the value of "-f" is set to "1", the system is configured to only send information to the kernel log regarding the failure.
+If the value of "failure" is set to "2", the system is configured to panic (shut down) in the event of an auditing failure.
 
-If the "-f" flag is not set, this is a CAT I finding.
+If the value of "failure" is set to "1", the system is configured to only send information to the kernel log regarding the failure.
 
-If the "-f" flag is set to any value other than "1" or "2", this is a CAT II finding.
+If the "failure" setting is not set, this is a CAT I finding.
 
-If the "-f" flag is set to "1" but the availability concern is not documented or there is no monitoring of the kernel log, this is a CAT III finding.
+If the "failure" setting is set to any value other than "1" or "2", this is a CAT II finding.
+
+If the "failure" setting is set to "1" but the availability concern is not documented or there is no monitoring of the kernel log, this is a CAT III finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -5771,9 +5670,9 @@ To find the relevant "setuid"/"setgid" programs, run the following command for e
 
 # find [PART] -xdev -type f \( -perm -4000 -o -perm -2000 \) 2>/dev/null
 
-For each "setuid"/"setgid" program on the system, which is not covered by an audit rule for a (sub) directory (such as "/usr/sbin"), add a line of the following form to "/etc/audit/audit.rules", where <suid_prog_with_full_path> is the full path to each "setuid"/"setgid" program in the list:
+For each "setuid"/"setgid" program on the system, which is not covered by an audit rule for a (sub) directory (such as "/usr/sbin"), add a line of the following form to "/etc/audit/rules.d/audit.rules", where <suid_prog_with_full_path> is the full path to each "setuid"/"setgid" program in the list:
 
--a always,exit -F <suid_prog_with_full_path> -F perm=x -F auid>=1000 -F auid!=4294967295 -k setuid/setgid
+-a always,exit -F path=<suid_prog_with_full_path> -F perm=x -F auid>=1000 -F auid!=4294967295 -k setuid/setgid
 
 Check
 ~~~~~
@@ -5786,7 +5685,8 @@ To find relevant setuid and setgid programs, use the following command once for 
 
 Run the following command to verify entries in the audit rules for all programs found with the previous command:
 
-# grep <suid_prog_with_full_path> -a always,exit -F <suid_prog_with_full_path> -F perm=x -F auid>=1000 -F auid!=4294967295 -k setuid/setgid
+# grep -i "<suid_prog_with_full_path>" /etc/audit/audit.rules
+-a always,exit -F path="<suid_prog_with_full_path>" -F perm=x -F auid>=1000 -F auid!=4294967295 -k setuid/setgid
 
 All "setuid" and "setgid" files on the system must have a corresponding audit rule, or must have an audit rule for the (sub) directory that contains the "setuid"/"setgid" file.
 
@@ -5844,13 +5744,16 @@ Satisfies: SRG-OS-000064-GPOS-00033, SRG-OS-000392-GPOS-00172, SRG-OS-000458-GPO
 Fix
 ~~~
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S chown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S chown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 The audit daemon must be restarted for the changes to take effect.
+
 
 Check
 ~~~~~
@@ -5861,13 +5764,14 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i chown /etc/audit/audit.rules
+# grep -iw chown /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S chown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S chown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "chown" command, this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -5921,13 +5825,16 @@ Satisfies: SRG-OS-000064-GPOS-00033, SRG-OS-000392-GPOS-00172, SRG-OS-000458-GPO
 Fix
 ~~~
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S fchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 The audit daemon must be restarted for the changes to take effect.
+
 
 Check
 ~~~~~
@@ -5938,13 +5845,14 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i fchown /etc/audit/audit.rules
+# grep -iw fchown /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S fchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "fchown" command, this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -5998,13 +5906,15 @@ Satisfies: SRG-OS-000064-GPOS-00033, SRG-OS-000392-GPOS-00172, SRG-OS-000458-GPO
 Fix
 ~~~
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-The audit daemon must be restarted for the changes to take effect.
+The audit daemon must be restarted for the changes to take effect. 
 
 Check
 ~~~~~
@@ -6015,13 +5925,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i lchown /etc/audit/audit.rules
+# grep -iw lchown /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S lchown -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "lchown" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6075,13 +5985,16 @@ Satisfies: SRG-OS-000064-GPOS-00033, SRG-OS-000392-GPOS-00172, SRG-OS-000458-GPO
 Fix
 ~~~
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S fchownat -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fchownat -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 The audit daemon must be restarted for the changes to take effect.
+
 
 Check
 ~~~~~
@@ -6092,13 +6005,14 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i fchownat /etc/audit/audit.rules
+# grep -iw fchownat /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S fchownat -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fchownat -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "fchownat" command, this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6154,7 +6068,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "chmod" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S chmod -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6171,13 +6087,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i chmod /etc/audit/audit.rules
+# grep -iw chmod /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S chmod -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S chmod -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "chmod" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6233,7 +6149,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "fchmod" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S fchmod -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6250,13 +6168,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i fchmod /etc/audit/audit.rules
+# grep -iw fchmod /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S fchmod -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fchmod -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "fchmod" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6312,7 +6230,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "fchmodat" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6329,13 +6249,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i fchmodat /etc/audit/audit.rules
+# grep -iw fchmodat /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fchmodat -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "fchmodat" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6391,7 +6311,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "setxattr" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S setxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6408,13 +6330,14 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i setxattr /etc/audit/audit.rules
+# grep -iw setxattr /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S setxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S setxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "setxattr" command, this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6470,7 +6393,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "fsetxattr" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S fsetxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6487,13 +6412,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i fsetxattr /etc/audit/audit.rules
+# grep -iw fsetxattr /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S fsetxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fsetxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "fsetxattr" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6549,7 +6474,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "lsetxattr" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S lsetxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6566,13 +6493,14 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i lsetxattr /etc/audit/audit.rules
+# grep -iw lsetxattr /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S lsetxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S lsetxattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "lsetxattr" command, this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6628,7 +6556,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "removexattr" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S removexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6645,13 +6575,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i removexattr /etc/audit/audit.rules
+# grep -iw removexattr /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S removexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S removexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "removexattr" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6707,13 +6637,16 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "fremovexattr" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S fremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-The audit daemon must be restarted for the changes to take effect.
+The audit daemon must be restarted for the changes to take effect. 
+
 
 Check
 ~~~~~
@@ -6724,13 +6657,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i fremovexattr /etc/audit/audit.rules
+# grep -iw fremovexattr /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S fremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S fremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "fremovexattr" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6786,7 +6719,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "lremovexattr" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S lremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
@@ -6803,13 +6738,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i lremovexattr /etc/audit/audit.rules
+# grep -iw lremovexattr /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S lremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
 -a always,exit -F arch=b64 -S lremovexattr -F auid>=1000 -F auid!=4294967295 -k perm_mod
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "lremovexattr" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6865,13 +6800,20 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "creat" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules:
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S creat -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S creat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S creat -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S creat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
 The audit daemon must be restarted for the changes to take effect.
+
 
 Check
 ~~~~~
@@ -6882,13 +6824,21 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i creat /etc/audit/audit.rules
+# grep -iw creat /etc/audit/audit.rules
 
--a always,exit -F arch=b32 -S creat  -Fexit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S creat F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
--a always,exit -F arch=b64 -S creat  -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S creat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
-If the command does not return any output, this is a finding.
+-a always,exit -F arch=b64 -S creat -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S creat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+If there are no audit rules defined for the “creat” command, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EPERM”, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EACCES”, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -6944,13 +6894,20 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "open" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S open -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S open -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S open -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S open -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
 The audit daemon must be restarted for the changes to take effect.
+
 
 Check
 ~~~~~
@@ -6961,13 +6918,21 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i open /etc/audit/audit.rules
+# grep -iw open /etc/audit/audit.rules
 
--a always,exit -F arch=b32 -S open -Fexit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S open -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S open -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S open -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S open -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the “open” command, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EPERM”, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EACCES”, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -7023,9 +6988,15 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "openat" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S openat -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S openat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S openat -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S openat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
@@ -7040,13 +7011,21 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i openat /etc/audit/audit.rules
+# grep -iw openat /etc/audit/audit.rules
 
--a always,exit -F arch=b32 -S openat -Fexit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S openat -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S openat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S openat -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S openat -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the “openat” command, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EPERM”, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EACCES”, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -7102,13 +7081,20 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "open_by_handle_at" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S open_by_handle_at -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S open_by_handle_at -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
 The audit daemon must be restarted for the changes to take effect.
+
 
 Check
 ~~~~~
@@ -7119,13 +7105,21 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i open_by_handle_at /etc/audit/audit.rules
+# grep -iw open_by_handle_at /etc/audit/audit.rules
 
--a always,exit -F arch=b32 -S open_by_handle_at -Fexit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S open_by_handle_at -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S open_by_handle_at -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S open_by_handle_at -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the “open_by_handle_at” command, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EPERM”, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EACCES”, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -7181,9 +7175,15 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "truncate" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S truncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S truncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S truncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S truncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
@@ -7198,13 +7198,21 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i truncate /etc/audit/audit.rules
+# grep -iw truncate /etc/audit/audit.rules
 
--a always,exit -F arch=b32 -S truncate -Fexit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S truncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S truncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S truncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S truncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the “truncate” command, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EPERM”, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EACCES”, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -7260,9 +7268,15 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "ftruncate" command occur.
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
@@ -7277,13 +7291,21 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i ftruncate /etc/audit/audit.rules
+# grep -iw ftruncate /etc/audit/audit.rules
 
--a always,exit -F arch=b32 -S ftruncate -Fexit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+-a always,exit -F arch=b32 -S ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b32 -S ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
+
+-a always,exit -F arch=b64 -S ftruncate -F exit=-EPERM -F auid>=1000 -F auid!=4294967295 -k access
 
 -a always,exit -F arch=b64 -S ftruncate -F exit=-EACCES -F auid>=1000 -F auid!=4294967295 -k access
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the “truncate” command, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EPERM”, this is a finding.
+
+If the output does not produce a rule containing “-F exit=-EACCES”, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -7536,8 +7558,8 @@ Additional Data
 
 
 
-V-72141 - All uses of the restorecon command must be audited. - RHEL-07-030590
-------------------------------------------------------------------------------
+V-72141 - All uses of the setfiles command must be audited. - RHEL-07-030590
+----------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -7556,24 +7578,24 @@ Satisfies: SRG-OS-000392-GPOS-00172, SRG-OS-000463-GPOS-00207, SRG-OS-000465-GPO
 Fix
 ~~~
 
-Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "restorecon" command occur.
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "setfiles" command occur.
 
 Add or update the following rule in "/etc/audit/rules.d/audit.rules":
 
--a always,exit -F path=/usr/sbin/restorecon -F perm=x -F auid>=1000 -F auid!=4294967295 -k -F  privileged-priv_change
+-a always,exit -F path=/usr/sbin/setfiles -F perm=x -F auid>=1000 -F auid!=4294967295 -k -F privileged-priv_change
 
 The audit daemon must be restarted for the changes to take effect.
 
 Check
 ~~~~~
 
-Verify the operating system generates audit records when successful/unsuccessful attempts to use the "restorecon" command occur.
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "setfiles" command occur.
 
 Check the file system rule in "/etc/audit/audit.rules" with the following command:
 
-# grep -i /usr/sbin/restorecon /etc/audit/audit.rules
+# grep -i /usr/sbin/setfiles /etc/audit/audit.rules
 
--a always,exit -F path=/usr/sbin/restorecon -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+-a always,exit -F path=/usr/sbin/setfiles -F perm=x -F auid>=1000 -F auid!=4294967295 -k -F privileged-priv_change
 
 If the command does not return any output, this is a finding.
 
@@ -7706,7 +7728,7 @@ Configure the operating system to generate audit records when unsuccessful accou
 
 Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
 
--w /var/run/faillock/ -p wa -k logins
+-w /var/run/faillock -p wa -k logins
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -7925,7 +7947,7 @@ Configure the operating system to generate audit records when successful/unsucce
 
 Add or update the following rule in "/etc/audit/rules.d/audit.rules":
 
--a always,exit -F path=/sbin/unix_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+-a always,exit -F path=/usr/sbin/unix_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -7938,7 +7960,7 @@ Check the file system rule in "/etc/audit/audit.rules" with the following comman
 
 # grep -i /sbin/unix_chkpwd /etc/audit/audit.rules
 
--a always,exit -F path=/sbin/unix_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
+-a always,exit -F path=/usr/sbin/unix_chkpwd -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-passwd
 
 If the command does not return any output, this is a finding.
 
@@ -8217,7 +8239,7 @@ Configure the operating system to generate audit records when successful/unsucce
 
 Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
 
--a always,exit -F path=/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change 
+-a always,exit -F path=/usr/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change 
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -8230,7 +8252,7 @@ Check for the following system call being audited by performing the following co
 
 # grep -i /bin/su /etc/audit/audit.rules
 
--a always,exit -F path=/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
+-a always,exit -F path=/usr/bin/su -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
 
 If the command does not return any output, this is a finding.
 
@@ -8365,7 +8387,7 @@ Add or update the following rule in "/etc/audit/rules.d/audit.rules":
 
 -w /etc/sudoers -p wa -k privileged-actions
 
--w /etc/sudoers.d -p wa -k privileged-actions
+-w /etc/sudoers.d/ -p wa -k privileged-actions
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -8376,13 +8398,13 @@ Verify the operating system generates audit records when successful/unsuccessful
 
 Check for modification of the following files being audited by performing the following commands to check the file system rules in "/etc/audit/audit.rules": 
 
-# grep /etc/sudoers /etc/audit/audit.rules
+# grep -i "/etc/sudoers" /etc/audit/audit.rules
 
 -w /etc/sudoers -p wa -k privileged-actions
 
-# grep /etc/sudoers.d /etc/audit/audit.rules
+# grep -i "/etc/sudoers.d/" /etc/audit/audit.rules
 
--w /etc/sudoers.d -p wa -k privileged-actions
+-w /etc/sudoers.d/ -p wa -k privileged-actions
 
 If the commands do not return output that does not match the examples, this is a finding.
 
@@ -8599,7 +8621,7 @@ Verify the operating system generates audit records when successful/unsuccessful
 
 Check for the following system calls being audited by performing the following command to check the file system rules in "/etc/audit/audit.rules": 
 
-# grep -i /usr/bin/sudoedit /etc/audit/audit.rules
+# grep -i "/usr/bin/sudoedit" /etc/audit/audit.rules
 
 -a always,exit -F path=/bin/sudoedit -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-priv_change
 
@@ -8659,11 +8681,21 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "mount" command occur.
 
-Add or update the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add or update the following rules in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
 
+-a always,exit -F arch=b32 -F path=/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
+-a always,exit -F arch=b32 -F path=/usr/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
 -a always,exit -F arch=b64 -S mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
+-a always,exit -F arch=b64 -F path=/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
+-a always,exit -F arch=b64 -F path=/usr/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -8674,13 +8706,21 @@ Verify the operating system generates audit records when successful/unsuccessful
 
 Check for the following system calls being audited by performing the following series of commands to check the file system rules in "/etc/audit/audit.rules": 
 
-# grep -i /bin/mount /etc/audit/audit.rules
+# grep -iw "mount" /etc/audit/audit.rules
 
 -a always,exit -F arch=b32 -S mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
 
+-a always,exit -F arch=b32 -F path=/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
+-a always,exit -F arch=b32 -F path=/usr/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
 -a always,exit -F arch=b64 -S mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
 
-If the command does not return any output, this is a finding.
+-a always,exit -F arch=b64 -F path=/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
+-a always,exit -F arch=b64 -F path=/usr/bin/mount -F auid>=1000 -F auid!=4294967295 -k privileged-mount
+
+If all uses of the mount command are not being audited, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -8749,7 +8789,7 @@ Verify the operating system generates audit records when successful/unsuccessful
 
 Check for the following system calls being audited by performing the following series of commands to check the file system rules in "/etc/audit/audit.rules": 
 
-# grep -i /bin/umount /etc/audit/audit.rules
+# grep -i "/bin/umount" /etc/audit/audit.rules
 
 -a always,exit -F path=/bin/umount -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged-mount  
 
@@ -9006,79 +9046,6 @@ Additional Data
 
 
 
-V-72181 - All uses of the pt_chown command must be audited. - RHEL-07-030790
-----------------------------------------------------------------------------
-
-Severity
-~~~~~~~~
-
-Medium
-
-Description
-~~~~~~~~~~~
-
-Reconstruction of harmful events or forensic analysis is not possible if audit records do not contain enough information.
-
-At a minimum, the organization must audit the full-text recording of privileged commands. The organization must maintain audit trails in sufficient detail to reconstruct events to determine the cause and impact of compromise.
-
-Satisfies: SRG-OS-000042-GPOS-00020, SRG-OS-000392-GPOS-00172, SRG-OS-000471-GPOS-00215
-
-Fix
-~~~
-
-Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "pt_chown" command occur. 
-
-Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
-
--a always,exit -F path=/usr/libexec/pt_chown -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged_terminal
-
-The audit daemon must be restarted for the changes to take effect.
-
-Check
-~~~~~
-
-Verify the operating system generates audit records when successful/unsuccessful attempts to use the "pt_chown" command occur. 
-
-Check for the following system call being audited by performing the following command to check the file system rules in "/etc/audit/audit.rules": 
-
-# grep -i /usr/libexec/pt_chown /etc/audit/audit.rules
-
--a always,exit -F path=/usr/libexec/pt_chown -F perm=x -F auid>=1000 -F auid!=4294967295 -k privileged_terminal
-
-If the command does not return any output, this is a finding.
-
-Additional Data
-~~~~~~~~~~~~~~~
-
-
-* Documentable: false
-
-* False Negatives: None
-
-* False Positives: None
-
-* IA Controls: None
-
-* Mitigation Control: None
-
-* Mitigations: None
-
-* Potential Impacts: None
-
-* Responsibility: None
-
-* SeverityOverrideGuidance: None
-
-* Third Party Tools: None
-
-* Control Correlation Identifiers: CCI-000135, CCI-000172, CCI-002884
-
-
-----
-
-
-
-
 V-72183 - All uses of the crontab command must be audited. - RHEL-07-030800
 ---------------------------------------------------------------------------
 
@@ -9183,7 +9150,7 @@ Verify the operating system generates audit records when successful/unsuccessful
 
 Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
-# grep -i /sbin/pam_timestamp_check /etc/audit/audit.rules
+# grep -i "/sbin/pam_timestamp_check" /etc/audit/audit.rules
 
 -a always,exit -F path=/sbin/pam_timestamp_check -F perm=x -F auid>=1000 -F auid!=4294967295  -k privileged-pam  
 
@@ -9241,9 +9208,11 @@ Satisfies: SRG-OS-000471-GPOS-00216, SRG-OS-000477-GPOS-00222
 Fix
 ~~~
 
-Configure the operating system generates audit records when successful/unsuccessful attempts to use the "init_module" command occur. 
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "init_module" command occur. 
 
-Add or update the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture): 
+Add or update the following rules in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured. 
 
 -a always,exit -F arch=b32 -S init_module -k module-change
 
@@ -9260,7 +9229,7 @@ Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the line appropriate for the system architecture must be present.
 
-# grep -i init_module /etc/audit/audit.rules
+# grep -iw init_module /etc/audit/audit.rules
 
 If the command does not return the following output (appropriate to the architecture), this is a finding. 
 
@@ -9268,7 +9237,7 @@ If the command does not return the following output (appropriate to the architec
 
 -a always,exit -F arch=b64 -S init_module -k module-change
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for "init_module", this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -9324,7 +9293,9 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "delete_module" command occur. 
 
-Add or update the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture): 
+Add or update the following rules in "/etc/audit/rules.d/audit.rules": 
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S delete_module -k module-change
 
@@ -9341,7 +9312,7 @@ Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the line appropriate for the system architecture must be present.
 
-# grep -i delete_module /etc/audit/audit.rules
+# grep -iw delete_module /etc/audit/audit.rules
 
 If the command does not return the following output (appropriate to the architecture), this is a finding. 
 
@@ -9349,7 +9320,7 @@ If the command does not return the following output (appropriate to the architec
 
 -a always,exit -F arch=b64 -S delete_module -k module-change
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for "delete_module", this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -9405,7 +9376,7 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "insmod" command occur. 
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture): 
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
 
 -w /sbin/insmod -p x -F auid!=4294967295 -k module-change
 
@@ -9420,7 +9391,7 @@ Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
 # grep -i insmod /etc/audit/audit.rules
 
-If the command does not return the following output (appropriate to the architecture), this is a finding. 
+If the command does not return the following output this is a finding. 
 
 -w /sbin/insmod -p x -F auid!=4294967295 -k module-change
 
@@ -9480,7 +9451,7 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "rmmod" command occur. 
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture): 
+Add or update the following rule in "/etc/audit/rules.d/audit.rules": 
 
 -w /sbin/rmmod-p x -F auid!=4294967295 -k module-change
 
@@ -9495,7 +9466,7 @@ Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
 # grep -i rmmod /etc/audit/audit.rules
 
-If the command does not return the following output (appropriate to the architecture), this is a finding. 
+If the command does not return the following output, this is a finding. 
 
 -w /sbin/rmmod -p x -F auid!=4294967295 -k module-change
 
@@ -9555,7 +9526,7 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "modprobe" command occur. 
 
-Add or update the following rule in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture): 
+Add or update the following rule in "/etc/audit/rules.d/audit.rules":
 
 -w /sbin/modprobe -p x -F auid!=4294967295 -k module-change
 
@@ -9572,7 +9543,7 @@ Note: The output lines of the command are duplicated to cover both 32-bit and 64
 
 # grep -i modprobe /etc/audit/audit.rules
 
-If the command does not return the following output (appropriate to the architecture), this is a finding. 
+If the command does not return the following output, this is a finding. 
 
 -w /sbin/modprobe -p x -F auid!=4294967295 -k module-change
 
@@ -9647,7 +9618,7 @@ Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
 # grep /etc/passwd /etc/audit/audit.rules
 
--w /etc/passwd -p wa -k audit_rules_usergroup_modification
+-w /etc/passwd -p wa -k identity
 
 If the command does not return a line, or the line is commented out, this is a finding.
 
@@ -9703,9 +9674,12 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "rename" command occur.
 
-Add the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add the following rules in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S rename -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
 -a always,exit -F arch=b64 -S rename -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
 
 The audit daemon must be restarted for the changes to take effect.
@@ -9719,11 +9693,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i rename /etc/audit/audit.rules
+# grep -iw rename /etc/audit/audit.rules
+
 -a always,exit -F arch=b32 -S rename -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
 -a always,exit -F arch=b64 -S rename -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "rename" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -9777,10 +9753,13 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "renameat" command occur.
 
-Add the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add the following rules in "/etc/audit/rules.d/audit.rules":
 
--a always,exit -F arch=b32 -S renameat  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
--a always,exit -F arch=b64 -S renameat  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
+
+-a always,exit -F arch=b32 -S renameat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+-a always,exit -F arch=b64 -S renameat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -9793,11 +9772,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i renameat  /etc/audit/audit.rules
--a always,exit -F arch=b32 -S renameat  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
--a always,exit -F arch=b64 -S renameat  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+# grep -iw renameat /etc/audit/audit.rules
 
-If the command does not return any output, this is a finding.
+-a always,exit -F arch=b32 -S renameat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+-a always,exit -F arch=b64 -S renameat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+If there are no audit rules defined for the "renameat" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -9851,10 +9832,13 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "rmdir" command occur.
 
-Add the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add the following rules in "/etc/audit/rules.d/audit.rules":
 
--a always,exit -F arch=b32 -S rmdir  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
--a always,exit -F arch=b64 -S rmdir  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
+
+-a always,exit -F arch=b32 -S rmdir -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+-a always,exit -F arch=b64 -S rmdir -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -9867,11 +9851,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i rmdir /etc/audit/audit.rules
--a always,exit -F arch=b32 -S rmdir  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
--a always,exit -F arch=b64 -S rmdir  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+# grep -iw rmdir /etc/audit/audit.rules
 
-If the command does not return any output, this is a finding.
+-a always,exit -F arch=b32 -S rmdir -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+-a always,exit -F arch=b64 -S rmdir -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+If there are no audit rules defined for the "rmdir" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -9925,10 +9911,13 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "unlink" command occur.
 
-Add the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add the following rules in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S unlink -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
--a always,exit -F arch=b64 -S unlink  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+-a always,exit -F arch=b64 -S unlink -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -9941,11 +9930,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i unlink/etc/audit/audit.rules
--a always,exit -F arch=b32 -S unlink -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
--a always,exit -F arch=b64 -S unlink  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+# grep -iw unlink/etc/audit/audit.rules
 
-If the command does not return any output, this is a finding.
+-a always,exit -F arch=b32 -S unlink -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+-a always,exit -F arch=b64 -S unlink -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+If there are no audit rules defined for the "unlink" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -9999,10 +9990,13 @@ Fix
 
 Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "unlinkat" command occur.
 
-Add the following rules in "/etc/audit/rules.d/audit.rules" (removing those that do not match the CPU architecture):
+Add the following rules in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
 
 -a always,exit -F arch=b32 -S unlinkat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
--a always,exit -F arch=b64 -S unlinkat  -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
+-a always,exit -F arch=b64 -S unlinkat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -10015,11 +10009,13 @@ Check the file system rules in "/etc/audit/audit.rules" with the following comma
 
 Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be present.
 
-# grep -i unlinkat/etc/audit/audit.rules
+# grep -iw unlinkat/etc/audit/audit.rules
+
 -a always,exit -F arch=b32 -S unlinkat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
+
 -a always,exit -F arch=b64 -S unlinkat -F perm=x -F auid>=1000 -F auid!=4294967295 -k delete
 
-If the command does not return any output, this is a finding.
+If there are no audit rules defined for the "unlinkat" command, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -10186,8 +10182,8 @@ Additional Data
 
 
 
-V-72215 - The system must update the DoD-approved virus scan program every seven days or more frequently. - RHEL-07-032010
---------------------------------------------------------------------------------------------------------------------------
+V-72215 - The system must update the virus scan program every seven days or more frequently. - RHEL-07-032010
+-------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -10204,12 +10200,12 @@ The virus scanning software should be configured to check for software and virus
 Fix
 ~~~
 
-Update the approved DoD virus scan software and virus definition files.
+Update the virus scan software and virus definition files.
 
 Check
 ~~~~~
 
-Verify the system is using a DoD-approved virus scan program and the virus definition file is less than seven days old.
+Verify the system is using a virus scan program and the virus definition file is less than seven days old.
 
 Check for the presence of "McAfee VirusScan Enterprise for Linux" with the following command:
 
@@ -10451,11 +10447,19 @@ Fix
 
 Configure the operating system to terminate all network connections associated with a communications session at the end of the session or after a period of inactivity.
 
-Add the following line to "/etc/profile" (or modify the line to have the required value):
+Add or update the following lines in "/etc/profile".
 
 TMOUT=600
+readonly TMOUT
+export TMOUT
 
-The SSH service must be restarted for changes to take effect.
+Or create a script to enforce the inactivity timeout (for example /etc/profile.d/tmout.sh) such as:
+
+#!/bin/bash
+
+TMOUT=600
+readonly TMOUT
+export TMOUT
 
 Check
 ~~~~~
@@ -10464,10 +10468,11 @@ Verify the operating system terminates all network connections associated with a
 
 Check the value of the system inactivity timeout with the following command:
 
-# grep -i tmout /etc/bashrc 
+# grep -i tmout /etc/bashrc /etc/profile.d/*
+
 TMOUT=600
 
-If "TMOUT" is not set to "600" or less in "/etc/bashrc", this is a finding.
+If "TMOUT" is not set to "600" or less in "/etc/bashrc" or in a script created to enforce session termination after inactivity, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -10541,7 +10546,7 @@ Configure the operating system to display the Standard Mandatory DoD Notice and 
 
 Edit the "/etc/ssh/sshd_config" file to uncomment the banner keyword and configure it to point to a file that will contain the logon banner (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor). An example configuration line is:
 
-banner=/etc/issue
+banner /etc/issue
 
 Either create the file containing the banner or replace the text in the file with the Standard Mandatory DoD Notice and Consent Banner. The DoD required text is:
 
@@ -10553,7 +10558,7 @@ Either create the file containing the banner or replace the text in the file wit
 
 -Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
 
--This IS includes security measures (e.g., authentication and access controls) to protect USG interests -- not for your personal benefit or privacy.
+-This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
 
 -Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details."
 
@@ -10568,7 +10573,7 @@ Check for the location of the banner file being used with the following command:
 
 # grep -i banner /etc/ssh/sshd_config
 
-banner=/etc/issue
+banner /etc/issue
 
 This command will return the banner keyword and the name of the file that contains the ssh banner (in this case "/etc/issue").
 
@@ -10876,14 +10881,13 @@ Install SSH packages onto the host with the following commands:
 # yum install openssh-clients.x86_64
 # yum install openssh-server.x86_64
 
-Note: 32-bit versions will require different packages.
 
 Check
 ~~~~~
 
 Check to see if sshd is installed with the following command:
 
-# yum list installed ssh
+# yum list installed | grep  ssh
 libssh2.x86_64                           1.4.3-8.el7               @anaconda/7.1
 openssh.x86_64                           6.6.1p1-11.el7            @anaconda/7.1
 openssh-clients.x86_64                   6.6.1p1-11.el7            @anaconda/7.1
@@ -11031,13 +11035,15 @@ Check
 
 Verify the operating system automatically terminates a user session after inactivity time-outs have expired.
 
-Check for the value of the "ClientAlive" keyword with the following command:
+Check for the value of the "ClientAliveInterval" keyword with the following command:
 
-# grep -i clientalive /etc/ssh/sshd_config
+# grep -iw clientaliveinterval /etc/ssh/sshd_config
 
 ClientAliveInterval 600
 
-If "ClientAliveInterval" is not set to "600" in "/etc/ ssh/sshd_config", and a lower value is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+If "ClientAliveInterval" is not configured, commented out, or has a value of "0", this is a finding.
+
+If "ClientAliveInterval" has a value that is greater than "600" and is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -11089,9 +11095,9 @@ Fix
 
 Configure the SSH daemon to not allow authentication using RSA rhosts authentication.
 
-Add the following line in "/etc/ssh/sshd_config", or uncomment the line and set the value to "yes":
+Add the following line in "/etc/ssh/sshd_config", or uncomment the line and set the value to "no":
 
-RhostsRSAAuthentication yes
+RhostsRSAAuthentication no
 
 The SSH service must be restarted for changes to take effect.
 
@@ -11103,10 +11109,9 @@ Verify the SSH daemon does not allow authentication using RSA rhosts authenticat
 To determine how the SSH daemon's "RhostsRSAAuthentication" option is set, run the following command:
 
 # grep RhostsRSAAuthentication /etc/ssh/sshd_config
+RhostsRSAAuthentication no
 
-RhostsRSAAuthentication yes
-
-If the value is returned as "no", the returned line is commented out, or no output is returned, this is a finding.
+If the value is returned as "yes", the returned line is commented out, or no output is returned, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -11170,6 +11175,12 @@ The SSH service must be restarted for changes to take effect.
 
 Check
 ~~~~~
+
+Check the version of the operating system with the following command:
+
+# cat /etc/redhat-release
+
+If the release is 7.4 or newer this requirement is Not Applicable.
 
 Verify the operating system automatically terminates a user session after inactivity time-outs have expired.
 
@@ -12149,7 +12160,11 @@ Create a direct firewall rule to protect against DoS attacks with the following 
 
 Note: The command is to add a rule to the public zone.
 
-# firewall-cmd --direct --add-rule ipv4 filter IN_public_allow 0 -p tcp -m limit --limit 25/minute --limit-burst 100  -j ACCEPT
+# firewall-cmd --direct --permanent --add-rule ipv4 filter IN_public_allow 0 -m tcp -p tcp -m limit --limit 25/minute --limit-burst 100 -j ACCEPT
+
+The firewalld service will need to be restarted for this to take effect:
+
+# systemctl restart firewalld
 
 Check
 ~~~~~
@@ -12566,6 +12581,10 @@ Set the system to the required kernel parameter by adding the following line to 
 
 net.ipv4.conf.default.send_redirects=0
 
+Issue the following command to make the changes take effect:
+
+# sysctl -p /etc/sysctl.conf
+
 Check
 ~~~~~
 
@@ -12573,8 +12592,9 @@ Verify the system does not allow interfaces to perform IPv4 ICMP redirects by de
 
 Check the value of the "default send_redirects" variables with the following command:
 
-# grep  'net.ipv4.conf.default.send_redirects' /etc/sysctl.conf
-net.ipv4.conf.default.send_redirects=0
+# /sbin/sysctl -a | grep 'net.ipv4.conf.default.send_redirects'
+
+net.ipv4.conf.default.send_redirects = 0 
 
 If the returned line does not have a value of "0", or a line is not returned, this is a finding.
 
@@ -12842,8 +12862,8 @@ Verify the TFTP daemon is configured to operate in secure mode.
 
 Check to see if a TFTP server has been installed with the following commands:
 
-# yum list installed | grep tftp
-tftp-0.49-9.el7.x86_64.rpm
+# yum list installed | grep tftp-server
+tftp-server.x86_64    x.x-x.el7    rhel-7-server-rpms
 
 If a TFTP server is not installed, this is Not Applicable.
 
@@ -12904,9 +12924,7 @@ Fix
 
 Document the requirement for an X Windows server with the ISSO or remove the related packages with the following commands:
 
-#yum groupremove "X Window System"
-
-#yum remove xorg-x11-server-common
+# rpm -e xorg-x11-server-common
 
 Check
 ~~~~~
@@ -12915,7 +12933,7 @@ Verify that if the system has X Windows System installed, it is authorized.
 
 Check for the X11 package with the following command:
 
-# yum group list installed "X Window System"
+# rpm -qa | grep xorg | grep server
 
 Ask the System Administrator if use of the X Windows System is an operational requirement.
 
@@ -13099,7 +13117,7 @@ Fix
 
 If "firewalld" is installed and active on the system, configure rules for allowing specific services and hosts. 
 
-If "tcpwrappers" is installed, configure the "/etc/hosts.allow" and "/etc/hosts.deny" to allow or deny access to specific hosts.
+If "firewalld" is not "active", enable "tcpwrappers" by configuring "/etc/hosts.allow" and "/etc/hosts.deny" to allow or deny access to specific hosts.   
 
 Check
 ~~~~~
@@ -13143,7 +13161,7 @@ rw-r----- 1 root root 9 Aug  2 23:13 /etc/hosts.allow
 
 If "firewalld" and "tcpwrappers" are not installed, configured, and active, ask the SA if another access control program (such as iptables) is installed and active. Ask the SA to show that the running configuration grants or denies access to specific hosts or services.
 
-If "firewalld" is active and is not configured to grant access to specific hosts and "tcpwrappers" is not configured to grant or deny access to specific hosts, this is a finding.
+If "firewalld" is active and is not configured to grant access to specific hosts or "tcpwrappers" is not configured to grant or deny access to specific hosts, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -13434,7 +13452,7 @@ Fix
 
 Configure the operating system to implement multifactor authentication for remote access to privileged accounts via pluggable authentication modules (PAM).
 
-Modify all of the services lines in /etc/sssd/sssd.conf to include pam.
+Modify all of the services lines in "/etc/sssd/sssd.conf" or in configuration files found under "/etc/sssd/conf.d" to include pam.
 
 Check
 ~~~~~
@@ -13443,7 +13461,7 @@ Verify the operating system implements multifactor authentication for remote acc
 
 Check the "/etc/sssd/sssd.conf" file for the authentication services that are being used with the following command:
 
-# grep services /etc/sssd/sssd.conf
+# grep services /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf
 
 services = nss, pam
 
@@ -13522,13 +13540,15 @@ Check to see if Online Certificate Status Protocol (OCSP) is enabled on the syst
 
 # grep cert_policy /etc/pam_pkcs11/pam_pkcs11.conf
 
-cert_policy =ca, ocsp_on, signature;
-cert_policy =ca, ocsp_on, signature;
-cert_policy =ca, ocsp_on, signature;
+cert_policy = ca, ocsp_on, signature;
+cert_policy = ca, ocsp_on, signature;
+cert_policy = ca, ocsp_on, signature;
 
-There should be at least three lines returned. All lines must match the example output; specifically that "oscp_on" must be included in the "cert_policy" line.
 
-If "oscp_on" is present in all "cert_policy" lines, this is not a finding.
+There should be at least three lines returned. 
+
+If "oscp_on" is not present in all "cert_policy" lines in "/etc/pam_pkcs11/pam_pkcs11.conf", this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -13562,88 +13582,8 @@ Additional Data
 
 
 
-V-72435 - The operating system must implement smart card logons for multifactor authentication for access to privileged accounts. - RHEL-07-041004
---------------------------------------------------------------------------------------------------------------------------------------------------
-
-Severity
-~~~~~~~~
-
-Medium
-
-Description
-~~~~~~~~~~~
-
-Using an authentication device, such as a CAC or token that is separate from the information system, ensures that even if the information system is compromised, that compromise will not affect credentials stored on the authentication device.
-
-Multifactor solutions that require devices separate from information systems gaining access include, for example, hardware tokens providing time-based or challenge-response authenticators and smart cards such as the U.S. Government Personal Identity Verification card and the DoD Common Access Card.
-
-A privileged account is defined as an information system account with authorizations of a privileged user.
-
-Remote access is access to DoD nonpublic information systems by an authorized user (or an information system) communicating through an external, non-organization-controlled network. Remote access methods include, for example, dial-up, broadband, and wireless.
-
-This requirement only applies to components where this is specific to the function of the device or has the concept of an organizational user (e.g., VPN, proxy capability). This does not apply to authentication for the purpose of configuring the device itself (management).
-
-Requires further clarification from NIST.
-
-Satisfies: SRG-OS-000375-GPOS-00160, SRG-OS-000375-GPOS-00161, SRG-OS-000375-GPOS-00162
-
-Fix
-~~~
-
-Configure the operating system to implement smart card logon for multifactor authentication to uniquely identify privileged users.
-
-Enable smart card logons with the following commands:
-
-#authconfig --enablesmartcard --smartcardaction=1 --update
-# authconfig --enablerequiresmartcard --update
-
-Check
-~~~~~
-
-Verify the operating system requires smart card logons for multifactor authentication to uniquely identify privileged users.
-
-Check to see if smartcard authentication is enforced on the system with the following command:
-
-# authconfig --test | grep -i smartcard
-
-The entry for use only smartcard for logon may be enabled, and the smartcard module and smartcard removal actions must not be blank.
-
-If smartcard authentication is disabled or the smartcard and smartcard removal actions are blank, this is a finding.
-
-Additional Data
-~~~~~~~~~~~~~~~
-
-
-* Documentable: false
-
-* False Negatives: None
-
-* False Positives: None
-
-* IA Controls: None
-
-* Mitigation Control: None
-
-* Mitigations: None
-
-* Potential Impacts: None
-
-* Responsibility: None
-
-* SeverityOverrideGuidance: None
-
-* Third Party Tools: None
-
-* Control Correlation Identifiers: CCI-001948, CCI-001953, CCI-001954
-
-
-----
-
-
-
-
-V-73155 - The operating system must set the lock delay setting  for all connection types. - RHEL-07-010081
-----------------------------------------------------------------------------------------------------------
+V-73155 - The operating system must prevent a user from overriding the screensaver lock-delay setting for the graphical user interface. - RHEL-07-010081
+--------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13726,8 +13666,8 @@ Additional Data
 
 
 
-V-73157 - The operating system must set the session idle delay setting for all connection types. - RHEL-07-010082
------------------------------------------------------------------------------------------------------------------
+V-73157 - The operating system must prevent a user from overriding the session idle-delay setting for the graphical user interface. - RHEL-07-010082
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -13759,9 +13699,9 @@ Add the setting to lock the session idle delay:
 Check
 ~~~~~
 
-Verify the operating system prevents a user from overriding session idle delay after a 15-minute period of inactivity for graphical user interfaces. The screen program must be installed to lock sessions on the console.
+Verify the operating system prevents a user from overriding session idle delay after a 15-minute period of inactivity for graphical user interfaces. 
 
-Note: If the system does not have GNOME installed, this requirement is Not Applicable. 
+Note: If the system does not have GNOME installed, this requirement is Not Applicable. The screen program must be installed to lock sessions on the console. 
 
 Determine which profile the system database is using with the following command:
 # grep system-db /etc/dconf/profile/user
@@ -13821,7 +13761,7 @@ Medium
 Description
 ~~~~~~~~~~~
 
-Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. "Pwquality" enforces complex password construction configuration on the system.
+Use of a complex password helps to increase the time and resources required to compromise the password. Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts at guessing and brute-force attacks. “pwquality” enforces complex password construction configuration and has the ability to limit brute-force attacks on the system.
 
 Fix
 ~~~
@@ -13832,6 +13772,8 @@ Add the following line to "/etc/pam.d/passwd" (or modify the line to have the re
 
 password    required    pam_pwquality.so retry=3
 
+Note: The value of “retry” should be between “1” and “3”.
+
 Check
 ~~~~~
 
@@ -13839,11 +13781,13 @@ Verify the operating system uses "pwquality" to enforce the password complexity 
 
 Check for the use of "pwquality" with the following command:
 
-# grep pwquality /etc/pam.d/passwd
+#  cat /etc/pam.d/passwd | grep pam_pwquality
 
-password    required    pam_pwquality.so retry=3
+password required pam_pwquality.so retry=3
 
 If the command does not return a line containing the value "pam_pwquality.so", this is a finding.
+
+If the value of “retry” is set to “0” or greater than “3”, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -14112,7 +14056,7 @@ Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
 # grep /etc/gshadow /etc/audit/audit.rules
 
--w /etc/gshadow -p wa -k audit_rules_usergroup_modification
+-w /etc/gshadow -p wa -k identity
 
 If the command does not return a line, or the line is commented out, this is a finding.
 
@@ -14183,7 +14127,7 @@ Check the auditing rules in "/etc/audit/audit.rules" with the following command:
 
 # grep /etc/shadow /etc/audit/audit.rules
 
--w /etc/shadow -p wa -k audit_rules_usergroup_modification
+-w /etc/shadow -p wa -k identity
 
 If the command does not return a line, or the line is commented out, this is a finding.
 
@@ -14241,7 +14185,7 @@ Configure the operating system to generate audit records for all account creatio
 
 Add or update the following file system rule in "/etc/audit/rules.d/audit.rules":
 
--w /etc/opasswd -p wa -k identity
+-w /etc/security/opasswd -p wa -k identity
 
 The audit daemon must be restarted for the changes to take effect.
 
@@ -14252,9 +14196,9 @@ Verify the operating system must generate audit records for all account creation
 
 Check the auditing rules in "/etc/audit/rules.d/audit.rules" with the following command:
 
-# grep /etc/opasswd /etc/audit/rules.d/audit.rules
+# grep /etc/security/opasswd /etc/audit/rules.d/audit.rules
 
--w /etc/opasswd -p wa -k audit_rules_usergroup_modification
+-w /etc/security/opasswd -p wa -k identity
 
 If the command does not return a line, or the line is commented out, this is a finding.
 
@@ -14321,7 +14265,7 @@ Check the value of the "accept_redirects" variables with the following command:
 
 net.ipv4.conf.all.accept_redirects=0
 
-If both of the returned lines do not have a value of "0", or a line is not returned, this is a finding.
+If the returned line does not have a value of "0", or a line is not returned, this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -14417,5 +14361,641 @@ Additional Data
 * Third Party Tools: None
 
 * Control Correlation Identifiers: CCI-001443, CCI-001444, CCI-002418
+
+
+----
+
+
+
+
+V-77819 - The operating system must uniquely identify and must authenticate users using multifactor authentication via a graphical user logon. - RHEL-07-010061
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+To assure accountability and prevent unauthenticated access, users must be identified and authenticated to prevent potential misuse and compromise of the system.
+
+Multifactor solutions that require devices separate from information systems gaining access include, for example, hardware tokens providing time-based or challenge-response authenticators and smart cards such as the U.S. Government Personal Identity Verification card and the DoD Common Access Card.
+
+
+Satisfies: SRG-OS-000375-GPOS-00161,SRG-OS-000375-GPOS-00162
+
+
+Fix
+~~~
+
+Configure the operating system to uniquely identify and authenticate users using multifactor authentication via a graphical user logon.
+
+Note: If the system does not have GNOME installed, this requirement is Not Applicable.
+
+Create a database to contain the system-wide screensaver settings (if it does not already exist) with the following command: 
+
+Note: The example is using the database local for the system, so if the system is using another database in "/etc/dconf/profile/user", the file should be created under the appropriate subdirectory.
+
+# touch /etc/dconf/db/local.d/00-defaults
+
+Add the setting to enable smartcard login:
+enable-smartcard-authentication=true
+
+Check
+~~~~~
+
+Verify the operating system uniquely identifies and authenticates users using multifactor authentication via a graphical user logon.
+
+Note: If the system does not have GNOME installed, this requirement is Not Applicable. 
+
+Determine which profile the system database is using with the following command:
+
+# grep system-db /etc/dconf/profile/user
+
+system-db:local
+
+Note: The example is using the database local for the system, so the path is "/etc/dconf/db/local.d". This path must be modified if a database other than local is being used.
+
+# grep enable-smartcard-authentication /etc/dconf/db/local.d/*
+
+enable-smartcard-authentication=true
+
+If "enable-smartcard-authentication" is set to "false" or the keyword is missing, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-001948, CCI-001953, CCI-001954
+
+
+----
+
+
+
+
+V-77821 - The Datagram Congestion Control Protocol (DCCP) kernel module must be disabled unless required. - RHEL-07-020101
+--------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Disabling DCCP protects the system against exploitation of any flaws in the protocol implementation.
+
+Fix
+~~~
+
+Configure the operating system to disable the ability to use the DCCP kernel module.
+
+Create a file under "/etc/modprobe.d" with the following command:
+
+# touch /etc/modprobe.d/nodccp
+
+Add the following line to the created file:
+
+install dccp /bin/true
+
+Check
+~~~~~
+
+Verify the operating system disables the ability to load the DCCP kernel module.
+
+Check to see if the DCCP kernel module is disabled with the following command:
+
+# grep -r dccp /etc/modprobe.d/* | grep -i "/bin/true" | grep -v "^#"
+
+install dccp /bin/true
+
+If the command does not return any output, or the line is commented out, and use of DCCP is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-001958
+
+
+----
+
+
+
+
+V-77823 - The operating system must require authentication upon booting into single-user and maintenance modes. - RHEL-07-010481
+--------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+If the system does not require valid root authentication before it boots into single-user or maintenance mode, anyone who invokes single-user or maintenance mode is granted privileged access to all files on the system.
+
+Fix
+~~~
+
+Configure the operating system to require authentication upon booting into single-user and maintenance modes.
+
+Add or modify the "ExecStart" line in "/usr/lib/systemd/system/rescue.service" to include "/usr/sbin/sulogin":
+
+ExecStart=-/bin/sh -c "/usr/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"
+
+
+Check
+~~~~~
+
+Verify the operating system must require authentication upon booting into single-user and maintenance modes.
+
+Check that the operating system requires authentication upon booting into single-user mode with the following command:
+
+# grep -i execstart /usr/lib/systemd/system/rescue.service
+
+ExecStart=-/bin/sh -c "/usr/sbin/sulogin; /usr/bin/systemctl --fail --no-block default"
+
+If "ExecStart" does not have "/usr/sbin/sulogin" as an option, this is a finding.
+
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-000213
+
+
+----
+
+
+
+
+V-77825 - The operating system must implement virtual address space randomization. - RHEL-07-040201
+---------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Address space layout randomization (ASLR) makes it more difficult for an attacker to predict the location of attack code he or she has introduced into a process's address space during an attempt at exploitation. Additionally, ASLR also makes it more difficult for an attacker to know the location of existing code in order to repurpose it using return-oriented programming (ROP) techniques.
+
+Fix
+~~~
+
+Configure the operating system implement virtual address space randomization.
+
+Set the system to the required kernel parameter by adding the following line to "/etc/sysctl.conf" (or modify the line to have the required value):
+
+kernel.randomize_va_space=2
+
+Check
+~~~~~
+
+Verify the operating system implements virtual address space randomization.
+
+Check that the operating system implements virtual address space randomization with the following command:
+
+# grep kernel.randomize_va_space /etc/sysctl.conf 
+
+kernel.randomize_va_space=2
+
+If "kernel.randomize_va_space" does not have a value of "2", this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-000366
+
+
+----
+
+
+
+
+V-78995 - The operating system must prevent a user from overriding the screensaver lock-enabled setting for the graphical user interface. - RHEL-07-010062
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+A session lock is a temporary action taken when a user stops work and moves away from the immediate physical vicinity of the information system but does not want to log out because of the temporary nature of the absence.
+
+The session lock is implemented at the point where session activity can be determined.
+
+The ability to enable/disable a session lock is given to the user by default. Disabling the user’s ability to disengage the graphical user interface session lock provides the assurance that all sessions will lock after the specified period of time.
+
+
+Fix
+~~~
+
+Configure the operating system to prevent a user from overriding a screensaver lock after a 15-minute period of inactivity for graphical user interfaces.
+
+Create a database to contain the system-wide screensaver settings (if it does not already exist) with the following command: 
+
+Note: The example below is using the database "local" for the system, so if the system is using another database in "/etc/dconf/profile/user", the file should be created under the appropriate subdirectory.
+
+# touch /etc/dconf/db/local.d/locks/session
+
+Add the setting to lock the screensaver lock-enabled setting:
+
+/org/gnome/desktop/screensaver/lock-enabled
+
+
+Check
+~~~~~
+
+Verify the operating system prevents a user from overriding the screensaver lock-enabled setting for the graphical user interface. 
+
+Note: If the system does not have GNOME installed, this requirement is Not Applicable. The screen program must be installed to lock sessions on the console.
+
+Determine which profile the system database is using with the following command:
+# grep system-db /etc/dconf/profile/user
+
+system-db:local
+
+Check for the lock-enabled setting with the following command:
+
+Note: The example below is using the database "local" for the system, so the path is "/etc/dconf/db/local.d". This path must be modified if a database other than "local" is being used.
+
+# grep -i lock-enabled /etc/dconf/db/local.d/locks/*
+
+/org/gnome/desktop/screensaver/lock-enabled
+
+If the command does not return a result, this is a finding.
+
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-000057
+
+
+----
+
+
+
+
+V-78997 - The operating system must prevent a user from overriding the screensaver idle-activation-enabled setting for the graphical user interface. - RHEL-07-010101
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+A session lock is a temporary action taken when a user stops work and moves away from the immediate physical vicinity of the information system but does not want to log out because of the temporary nature of the absence.
+
+The session lock is implemented at the point where session activity can be determined.
+
+The ability to enable/disable a session lock is given to the user by default. Disabling the user’s ability to disengage the graphical user interface session lock provides the assurance that all sessions will lock after the specified period of time.
+
+
+Fix
+~~~
+
+Configure the operating system to prevent a user from overriding a screensaver lock after a 15-minute period of inactivity for graphical user interfaces.
+
+Create a database to contain the system-wide screensaver settings (if it does not already exist) with the following command: 
+
+Note: The example below is using the database "local" for the system, so if the system is using another database in "/etc/dconf/profile/user", the file should be created under the appropriate subdirectory.
+
+# touch /etc/dconf/db/local.d/locks/session
+
+Add the setting to lock the screensaver idle-activation-enabled setting:
+
+/org/gnome/desktop/screensaver/idle-activation-enabled
+
+Check
+~~~~~
+
+Verify the operating system prevents a user from overriding the screensaver idle-activation-enabled setting for the graphical user interface. 
+
+Note: If the system does not have GNOME installed, this requirement is Not Applicable. The screen program must be installed to lock sessions on the console.
+
+Determine which profile the system database is using with the following command:
+# grep system-db /etc/dconf/profile/user
+
+system-db:local
+
+Check for the idle-activation-enabled setting with the following command:
+
+Note: The example below is using the database "local" for the system, so the path is "/etc/dconf/db/local.d". This path must be modified if a database other than "local" is being used.
+
+# grep -i idle-activation-enabled /etc/dconf/db/local.d/locks/*
+
+/org/gnome/desktop/screensaver/idle-activation-enabled
+
+If the command does not return a result, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-000057
+
+
+----
+
+
+
+
+V-78999 - All uses of the create_module command must be audited. - RHEL-07-030819
+---------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Without generating audit records that are specific to the security and mission needs of the organization, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one. 
+
+Audit records can be generated from various components within the information system (e.g., module or policy filter).
+
+Satisfies: SRG-OS-000471-GPOS-00216, SRG-OS-000477-GPOS-00222
+
+Fix
+~~~
+
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "create_module" command occur. 
+
+Add or update the following rules in "/etc/audit/rules.d/audit.rules":
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured. 
+
+-a always,exit -F arch=b32 -S create_module -k module-change
+
+-a always,exit -F arch=b64 -S create_module -k module-change
+
+The audit daemon must be restarted for the changes to take effect.
+
+Check
+~~~~~
+
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "create_module" command occur. 
+
+Check the auditing rules in "/etc/audit/audit.rules" with the following command:
+
+Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the line appropriate for the system architecture must be present.
+
+# grep -iw create_module /etc/audit/audit.rules
+
+If the command does not return the following output (appropriate to the architecture), this is a finding. 
+
+-a always,exit -F arch=b32 -S create_module -k module-change
+
+-a always,exit -F arch=b64 -S create_module -k module-change
+
+If there are no audit rules defined for “create_module”, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-000172
+
+
+----
+
+
+
+
+V-79001 - All uses of the finit_module command must be audited. - RHEL-07-030821
+--------------------------------------------------------------------------------
+
+Severity
+~~~~~~~~
+
+Medium
+
+Description
+~~~~~~~~~~~
+
+Without generating audit records that are specific to the security and mission needs of the organization, it would be difficult to establish, correlate, and investigate the events relating to an incident or identify those responsible for one. 
+
+Audit records can be generated from various components within the information system (e.g., module or policy filter).
+
+Satisfies: SRG-OS-000471-GPOS-00216, SRG-OS-000477-GPOS-00222
+
+Fix
+~~~
+
+Configure the operating system to generate audit records when successful/unsuccessful attempts to use the "finit_module" command occur. 
+
+Add or update the following rules in "/etc/audit/rules.d/audit.rules": 
+
+Note: The rules are duplicated to cover both 32-bit and 64-bit architectures. Only the lines appropriate for the system architecture must be configured.
+-a always,exit -F arch=b32 -S finit_module -k module-change
+
+-a always,exit -F arch=b64 -S finit_module -k module-change
+
+The audit daemon must be restarted for the changes to take effect.
+
+Check
+~~~~~
+
+Verify the operating system generates audit records when successful/unsuccessful attempts to use the "finit_module" command occur. 
+
+Check the auditing rules in "/etc/audit/audit.rules" with the following command:
+
+Note: The output lines of the command are duplicated to cover both 32-bit and 64-bit architectures. Only the line appropriate for the system architecture must be present.
+
+# grep -iw finit_module /etc/audit/audit.rules
+
+If the command does not return the following output (appropriate to the architecture), this is a finding. 
+
+-a always,exit -F arch=b32 -S finit_module -k module-change
+
+-a always,exit -F arch=b64 -S finit_module -k module-change
+
+If there are no audit rules defined for “finit_module”, this is a finding.
+
+Additional Data
+~~~~~~~~~~~~~~~
+
+
+* Documentable: false
+
+* False Negatives: None
+
+* False Positives: None
+
+* IA Controls: None
+
+* Mitigation Control: None
+
+* Mitigations: None
+
+* Potential Impacts: None
+
+* Responsibility: None
+
+* SeverityOverrideGuidance: None
+
+* Third Party Tools: None
+
+* Control Correlation Identifiers: CCI-000172
 
 

@@ -171,7 +171,9 @@ Fix
 
 If an account is configured for password authentication but does not have an assigned password, it may be possible to log on to the account without authenticating.
 
-Remove any instances of the "nullok" option in "/etc/pam.d/system-auth-ac" to prevent logons with empty passwords and run the "authconfig" command.
+Remove any instances of the "nullok" option in "/etc/pam.d/system-auth-ac" to prevent logons with empty passwords.
+
+Note: Any updates made to "/etc/pam.d/system-auth-ac" may be overwritten by the "authconfig" program. The "authconfig" program should not be used.
 
 Check
 ~~~~~
@@ -446,31 +448,40 @@ Generate an encrypted grub2 password for root with the following command:
 
 Note: The hash generated is an example.
 
-# grub-mkpasswd-pbkdf2
+# grub2-mkpasswd-pbkdf2
+
 Enter Password:
 Reenter Password:
 PBKDF2 hash of your password is grub.pbkdf2.sha512.10000.F3A7CFAA5A51EED123BE8238C23B25B2A6909AFC9812F0D45
 
-Using this hash, modify the "/etc/grub.d/10_linux" file with the following commands to add the password to the root entry:
+Edit "/etc/grub.d/40_custom" and add the following lines below the comments:
 
-# cat << EOF
-> set superusers="root" password_pbkdf2 smithj grub.pbkdf2.sha512.10000.F3A7CFAA5A51EED123BE8238C23B25B2A6909AFC9812F0D45
-> EOF
+# vi /etc/grub.d/40_custom
+
+set superusers="root"
+
+password_pbkdf2 root {hash from grub2-mkpasswd-pbkdf2 command}
 
 Generate a new "grub.conf" file with the new password with the following commands:
 
 # grub2-mkconfig --output=/tmp/grub2.cfg
 # mv /tmp/grub2.cfg /boot/grub2/grub.cfg
 
+
 Check
 ~~~~~
 
+For systems that use UEFI, this is Not Applicable.
+
 Check to see if an encrypted root password is set. On systems that use a BIOS, use the following command:
 
-# grep -i password /boot/grub2/grub.cfg
-password_pbkdf2 superusers-account password-hash
+# grep -i ^password_pbkdf2 /boot/grub2/grub.cfg
+
+password_pbkdf2 [superusers-account] [password-hash]
 
 If the root password entry does not begin with "password_pbkdf2", this is a finding.
+
+If the "superusers-account" is not set to "root", this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -526,32 +537,40 @@ Generate an encrypted grub2 password for root with the following command:
 
 Note: The hash generated is an example.
 
-# grub-mkpasswd-pbkdf2
+# grub2-mkpasswd-pbkdf2
+
 Enter Password:
 Reenter Password:
-
 PBKDF2 hash of your password is grub.pbkdf2.sha512.10000.F3A7CFAA5A51EED123BE8238C23B25B2A6909AFC9812F0D45
 
-Using this hash, modify the "/etc/grub.d/10_linux" file with the following commands to add the password to the root entry:
+Edit "/etc/grub.d/40_custom" and add the following lines below the comments:
 
-# cat << EOF
-> set superusers="root" password_pbkdf2 smithj grub.pbkdf2.sha512.10000.F3A7CFAA5A51EED123BE8238C23B25B2A6909AFC9812F0D45
-> EOF
+# vi /etc/grub.d/40_custom
+
+set superusers="root"
+
+password_pbkdf2 root {hash from grub2-mkpasswd-pbkdf2 command}
 
 Generate a new "grub.conf" file with the new password with the following commands:
 
 # grub2-mkconfig --output=/tmp/grub2.cfg
 # mv /tmp/grub2.cfg /boot/efi/EFI/redhat/grub.cfg
 
+
 Check
 ~~~~~
+
+For systems that use BIOS, this is Not Applicable.
 
 Check to see if an encrypted root password is set. On systems that use UEFI, use the following command:
 
 # grep -i password /boot/efi/EFI/redhat/grub.cfg
-password_pbkdf2 superusers-account password-hash
+
+password_pbkdf2 [superusers-account] [password-hash]
 
 If the root password entry does not begin with "password_pbkdf2", this is a finding.
+
+If the "superusers-account" is not set to "root", this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -1029,14 +1048,28 @@ Verify the operating system verifies correct operation of all security functions
 Check if "SELinux" is active and is enforcing the targeted policy with the following command:
 
 # sestatus
+
 SELinux status:                 enabled
-SELinuxfs mount:                /selinu
-XCurrent mode:                   enforcing
+
+SELinuxfs mount:                /selinux
+
+SELinux root directory:         /etc/selinux
+
+Loaded policy name:             targeted
+
+Current mode:                   enforcing
+
 Mode from config file:          enforcing
-Policy version:                 24
-Policy from config file:        targeted
+
+Policy MLS status:              enabled
+
+Policy deny_unknown status:     allowed
+
+Max kernel policy version:      28
+
 
 If the "Policy from config file" is not set to "targeted", or the "Loaded policy name" is not set to "targeted", this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -1300,8 +1333,6 @@ Configure the operating system to implement DoD-approved encryption by following
 
 The fips=1 kernel option needs to be added to the kernel command line during system installation so that key generation is done with FIPS-approved algorithms and continuous monitoring tests in place. Users should also ensure that the system has plenty of entropy during the installation process by moving the mouse around, or if no mouse is available, ensuring that many keystrokes are typed. The recommended amount of keystrokes is 256 and more. Less than 256 keystrokes may generate a non-unique key.
 
-For proper operation of the in-module integrity verification, the prelink has to be disabled. This can be done by configuring PRELINKING=no in the "/etc/sysconfig/prelink" configuration file. Existing prelinking, if any, should be undone on all system files using the prelink -u -a command.
-
 Install the dracut-fips package with the following command:
 
 # yum install dracut-fips
@@ -1329,8 +1360,8 @@ On UEFI-based machines, use the following command:
 If /boot or /boot/efi reside on separate partitions, the kernel parameter boot=<partition of /boot or /boot/efi> must be added to the kernel command line. You can identify a partition by running the df /boot or df /boot/efi command:
 
 # df /boot
-Filesystem           1K-blocks      Used Available Use% Mounted on
-/dev/sda1               495844     53780    416464  12% /boot
+Filesystem 1K-blocks Used Available Use% Mounted on
+/dev/sda1 495844 53780 416464 12% /boot
 
 To ensure the boot= configuration option will work even if device naming changes between boots, identify the universally unique identifier (UUID) of the partition with the following command:
 
@@ -1342,6 +1373,7 @@ For the example above, append the following string to the kernel command line:
 boot=UUID=05c000f1-a213-759e-c7a2-f11b7424c797
 
 Reboot the system for the changes to take effect.
+
 
 Check
 ~~~~~
@@ -1499,7 +1531,7 @@ Configure the operating system to produce audit records containing information t
 
 Enable the auditd service with the following command:
 
-# chkconfig auditd on
+# systemctl start auditd.service
 
 Check
 ~~~~~
@@ -1545,8 +1577,8 @@ Additional Data
 
 
 
-V-72213 - The system must use a DoD-approved virus scan program. - RHEL-07-032000
----------------------------------------------------------------------------------
+V-72213 - The system must use a virus scan program. - RHEL-07-032000
+--------------------------------------------------------------------
 
 Severity
 ~~~~~~~~
@@ -1565,12 +1597,12 @@ If the system processes inbound SMTP mail, the virus scanner must be configured 
 Fix
 ~~~
 
-Install an approved DoD antivirus solution on the system.
+Install an antivirus solution on the system.
 
 Check
 ~~~~~
 
-Verify the system is using a DoD-approved virus scan program.
+Verify the system is using a virus scan program.
 
 Check for the presence of "McAfee VirusScan Enterprise for Linux" with the following command:
 
@@ -1649,6 +1681,12 @@ The SSH service must be restarted for changes to take effect.
 
 Check
 ~~~~~
+
+Check the version of the operating system with the following command:
+
+# cat /etc/redhat-release
+
+If the release is 7.4 or newer this requirement is Not Applicable.
 
 Verify the SSH daemon is configured to only use the SSHv2 protocol.
 
@@ -1834,21 +1872,24 @@ The FTP service provides an unencrypted remote access that does not provide for 
 Fix
 ~~~
 
-Document the "lftpd" package with the ISSO as an operational requirement or remove it from the system with the following command:
+Document the "vsftpd" package with the ISSO as an operational requirement or remove it from the system with the following command:
 
-# yum remove lftpd
+# yum remove vsftpd
+
 
 Check
 ~~~~~
 
-Verify a lightweight FTP server has not been installed on the system.
+Verify an FTP server has not been installed on the system.
 
-Check to see if a lightweight FTP server has been installed with the following commands:
+Check to see if an FTP server has been installed with the following commands:
 
-# yum list installed lftpd
- lftp-4.4.8-7.el7.x86_64.rpm
+# yum list installed vsftpd
 
-If "lftpd" is installed and is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+ vsftpd-3.0.2.el7.x86_64.rpm
+
+If "vsftpd" is installed and is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
+
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -1966,7 +2007,7 @@ Configure SSH to encrypt connections for interactive users.
 
 Edit the "/etc/ssh/sshd_config" file to uncomment or add the line for the "X11Forwarding" keyword and set its value to "yes" (this file may be named differently or be in a different location if using a version of SSH that is provided by a third-party vendor):
 
-X11Fowarding yes
+X11Forwarding yes
 
 The SSH service must be restarted for changes to take effect.
 
@@ -1978,7 +2019,8 @@ Verify remote X connections for interactive users are encrypted.
 Check that remote X connections are encrypted with the following command:
 
 # grep -i x11forwarding /etc/ssh/sshd_config
-X11Fowarding yes
+
+X11Forwarding yes
 
 If the "X11Forwarding" keyword is set to "no", is missing, or is commented out, this is a finding.
 

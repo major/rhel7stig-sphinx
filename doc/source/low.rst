@@ -289,33 +289,11 @@ Migrate the system audit data path onto a separate file system.
 Check
 ~~~~~
 
-Verify the file integrity tool is configured to use FIPS 140-2 approved cryptographic hashes for validating file contents and directories.
+Determine if the "/var/log/audit" path is a separate file system.
 
-Note: If RHEL-07-021350 is a finding, this is automatically a finding as the system cannot implement FIPS 140-2 approved cryptographic algorithms and hashes.
+# grep /var/log/audit /etc/fstab
 
-Check to see if Advanced Intrusion Detection Environment (AIDE) is installed on the system with the following command:
-
-# yum list installed aide
-
-If AIDE is not installed, ask the System Administrator how file integrity checks are performed on the system. 
-
-If there is no application installed to perform file integrity checks, this is a finding.
-
-Note: AIDE is highly configurable at install time. These commands assume the "aide.conf" file is under the "/etc" directory. 
-
-Use the following command to determine if the file is in another location:
-
-# find / -name aide.conf
-
-Check the "aide.conf" file to determine if the "sha512" rule has been added to the rule list being applied to the files and directories selection lists.
-
-An example rule that includes the "sha512" rule follows:
-
-All=p+i+n+u+g+s+m+S+sha512+acl+xattrs+selinux
-/bin All            # apply the custom rule to the files in bin 
-/sbin All          # apply the same custom rule to the files in sbin 
-
-If the "sha512" rule is not being used on all selection lines in the "/etc/aide.conf" file, or another file integrity tool is not using FIPS 140-2 approved cryptographic hashes for validating file contents and directories, this is a finding.
+If no result is returned, "/var/log/audit" is not on a separate file system, and this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~
@@ -673,10 +651,14 @@ Verify users are provided with feedback on when account accesses last occurred.
 Check that "pam_lastlog" is used and not silent with the following command:
 
 # grep pam_lastlog /etc/pam.d/postlogin-ac
+session required pam_lastlog.so showfailed
 
-session     required      pam_lastlog.so showfailed silent
+If the "silent" option is present with "pam_lastlog" check the sshd configuration file.
 
-If "pam_lastlog" is missing from "/etc/pam.d/postlogin-ac" file, or the silent option is present on the line check for the "PrintLastLog" keyword in the sshd daemon configuration file, this is a finding.
+# grep -i printlastlog /etc/ssh/sshd_config
+PrintLastLog yes
+
+If "pam_lastlog" is missing from "/etc/pam.d/postlogin-ac" file, or the silent option is present and PrintLastLog is missing from or set to "no" in the "/etc/ssh/sshd_config" file this is a finding.
 
 Additional Data
 ~~~~~~~~~~~~~~~

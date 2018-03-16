@@ -9,7 +9,7 @@ from lxml import etree
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-XCCDF_FILE = 'U_Red_Hat_Enterprise_Linux_7_STIG_V1R1_Manual-xccdf.xml'
+XCCDF_FILE = 'U_Red_Hat_Enterprise_Linux_7_STIG_V1R4_Manual-xccdf.xml'
 
 
 def write_file(filename, content):
