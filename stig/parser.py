@@ -45,6 +45,7 @@ def description_tag_prettify(uglyname):
     else:
         return uglyname
 
+
 # Get Jinja configured properly
 jinja_env = jinja2.Environment(
     loader=jinja2.FileSystemLoader(SCRIPT_DIR)
